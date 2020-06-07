@@ -7,7 +7,9 @@ branches:
   only:
     - dev # build master branch only
 before_script:
-  - git clone https://github.com/nettee/hexo-theme-next themes/next
+  - git clone https://github.com/xaoxuu/hexo-theme-volantis themes/volantis
+  - npm i -S hexo-generator-search hexo-generator-json-content
+  - npm i -S hexo-renderer-stylus
 script:
   - hexo generate # generate static files
 deploy:
