@@ -100,4 +100,4 @@ theme: next
 deploy:
   type: 'git'
   repository: https://github.com/Strive087/strive087.github.io.git
-  branch: master
+  branch: dev
