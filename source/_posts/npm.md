@@ -1,4 +1,10 @@
-# npm切换源
+---
+title : npm切换镜像源
+date : 2020/6/7 20:20:35
+tag : npm
+categories : nodeJs
+---
+# npm切换镜像源
 
 - 切换为淘宝镜像
 
