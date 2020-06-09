@@ -105,12 +105,13 @@ deploy:
 favicon:  images/favicon.ico
 # 网站图标，更多尺寸等图标请使用import方式批量导入
 #favicon: https://cdn.jsdelivr.net/gh/xaoxuu/assets@master/favicon/favicon.ico
-#import:
+import:
 #  meta:
 #  - "<meta name='theme-color' content='#FFFFFF'>"
 #  - "<meta name='msapplication-TileColor' content='#1BC3FB'>"
 #  - "<meta name='msapplication-config' content='https://cdn.jsdelivr.net/gh/xaoxuu/assets@master/favicon/favicons/browserconfig.xml'>"
-# link:
+ link:
+ - "<link rel='stylesheet' href='http://at.alicdn.com/t/font_1872916_9bxpvrr3gw.css'>"
 #  - "<link rel='shortcut icon' type='image/x-icon' href='https://cdn.jsdelivr.net/gh/xaoxuu/assets@master/favicon/favicon.ico'>"
 #  - "<link rel='icon' type='image/x-icon' sizes='32x32' href='https://cdn.jsdelivr.net/gh/xaoxuu/assets@master/favicon/favicons/favicon-32x32.png'>"
 #  - "<link rel='apple-touch-icon' type='image/png' sizes='180x180' href='https://cdn.jsdelivr.net/gh/xaoxuu/assets@master/favicon/favicons/apple-touch-icon.png'>"

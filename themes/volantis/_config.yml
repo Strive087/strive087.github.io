@@ -101,8 +101,8 @@ cover:
     archive: true
     others: false # can be written in front-matter 'cover: true'
   logo: # https://cdn.jsdelivr.net/gh/xaoxuu/cdn-assets/logo/256/google_logo.png
-  title: Volantis
-  subtitle: 'A Wonderful Theme for Hexo'
+  title: 前端之路
+  subtitle: '路漫漫其修远兮'
   search: # search bar placeholder
   features:
     - name: 文档
@@ -111,27 +111,23 @@ cover:
     - name: 博文
       icon: fas fa-rss
       url: https://volantis.js.org/archives/
-    - name: 示例
-      icon: fas fa-play-circle
-      url: https://volantis.js.org/examples/
     - name: 源码
       icon: fas fa-file-code
-      url: https://github.com/xaoxuu/hexo-theme-volantis/
+      url: https://github.com/Strive087/strive087.github.io
       rel: external nofollow noopener noreferrer
       target: _blank
     - name: 鸣谢
       icon: fas fa-handshake
       url: https://volantis.js.org/contributors/
 
-
 # Navigation Bar
 navbar:
   logo: # choose [img] or [icon + title]
-    img:
-    icon:
-    title:
-  menu:
-    # The following can be written in `blog/source/_data/menu.yml`
+    img:    
+    icon: iconfont icon-daolu 
+    title: 前端之路
+  menu: 
+  # The following can be written in `blog/source/_data/menu.yml`
     - name: 博客
       icon: fas fa-rss
       url: /
@@ -144,9 +140,9 @@ navbar:
     - name: 归档
       icon: fas fa-archive
       url: archives/
-    - name: 友链
-      icon: fas fa-link
-      url: friends/
+    #- name: 友链
+    #  icon: fas fa-link
+    #  url: friends/
     - name: 关于
       icon: fas fa-info-circle
       url: about/
@@ -175,7 +171,7 @@ layout:
       header: [title, author, category, date, top]
       footer: [updated, tags, btns, share]
     # 文章页面的侧边栏
-    sidebar: [qrcode, toc]
+    sidebar: [qrcode, toc, donate]
   # 文章布局，参数继承自 on_page
   on_post:
     # 文章页脚，自动在每一篇文章末尾添加
@@ -334,7 +330,7 @@ widget:
   donate:
     class: qrcode
     display: [desktop, mobile] # [desktop, mobile]
-    height: 64px  # Automatic height if not set
+    height: 80px  # Automatic height if not set
     fancybox: true
     images:
       - http://106.53.255.182:9608/images/alipay.jpg
@@ -467,7 +463,7 @@ plugins:
     # Optional
     fixed: false      # enable fixed mode
     theme: '#1BCDFC'  # main color
-    autoplay: false   # audio autoplay
+    autoplay: true   # audio autoplay
     order: list       # player play order, values: 'list', 'random'
     loop: all         # player loop play, values: 'all', 'one', 'none'
     volume: 0.7       # default volume, notice that player will remember user setting, default volume will not work after user set volume themselves
