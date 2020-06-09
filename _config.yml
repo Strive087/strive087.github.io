@@ -118,3 +118,33 @@ import:
 #  - "<link rel='mask-icon' color='#1BC3FB' href='https://cdn.jsdelivr.net/gh/xaoxuu/assets@master/favicon/favicons/safari-pinned-tab.svg'>"
 #  - "<link rel='manifest' href='https://cdn.jsdelivr.net/gh/xaoxuu/assets@master/favicon/favicons/site.webmanifest'>"
 #  script:
+#
+live2d:
+  enable: true
+  scriptFrom: local
+  model:
+    use: live2d-widget-model-izumi #模型选择
+  display:
+    position: left  #模型位置
+    width: 150       #模型宽度
+    height: 300      #模型高度
+  mobile:
+    show: true      #是否在手机端显示
+
+# RSS订阅支持
+plugin:
+  - hexo-generator-feed
+ # Feed Atom
+feed: 
+  type: atom
+  path: atom.xml
+  limit: 20
+
+
+
+
+
+
+
+
+

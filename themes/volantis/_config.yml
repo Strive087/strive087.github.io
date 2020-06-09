@@ -360,17 +360,16 @@ footer:
   layout: [aplayer, social, license, info, copyright]
   social:
     - icon: fas fa-rss
-      url: atom.xml
+      url: /atom.xml
     - icon: fas fa-envelope
-      url: mailto:me@xaoxuu.com
+      url: mailto:840459919@qq.com
     - icon: fab fa-github
-      url: https://github.com/xaoxuu
+      url: https://github.com/Strive087/strive087.github.io
     - icon: fas fa-headphones-alt
-      url: https://music.163.com/#/user/home?id=63035382
-  copyright: '[Copyright © 2017-2020 Mr. X](https://xaoxuu.com)'
+      url: https://music.163.com/#/user/home?id=130611633
+  copyright: '[Copyright © 2017-2020 PigBro](https://pigbro.online)'
   # You can add your own property here. (Support markdown, for example: br: '<br>')
   br: '<br>'
-
 
 ############################### SEO ###############################
 seo:
@@ -468,7 +467,7 @@ plugins:
     loop: all         # player loop play, values: 'all', 'one', 'none'
     volume: 0.7       # default volume, notice that player will remember user setting, default volume will not work after user set volume themselves
     list_max_height: 340px # list max height
-    list_folded: true
+    list_folde: true
 
 
 
@@ -594,4 +593,6 @@ info:
   docs: https://volantis.js.org/ # This is theme's URL.
   cdn:
     js: https://cdn.jsdelivr.net/gh/xaoxuu/cdn-volantis@2.6.5/js/app.js
-    css:
+    css: 
+
+rss: atom.xml
