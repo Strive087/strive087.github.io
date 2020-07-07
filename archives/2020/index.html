@@ -396,6 +396,10 @@
         
           
         
+          
+        
+          
+        
       
     
     
@@ -414,8 +418,8 @@
         
           
   <h2 class="title">
-    <a href="/2020/06/10/js_module/">
-      js_module
+    <a href="/2020/07/06/algorithm/%E5%9F%BA%E6%9C%AC%E6%A6%82%E5%BF%B5/">
+      基本概念
     </a>
   </h2>
 
@@ -438,6 +442,14 @@
           
             
               
+  
+  <div class='new-meta-item category'>
+    <a href='/categories/%E7%AE%97%E6%B3%95/' rel="nofollow">
+      <i class="fas fa-folder-open fa-fw" aria-hidden="true"></i>
+      <p>算法</p>
+    </a>
+  </div>
+
 
             
           
@@ -445,7 +457,7 @@
               <div class="new-meta-item date">
   <a class='notlink'>
     <i class="fas fa-calendar-alt fa-fw" aria-hidden="true"></i>
-    <p>发布于：2020年6月10日</p>
+    <p>发布于：2020年7月7日</p>
   </a>
 </div>
 
@@ -473,7 +485,238 @@
   <section class="article typo">
     <div class="article-entry" itemprop="articleBody">
       
+        <p class='p subtitle'>算法</p>
+<p>在数学领域里，算法是用于解决某一类 问题的公式和思想。<br>计算机科学领域的算法，它的本质是一系列程序指令，用于解决特定的运算和逻辑问题。</p>
+<p class='p subtitle'>数据结构</p>
+<p>数据结构是数据的组织、管理和存储格式， 其使用目的是为了高效地访问和修改数据。<br>数据结构包含数组、链表这样的线性数据结构，也包含树、图这样的复杂数据结构。</p>
+<p class='p subtitle'>时间复杂度</p>
+<p>如何推导出时间复杂度呢？有如下几个原则。 </p>
+<ul>
+<li>如果运行时间是常数量级，则用常数1表示 </li>
+<li>只保留时间函数中的最高阶项 </li>
+<li>如果最高阶项存在，则省去最高阶项前面的系数。</li>
+</ul>
+<p>常见的四种时间复杂度执行时间排序：<br>O(1)&lt;O(logn)&lt;O(n)&lt;O(n2)<br>在编程的世界中有各种各样的算法，除了上述4个场景，还有许多不同形式的时 间复杂度，例如：O(nlogn)、O(n3)、O(mn)、O(2n)、O(n!)</p>
+<p class='p subtitle'>空间复杂度</p>
+<p>在运行一段程序时，我们不仅要执行各种运算指令，同时也会根据需要，存储一些临时的中间数据，以便后续指令可以更方便地继续执行。<br>这些临时的中间数据在运行过程中所占用的内存空间自然是越小越好，那么空间复杂度便是评判其占用大小的标准。<br>常见的空间复杂度有下面几种情形。 </p>
+<ol>
+<li>常量空间<br>当算法的存储空间大小固定，和输入规模没有直接的关系时，空间复杂度记作O(1)。</li>
+<li>线性空间<br>当算法分配的空间是一个线性的集合（如数组），并且集合大小和输入规模n成正比时，空间复杂度记作O(n)。</li>
+<li>二维空间<br>当算法分配的空间是一个二维数组集合，并且集合的长度和宽度都与输入规模n成正比时，空间复杂度记作O(n2)。</li>
+<li>递归空间<br>递归是一个比较特殊的场景。虽然递归代码中并没有显式地声明变量或集合，但是计算机在执行程序时，会专门分配一块内存，用来存储“方法调用栈”。纯粹的递归操作的空间复杂度也是线性的，如果递归的深度是n，那么空间复杂度就是O(n)。</li>
+</ol>
+<p class='p subtitle'>时间与空间的取舍</p>
+<p>在绝大多数时候，时间复杂度更为重要一些，我们宁可多分配一些内存空间， 也要提升程序的执行速度。</p>
+<p class='p subtitle'>最大公约数</p>
+<p>如果数a能被数b整除，a就叫做b的倍数，b就叫做a的约数。<br>最大公因数，也称最大公约数、最大公因子，指两个或多个整数共有约数中最大的一个。a，b的最大公约数记为（a，b), 同样的，a，b，c的最大公约数记为（a，b，c），多个整数的最大公约数也有同样的记号。<br>可以在区块中放置一些复杂的结构，支持嵌套。<br>求法：</p>
+<div class="note quote">
+            <p class='p subtitle'>质因数分解法</p><details ><summary> <p>点击查看更多</p> </summary>              <div class='content'>              <p>把每个数分别分解质因数，再把各数中的全部公有质因数提取出来连乘，所得的积就是这几个数的最大公约数。<br>例如：求24和60的最大公约数，先分解质因数，得24=2×2×2×3，60=2×2×3×5，24与60的全部公有的质因数是2、2、3，它们的积是2×2×3=12，所以，（24，60）=12。</p>              </div>            </details><p class='p subtitle'>短除法</p><details ><summary> <p>点击查看更多</p> </summary>              <div class='content'>              <p>短除法求最大公约数，先用这几个数的公约数连续去除，一直除到所有的商互质为止，然后把所有的除数连乘起来，所得的积就是这几个数的最大公约数。</p>              </div>            </details><p class='p subtitle'>辗转相除法</p><details ><summary> <p>点击查看更多</p> </summary>              <div class='content'>              <p>辗转相除法是求两个自然数的最大公约数的一种方法，也叫欧几里德算法。<br>例如，求（319，377）：<br>∵ 319÷377=0（余319）<br>∴（319，377）=（377，319）；<br>∵ 377÷319=1（余58）<br>∴（377，319）=（319，58）；<br>∵ 319÷58=5（余29）<br>∴ （319，58）=（58，29）；<br>∵ 58÷29=2（余0）<br>∴ （58，29）= 29；<br>∴ （319，377）=29。<br>可以写成右边的格式。<br>用辗转相除法求几个数的最大公约数，可以先求出其中任意两个数的最大公约数，再求这个最大公约数与第三个数的最大公约数，依次求下去，直到最后一个数为止。最后所得的那个最大公约数，就是所有这些数的最大公约数。</p>              </div>            </details><p class='p subtitle'>更相减损法</p><details ><summary> <p>点击查看更多</p> </summary>              <div class='content'>              <p>更相减损法：也叫更相减损术，是出自《九章算术》的一种求最大公约数的算法，它原本是为约分而设计的，但它适用于任何需要求最大公约数的场合。<br>第一步：任意给定两个正整数；判断它们是否都是偶数。若是，则用2约简；若不是则执行第二步。<br>第二步：以较大的数减较小的数，接着把所得的差与较小的数比较，并以大数减小数。继续这个操作，直到所得的减数和差相等为止。<br>则第一步中约掉的若干个2与第二步中等数的乘积就是所求的最大公约数。<br>其中所说的“等数”，就是最大公约数。求“等数”的办法是“更相减损”法。所以更相减损法也叫等值算法。<br>例1．用更相减损术求98与63的最大公约数。<br>解：由于63不是偶数，把98和63以大数减小数，并辗转相减：<br>98-63=35<br>63-35=28<br>35-28=7<br>28-7=21<br>21-7=14<br>14-7=7<br>所以，98和63的最大公约数等于7。<br>这个过程可以简单的写为：<br>（98，63）=（35，63）=（35，28）=（7，28）=（7，21）=（7，14）=（7，7）=7.<br>例2．用更相减损术求260和104的最大公约数。<br>解：由于260和104均为偶数，首先用2约简得到130和52，再用2约简得到65和26。<br>此时65是奇数而26不是奇数，故把65和26辗转相减：<br>65-26=39<br>39-26=13<br>26-13=13<br>所以，260与104的最大公约数等于13乘以第一步中约掉的两个2，即13<em>2</em>2=52。<br>这个过程可以简单地写为：<br>（260,104）(/2/2) =&gt;（65,26）=（39,26）=（13,26）=（13,13）=13. (<em>2</em>2) =&gt; 52</p>              </div>            </details><p class='p subtitle'>比较辗转相除法与更相减损术的区别</p>1. 都是求最大公因数的方法，计算上辗转相除法以除法为主，更相减损术以减法为主，计算次数上辗转相除法计算次数相对较少，特别当两个数字大小区别较大时计算次数的区别较明显。<br/>2. 从结果体现形式来看，辗转相除法体现结果是以相除余数为0则得到，而更相减损术则以减数与差相等而得到。
+          </div>
+
+
+
+
+      
+    </div>
+    
+      
+    
+  </section>
+</article>
+
+          </div>
         
+      
+        
+          <div class='post-wrapper'>
+            <article class="post white-box shadow reveal ">
+  
+
+
+  <section class='meta'>
+    
+      
+      
+      <div class="meta" id="header-meta">
+        
+          
+  <h2 class="title">
+    <a href="/2020/06/11/JS%E5%87%BD%E6%95%B0%E5%BC%8F%E7%BC%96%E7%A8%8B/">
+      JS的函数式编程
+    </a>
+  </h2>
+
+
+        
+        <div class='new-meta-box'>
+          
+            
+          
+            
+              
+<div class='new-meta-item author'>
+  <a href="https://strive087.github.io/" rel="nofollow">
+    <img src="http://106.53.255.182:9608/images/author.jpg">
+    <p>zhuduanlei</p>
+  </a>
+</div>
+
+            
+          
+            
+              
+  
+  <div class='new-meta-item category'>
+    <a href='/categories/javascript/%E5%87%BD%E6%95%B0%E5%BC%8F%E7%BC%96%E7%A8%8B/' rel="nofollow">
+      <i class="fas fa-folder-open fa-fw" aria-hidden="true"></i>
+      <p>javascript/函数式编程</p>
+    </a>
+  </div>
+
+
+            
+          
+            
+              <div class="new-meta-item date">
+  <a class='notlink'>
+    <i class="fas fa-calendar-alt fa-fw" aria-hidden="true"></i>
+    <p>发布于：2020年6月11日</p>
+  </a>
+</div>
+
+            
+          
+            
+              
+
+            
+          
+            
+              
+
+            
+          
+        </div>
+        
+          <hr>
+        
+      </div>
+    
+  </section>
+
+
+  <section class="article typo">
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>函数式编程特点：</p>
+<ol>
+<li>函数是”第一等公民”  (与变量的)</li>
+<li>只用”表达式”，不用”语句” </li>
+<li>没有”副作用” </li>
+<li>不修改状态 </li>
+<li>引用透明（函数运行只靠参数）</li>
+</ol>
+<p>函数curry<br>多参数函数转化成一个嵌套的一元函数<br>好处：一种函数的预加载的方法,相当于-缓存，保存作用域链<br>闭包必定会有内存泄漏</p>
+
+      
+    </div>
+    
+      
+    
+  </section>
+</article>
+
+          </div>
+        
+      
+        
+          <div class='post-wrapper'>
+            <article class="post white-box shadow reveal ">
+  
+
+
+  <section class='meta'>
+    
+      
+      
+      <div class="meta" id="header-meta">
+        
+          
+  <h2 class="title">
+    <a href="/2020/06/10/JS%E7%9A%84%E8%AF%8D%E6%B3%95%E4%BD%9C%E7%94%A8%E5%9F%9F/">
+      JS的词法作用域
+    </a>
+  </h2>
+
+
+        
+        <div class='new-meta-box'>
+          
+            
+          
+            
+              
+<div class='new-meta-item author'>
+  <a href="https://strive087.github.io/" rel="nofollow">
+    <img src="http://106.53.255.182:9608/images/author.jpg">
+    <p>zhuduanlei</p>
+  </a>
+</div>
+
+            
+          
+            
+              
+  
+  <div class='new-meta-item category'>
+    <a href='/categories/javascript/%E4%BD%9C%E7%94%A8%E5%9F%9F/' rel="nofollow">
+      <i class="fas fa-folder-open fa-fw" aria-hidden="true"></i>
+      <p>javascript/作用域</p>
+    </a>
+  </div>
+
+
+            
+          
+            
+              <div class="new-meta-item date">
+  <a class='notlink'>
+    <i class="fas fa-calendar-alt fa-fw" aria-hidden="true"></i>
+    <p>发布于：2020年6月11日</p>
+  </a>
+</div>
+
+            
+          
+            
+              
+
+            
+          
+            
+              
+
+            
+          
+        </div>
+        
+          <hr>
+        
+      </div>
+    
+  </section>
+
+
+  <section class="article typo">
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p class='p subtitle'>作用域</p>
+
+<p>说到词法作用域，我们先讲讲什么是作用域。<br>其实作用域就是一套用来存储变量以及快速查找变量的一套的规则。<br>java</p>
+<p class='p subtitle'>词法作用域</p>
+
+
+
       
     </div>
     
@@ -566,17 +809,20 @@
   <section class="article typo">
     <div class="article-entry" itemprop="articleBody">
       
-        <h1 id="npm切换镜像源"><a href="#npm切换镜像源" class="headerlink" title="npm切换镜像源"></a>npm切换镜像源</h1><ul>
+        <ul>
 <li><p>切换为淘宝镜像</p>
-<p>1.临时使用<br><code>npm --registry https://registry.npm.taobao.org install express</code></p>
-<p>2.持久使用<br><code>npm config set registry https://registry.npm.taobao.org</code></p>
-<p>3.通过cnpm<br><code>npm install -g cnpm --registry=https://registry.npm.taobao.org</code></p>
-</li>
+<p>1.临时使用</p>
+<pre><code>npm --registry https:&#x2F;&#x2F;registry.npm.taobao.org install express;</code></pre>
+<p>2.持久使用</p>
+<pre><code>npm config set registry https:&#x2F;&#x2F;registry.npm.taobao.org</code></pre>
+<p>3.通过cnpm</p>
+<pre><code>npm install -g cnpm --registry&#x3D;https:&#x2F;&#x2F;registry.npm.taobao.org</code></pre></li>
 <li><p>切换官方镜像</p>
-<p><code>npm config set registry https://registry.npmjs.org/</code></p>
-</li>
+<pre><code>npm config set registry https:&#x2F;&#x2F;registry.npmjs.org&#x2F;</code></pre></li>
 <li><p>查看当前npm源地址</p>
-<p><code>npm config get registry</code></p>
+<pre><code>npm config get registry</code></pre>
+
+
 </li>
 </ul>
 
@@ -689,9 +935,29 @@
       <ul class="entry navigation">
         
           <li><a class="flat-box"
+            title="/categories/javascript/" href="/categories/javascript/"
+            id="categoriesjavascript"
+            ><div class='name'>javascript</div><div class='badge'>(2)</div></a></li>
+        
+          <li><a class="flat-box child"
+            title="/categories/javascript/%E4%BD%9C%E7%94%A8%E5%9F%9F/" href="/categories/javascript/%E4%BD%9C%E7%94%A8%E5%9F%9F/"
+            id="categoriesjavascriptE4BD9CE794A8E59F9F"
+            ><div class='name'>作用域</div><div class='badge'>(1)</div></a></li>
+        
+          <li><a class="flat-box child"
+            title="/categories/javascript/%E5%87%BD%E6%95%B0%E5%BC%8F%E7%BC%96%E7%A8%8B/" href="/categories/javascript/%E5%87%BD%E6%95%B0%E5%BC%8F%E7%BC%96%E7%A8%8B/"
+            id="categoriesjavascriptE587BDE695B0E5BC8FE7BC96E7A88B"
+            ><div class='name'>函数式编程</div><div class='badge'>(1)</div></a></li>
+        
+          <li><a class="flat-box"
             title="/categories/nodeJs/" href="/categories/nodeJs/"
             id="categoriesnodeJs"
             ><div class='name'>nodeJs</div><div class='badge'>(1)</div></a></li>
+        
+          <li><a class="flat-box"
+            title="/categories/%E7%AE%97%E6%B3%95/" href="/categories/%E7%AE%97%E6%B3%95/"
+            id="categoriesE7AE97E6B395"
+            ><div class='name'>算法</div><div class='badge'>(1)</div></a></li>
         
       </ul>
     </div>
@@ -715,7 +981,7 @@
 
 
     <div class='content'>
-      <a href="/tags/npm/" style="font-size: 14px; color: #999">npm</a>
+      <a href="/tags/javascript/" style="font-size: 24px; color: #555">javascript</a> <a href="/tags/nodejs/" style="font-size: 14px; color: #999">nodejs</a> <a href="/tags/npm/" style="font-size: 14px; color: #999">npm</a> <a href="/tags/%E4%BD%9C%E7%94%A8%E5%9F%9F/" style="font-size: 14px; color: #999">作用域</a> <a href="/tags/%E5%87%BD%E6%95%B0%E5%BC%8F%E7%BC%96%E7%A8%8B/" style="font-size: 14px; color: #999">函数式编程</a> <a href="/tags/%E7%AE%97%E6%B3%95/" style="font-size: 14px; color: #999">算法</a>
     </div>
   </section>
 
