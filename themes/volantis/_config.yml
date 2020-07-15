@@ -185,7 +185,7 @@ meta:
   title: 前端之路
   # 默认文章作者（可在front-matter中覆盖）
   author:
-    avatar: http://106.53.255.182:9608/images/author.jpg
+    avatar: https://pigbro.online:9608/images/author.jpg
     name: zhuduanlei
     url: https://strive087.github.io/
   # 文章创建日期
@@ -265,7 +265,7 @@ widget:
   blogger:
     class: blogger
     display: [desktop, mobile] # [desktop, mobile]
-    avatar: http://106.53.255.182:9608/images/author.jpg
+    avatar: https://pigbro.online:9608/images/author.jpg
     shape: rectangle # circle, rectangle
     url: /about/
     title:
@@ -333,8 +333,8 @@ widget:
     height: 80px  # Automatic height if not set
     fancybox: true
     images:
-      - http://106.53.255.182:9608/images/alipay.jpg
-      - http://106.53.255.182:9608/images/wechatpay.jpg
+      - https://pigbro.online:9608/images/alipay.jpg
+      - https://pigbro.online:9608/images/wechatpay.jpg
   # ---------------------------------------
   # references widget
   references:
