@@ -27,5 +27,3 @@ npm config set registry https://registry.npmjs.org/
 {% codeblock lang:sh highlight:false line_number:false %}
 npm config get registry
 {% endcodeblock %}
-
-

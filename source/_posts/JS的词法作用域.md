@@ -11,5 +11,3 @@ categories : [javascript,作用域]
 其实作用域就是一套用来存储变量以及快速查找变量的一套的规则。
 java
 {% p subtitle, 词法作用域 %}
-
-
