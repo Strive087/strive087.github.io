@@ -3,6 +3,7 @@
   function pjax_fancybox() {
     $(".article-entry").find("img").not('.inline').not('a img').each(function () { //渲染 fancybox
       var element = document.createElement("a"); // a 标签
+      $(element).attr("class", "fancybox");
       $(element).attr("pjax-fancybox", "");  // 过滤 pjax
       $(element).attr("href", $(this).attr("src"));
       if ($(this).attr("data-original")) {
@@ -10,7 +11,7 @@
       }
       $(element).attr("data-fancybox", "images");
       var caption = "";   // 描述信息
-      if ($(this).attr('alt')) {  // 标准 markdown 描述信息
+      if ($(this).attr('alt')) {  // 判断当前页面是否存在描述信息
         $(element).attr('data-caption', $(this).attr('alt'));
         caption = $(this).attr('alt');
       }

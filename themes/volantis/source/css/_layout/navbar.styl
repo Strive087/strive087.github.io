@@ -1,19 +1,3 @@
-#loading-bar-wrapper
-  position: fixed
-  top: 0
-  left: 0
-  height: 2px
-  width: 100%
-  z-index: 99999
-
-#loading-bar
-  position: fixed
-  width: 0
-  height: 2px
-  trans()
-  background-color: $color-theme
-
-
 .l_header
   $iconW = 32px
   $iconMargin = 4px
@@ -183,7 +167,7 @@
         &:focus
           box-shadow: $boxshadow-float
       @media screen and (max-width: $device-mobile)
-        background: $color-codeblock
+        background: $color-block
         padding-left: $gap * 0.5
         border: none
         &:hover,&:focus
@@ -258,27 +242,25 @@ ul.list-v
   >li>a
     trans()
     display: block
-    color: mix($color-text, $color-card, 90)
+    color: mix($color-text, $color-card, 80)
     font-size: $fontsize-meta
     font-weight: bold
-    line-height: 33px
+    line-height: 36px
+    @media screen and (max-width: $device-laptop)
+      line-height: 40px
     padding: 0 $gap + $border-line + 2px 0 $gap
-    height: 32px
-    border-left: $border-line solid transparent
     text-overflow: ellipsis
+    margin: 0 4px
+    border-radius: 4px
     &:hover,&.active,&:active
       color: $color-theme
-      border-left: $border-line solid $color-theme
-      border-bottom: none
     >i
       margin-right: 8px
     &.current
       border-left-color: alpha($color-theme, 80%)
       border-bottom-color: alpha($color-theme, 80%)
     &:hover
-      color: $color-theme
-      border-left-color: $color-theme
-      border-bottom-color: $color-theme
+      color: mix($color-theme, $color-text, 70)
       background: bgcolor($color-theme)
 
     &:active,&.active
@@ -294,20 +276,20 @@ ul.list-v
       >i
         margin-right: 4px
 
-.l_header ul>li>a
-  color: mix($color-text, $color-card, 90)
+.l_header ul.nav-list-h>li>a
+  color: mix($color-text, $color-card, 80)
   &.current
     border-left-color: alpha($color-theme, 80%)
     border-bottom-color: alpha($color-theme, 80%)
-  &:hover
-    color: $color-theme
-    border-left-color: $color-theme
-    border-bottom-color: $color-theme
-    background: bgcolor($color-theme)
   &:active,&.active
     color: $color-theme
     border-left-color: $color-theme
     border-bottom-color: $color-theme
+  &:hover
+    color: mix($color-theme, $color-text, 70)
+    border-left-color: $color-theme
+    border-bottom-color: $color-theme
+    background: bgcolor($color-theme)
   i.music
     animation: rotate-effect 1.5s linear infinite
     @keyframes rotate-effect
@@ -371,11 +353,17 @@ ul.list-v
 
 
 .l_header
-  @media screen and (min-width: $device-2k)
-    max-width: 65vw
+  max-width: 65vw
+  left: "calc((100% - %s) * 0.5)" % @max-width
+  border-bottom-left-radius: $border-card
+  border-bottom-right-radius: $border-card
+  @media screen and (max-width: $device-2k)
+    max-width: $layout-width + 2 * $gap
     left: "calc((100% - %s) * 0.5)" % @max-width
-    border-bottom-left-radius: $border-card
-    border-bottom-right-radius: $border-card
+  @media screen and (max-width: $layout-width + 2 * $gap)
+    left: 0
+    border-radius: 0
+    max-width: 100%
   @media screen and (max-width: $device-mobile)
     .container
       margin-left: 0
@@ -394,10 +382,6 @@ ul.list-v
       .switcher
         display: flex
         margin-right: $gap * 0.5
-    // .wrapper.sub
-    //   .title
-    //     padding-left: 0
-    //     padding-right: 0
     .menu
       display:none
 
