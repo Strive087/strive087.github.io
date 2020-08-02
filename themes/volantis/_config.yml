@@ -457,13 +457,13 @@ plugins:
       - https://cdn.jsdelivr.net/npm/meting@2.0/dist/Meting.min.js
     # Required
     server: netease   # netease, tencent, kugou, xiami, baidu
-    type: album    # song, playlist, album, search, artist
-    id: 39483040    # song id / playlist id / album id / search keyword 
+    type: playlist    # song, playlist, album, search, artist
+    id: 164108004    # song id / playlist id / album id / search keyword 
     # Optional
     fixed: false      # enable fixed mode
     theme: '#1BCDFC'  # main color
     autoplay: true   # audio autoplay
-    order: list       # player play order, values: 'list', 'random'
+    order: random       # player play order, values: 'list', 'random'
     loop: all         # player loop play, values: 'all', 'one', 'none'
     volume: 0.7       # default volume, notice that player will remember user setting, default volume will not work after user set volume themselves
     list_max_height: 340px # list max height
