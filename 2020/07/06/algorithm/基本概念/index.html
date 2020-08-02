@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html>
-<head hexo-theme='https://volantis.js.org/#2.6.6'>
+<head hexo-theme='https://volantis.js.org/#3.0-beta2'>
   <meta charset="utf-8">
   <!-- SEO相关 -->
   
@@ -16,10 +16,11 @@
 
   <!-- 页面元数据 -->
   
-    <title>基本概念 - 前端之路</title>
+  <title>基本概念 - 前端之路</title>
   
     <meta name="keywords" content="算法">
   
+
   
 
   <!-- feed -->
@@ -35,7 +36,7 @@
   
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.css">
 
-  
+
   
     
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/node-waves@0.7.6/dist/waves.min.css">
@@ -43,7 +44,7 @@
   
 
   
-  <link rel="shortcut icon" type='image/x-icon' href="/images/favicon.ico">
+    <link rel="shortcut icon" type='image/x-icon' href="/images/favicon.ico">
   
 
   
@@ -65,27 +66,73 @@
 
   
 
-  <script>
-    function setLoadingBarProgress(num) {
-      document.getElementById('loading-bar').style.width=num+"%";
-    }
-  </script>
-
   
   
 </head>
 
-<body>
+
+<body oncontextmenu="return popMenu(event);">
+
   
-  <div id="loading-bar-wrapper">
-  <div id="loading-bar"></div>
+  
+  
+  <div class="cover-wrapper">
+    <cover class='cover post' style="display: none;">
+      <div class='cover-body'>
+  <div class='a'>
+    
+      <img no-lazy class='logo' src='https://cdn.jsdelivr.net/gh/volantis-x/cdn-org/blog/Logo-Cover@3x.png'/>
+    
+    
+    
+  </div>
+  <div class='b'>
+    <div class='menu navigation dock'>
+      <div class='list-h'>
+        
+          
+            <a href="/v3/getting-started/"
+              
+              
+              id="v3getting-started">
+              <img src='https://i.loli.net/2020/07/24/GaeXvVAdtJkCYT3.png'><p>文档</p>
+            </a>
+          
+            <a href="/faqs/"
+              
+              
+              id="faqs">
+              <img src='https://i.loli.net/2020/07/24/cxRslyWzk2OTP9r.png'><p>帮助</p>
+            </a>
+          
+            <a href="/examples/"
+              
+              
+              id="examples">
+              <img src='https://i.loli.net/2020/07/24/9kHJZNA8m4RBxhp.png'><p>示例</p>
+            </a>
+          
+            <a href="/contributors/"
+              
+              
+              id="contributors">
+              <img src='https://i.loli.net/2020/07/24/skczZ1VdMGRbTLi.png'><p>社区</p>
+            </a>
+          
+        
+      </div>
+    </div>
+  </div>
 </div>
-<header class="l_header shadow floatable blur">
+
+      <div class="scroll-down" style="display: none;"><i class="fa fa-chevron-down scroll-down-effects"></i></div>
+    </cover>
+    <header class="l_header shadow blur">
   <div class='container'>
   <div class='wrapper'>
     <div class='nav-sub'>
       <p class="title"></p>
-      <ul class='switcher nav-list-h'>
+      <ul class='switcher nav-list-h' id="pjax-header-nav-list">
         <li><a class="s-comment fas fa-comments fa-fw" target="_self" href='javascript:void(0)'></a></li>
         
           <li><a class="s-toc fas fa-list fa-fw" target="_self" href='javascript:void(0)'></a></li>
@@ -97,11 +144,8 @@
         
         <a class="title flat-box" target="_self" href='/'>
           
+            <img no-lazy class='logo' src='https://cdn.jsdelivr.net/gh/volantis-x/cdn-org/blog/Logo-NavBar@3x.png'/>
           
-            <i class='iconfont icon-daolu'></i>
-          
-          
-            前端之路
           
           
         </a>
@@ -115,7 +159,7 @@
             
             
               <li>
-                <a class="flat-box" href=/
+                <a class="menuitem flat-box" href=/
                   
                   
                   
@@ -131,7 +175,7 @@
             
             
               <li>
-                <a class="flat-box" href=/categories/
+                <a class="menuitem flat-box" href=/categories/
                   
                   
                   
@@ -147,7 +191,7 @@
             
             
               <li>
-                <a class="flat-box" href=/tags/
+                <a class="menuitem flat-box" href=/tags/
                   
                   
                   
@@ -163,7 +207,7 @@
             
             
               <li>
-                <a class="flat-box" href=/archives/
+                <a class="menuitem flat-box" href=/archives/
                   
                   
                   
@@ -179,7 +223,23 @@
             
             
               <li>
-                <a class="flat-box" href=/about/
+                <a class="menuitem flat-box" href=/friends/
+                  
+                  
+                  
+                    id="friends"
+                  >
+                  <i class='fas fa-link fa-fw'></i>友链
+                </a>
+                
+              </li>
+            
+          
+          
+            
+            
+              <li>
+                <a class="menuitem flat-box" href=/about/
                   
                   
                   
@@ -213,7 +273,7 @@
               
             
               <li>
-                <a class="flat-box" href=/
+                <a class="menuitem flat-box" href=/
                   
                   
                   
@@ -229,7 +289,7 @@
               
             
               <li>
-                <a class="flat-box" href=/categories/
+                <a class="menuitem flat-box" href=/categories/
                   
                   
                   
@@ -245,7 +305,7 @@
               
             
               <li>
-                <a class="flat-box" href=/tags/
+                <a class="menuitem flat-box" href=/tags/
                   
                   
                   
@@ -261,7 +321,7 @@
               
             
               <li>
-                <a class="flat-box" href=/archives/
+                <a class="menuitem flat-box" href=/archives/
                   
                   
                   
@@ -277,7 +337,23 @@
               
             
               <li>
-                <a class="flat-box" href=/about/
+                <a class="menuitem flat-box" href=/friends/
+                  
+                  
+                  
+                    id="friends"
+                  >
+                  <i class='fas fa-link fa-fw'></i>友链
+                </a>
+                
+              </li>
+            
+          
+            
+              
+            
+              <li>
+                <a class="menuitem flat-box" href=/about/
                   
                   
                   
@@ -298,12 +374,54 @@
   </div>
 </header>
 
-<script>setLoadingBarProgress(40);</script>
-
+  </div>
+  
 
 
   <div class="l_body nocover">
-    <div class='body-wrapper'>
+    <div class='body-wrapper' id="pjax-container">
+      
+        <!--此文件用来存放一些不方便取值的变量-->
+<!--思路大概是将值藏到重加载的区域内-->
+
+
+
+<div id="pjax-data" style="display: none">
+  <div id="pjax-ispage">true</div>
+  <div id="pjax-pageTitle">基本概念</div>
+  <div id="pjax-enable-cover">true</div>
+  <div id="pjax-permalink">https://strive087.github.io/2020/07/06/algorithm/%E5%9F%BA%E6%9C%AC%E6%A6%82%E5%BF%B5/</div>
+  
+  <div id="valine-path">none</div>
+  <div id="valine-placeholder">none</div>
+  
+  
+</div>
+
+
+<script>
+  // 处理封面 此时 jquery 还没加载
+  if ("none" == "none") { // 移除封面
+    document.getElementsByClassName('cover')[0].style.display = "none";
+    document.getElementsByClassName('l_body')[0].classList.add("nocover");
+    document.getElementsByClassName('l_header', 'cover-wrapper')[0].classList.add("show");
+  } else {
+    if ("none" == "blog") { // 半屏
+      document.getElementsByClassName('cover')[0].classList.remove("full");
+      document.getElementsByClassName('cover')[0].classList.add("half");
+      document.getElementsByClassName('scroll-down')[0].style.display = "none";
+    } else if ("none" == "docs") { // 全屏
+      document.getElementsByClassName('cover')[0].classList.remove("half");
+      document.getElementsByClassName('cover')[0].classList.add("full");
+      document.getElementsByClassName('scroll-down')[0].style.display = "";
+    }
+    document.getElementsByClassName('cover')[0].style.display = "";
+    document.getElementsByClassName('l_body', 'show')[0].classList.remove("nocover");
+    document.getElementsByClassName('l_header', 'cover-wrapper')[0].classList.remove("show");
+  }
+</script>
+
+      
       
 
 <div class='l_main'>
@@ -336,9 +454,9 @@
             
               
 <div class='new-meta-item author'>
-  <a href="https://strive087.github.io/" rel="nofollow">
-    <img src="https://pigbro.online:9608/images/author.jpg">
-    <p>zhuduanlei</p>
+  <a class='author' href="/" rel="nofollow">
+    <img no-lazy src="">
+    <p>请设置文章作者</p>
   </a>
 </div>
 
@@ -384,6 +502,7 @@
       <section class="article typo">
         <div class="article-entry" itemprop="articleBody">
           
+          
           <p class='p subtitle'>算法</p>
 <p>在数学领域里，算法是用于解决某一类 问题的公式和思想。<br>计算机科学领域的算法，它的本质是一系列程序指令，用于解决特定的运算和逻辑问题。</p>
 <p class='p subtitle'>数据结构</p>
@@ -414,7 +533,10 @@
 
 <p class='p subtitle'>物理结构与逻辑结构</p>
 <p>常用的数据结构有很多，但大多数以数组和链表作为主要的存储方式，数组和链表可以看做数据结构的”物理结构”。</p>
-<img src='https://pigbro.online:9608/images/algorithm_datastructure.png' style='width:500px'>  
+<img src='https://pigbro.online:9608/images/algorithm/datastructure.png' style='width:500px'>  
+
+<p class='p subtitle'>排列组合</p>
+<p>回顾一下高中的知识,什么是排列组合？<br>现在有一个袋子中有4个标记了不同数字的小球[0,1,2,3]，要求从袋子中不放回的取出三个。<br>对于排列而言，顾名思义要有顺序性，也就是说小球的顺序是包含在内的，例如[0,1,2]和[1,2,0]是不同的两种可能。那么如果有n个小球，要从中取出k个，有公式如下：<br>$$<br>\begin{equation}<br>{A}_n^k = \frac{n!}{(n-k)!}<br>\end{equation}<br>$$<br>对于组合而言，顺序是不重要的，例如[0,1,2]和[1,2,0]是一种可能，所以在计算可能性时，要除去自身重复。那么如果有n个小球，要从中取出k个，有公式如下：<br>$$<br>\begin{equation}<br>{C}_n^k = \frac{n!}{k!*(n-k)!}<br>\end{equation}<br>$$</p>
 
           
             <div class='article_footer'>
@@ -471,16 +593,16 @@
   <div class='content article-entry'>
     
       
-        <div class='fancybox'><img src='https://pigbro.online:9608/images/alipay.jpg'
+        <div class='fancybox'><img src='https://cdn.jsdelivr.net/gh/volantis-x/cdn-org/blog/qrcode/github@volantis.png'
         
-          height='80px'
+          height='64px'
         ></div>
       
     
       
-        <div class='fancybox'><img src='https://pigbro.online:9608/images/wechatpay.jpg'
+        <div class='fancybox'><img src='https://cdn.jsdelivr.net/gh/volantis-x/cdn-org/blog/qrcode/github@volantis.png'
         
-          height='80px'
+          height='64px'
         ></div>
       
     
@@ -502,10 +624,10 @@
     <div class='new-meta-box'>
       
         
-          <div class="new-meta-item date" itemprop="dateUpdated" datetime="2020-07-15T12:32:25+00:00">
+          <div class="new-meta-item date" itemprop="dateUpdated" datetime="2020-08-02T06:05:44+00:00">
   <a class='notlink'>
     <i class="fas fa-edit fa-fw" aria-hidden="true"></i>
-    <p>更新于：2020年7月15日</p>
+    <p>更新于：2020年8月2日</p>
   </a>
 </div>
 
@@ -536,7 +658,7 @@
           
           >
           
-            <img src="https://cdn.jsdelivr.net/gh/xaoxuu/cdn-assets/logo/128/qq.png">
+            <img src="https://cdn.jsdelivr.net/gh/volantis-x/cdn-org/logo/128/qq.png">
           
         </a>
       
@@ -548,7 +670,7 @@
           
           >
           
-            <img src="https://cdn.jsdelivr.net/gh/xaoxuu/cdn-assets/logo/128/qzone.png">
+            <img src="https://cdn.jsdelivr.net/gh/volantis-x/cdn-org/logo/128/qzone.png">
           
         </a>
       
@@ -560,7 +682,7 @@
           
           >
           
-            <img src="https://cdn.jsdelivr.net/gh/xaoxuu/cdn-assets/logo/128/weibo.png">
+            <img src="https://cdn.jsdelivr.net/gh/volantis-x/cdn-org/logo/128/weibo.png">
           
         </a>
       
@@ -607,26 +729,17 @@
   
 
   
-    <!-- 显示推荐文章和评论 -->
-
-
-
+    
   <article class="post white-box reveal comments shadow">
     <section class="article typo">
       <p ct><i class='fas fa-comments'></i> 评论</p>
       
-      
-      
-      
-      
-      
-        <section id="comments">
-          <div id="valine_container" class="valine_thread">
-            <i class="fas fa-cog fa-spin fa-fw fa-2x"></i>
-          </div>
-        </section>
-      
-      
+      <section id="comments">
+        <div id="valine_container" class="valine_thread">
+  <i class="fas fa-cog fa-spin fa-fw fa-2x"></i>
+</div>
+
+      </section>
     </section>
   </article>
 
@@ -638,14 +751,58 @@
 
 <!-- 根据页面mathjax变量决定是否加载MathJax数学公式js -->
 
-
-
   <script>
-    window.subData = {
-      title: '基本概念',
-      tools: true
-    }
-  </script>
+  // https://github.com/theme-next/hexo-theme-next/blob/master/layout/_third-party/math/mathjax.swig
+  if (typeof MathJax === 'undefined') {
+    window.MathJax = {
+      loader: {
+        source: {
+          '[tex]/amsCd': '[tex]/amscd',
+          '[tex]/AMScd': '[tex]/amscd'
+        }
+      },
+      tex: {
+        inlineMath: {'[+]': [['$', '$']]},
+        tags: 'ams'
+      },
+      options: {
+        renderActions: {
+          findScript: [10, doc => {
+            document.querySelectorAll('script[type^="math/tex"]').forEach(node => {
+              const display = !!node.type.match(/; *mode=display/);
+              const math = new doc.options.MathItem(node.textContent, doc.inputJax[0], display);
+              const text = document.createTextNode('');
+              node.parentNode.replaceChild(text, node);
+              math.start = {node: text, delim: '', n: 0};
+              math.end = {node: text, delim: '', n: 0};
+              doc.math.push(math);
+            });
+          }, '', false],
+          insertedScript: [200, () => {
+            document.querySelectorAll('mjx-container').forEach(node => {
+              let target = node.parentNode;
+              if (target.nodeName.toLowerCase() === 'li') {
+                target.parentNode.classList.add('has-jax');
+              }
+            });
+          }, '', false]
+        }
+      }
+    };
+    (function () {
+      var script = document.createElement('script');
+      script.src = 'https://cdn.jsdelivr.net/npm/mathjax@3.0/es5/tex-mml-chtml.js';
+      script.defer = true;
+      document.head.appendChild(script);
+    })();
+  } else {
+    // 文章章节标题不能为 “MathJax” ，否则会报错。
+    MathJax.startup.document.state(0);
+    MathJax.texReset();
+    MathJax.typeset();
+  }
+</script>
+
 
 
 </div>
@@ -659,33 +816,6 @@
 
 
 
-  
-
-  
-    
-    
-
-<section class="widget qrcode shadow desktop mobile">
-  
-
-  <div class='content article-entry'>
-    
-      
-        <div class='fancybox'><img src='https://pigbro.online:9608/images/alipay.jpg'
-        
-          height='80px'
-        ></div>
-      
-    
-      
-        <div class='fancybox'><img src='https://pigbro.online:9608/images/wechatpay.jpg'
-        
-          height='80px'
-        ></div>
-      
-    
-  </div>
-</section>
 
   
 
@@ -693,6 +823,9 @@
 </aside>
 
 
+
+    </div>
+    
   
   <footer class="clearfix">
     <br><br>
@@ -704,16 +837,16 @@
   
     <meting-js
       theme='#1BCDFC'
-      autoplay='true'
+      autoplay='false'
       volume='0.7'
       loop='all'
       order='list'
       fixed='false'
-      list-max-height='340px'
+      list-max-height='320px'
       server='netease'
-      type='album'
-      id='39483040'
-      list-folded=''>
+      type='playlist'
+      id='3175833810'
+      list-folded='true'>
     </meting-js>
   
 
@@ -734,7 +867,7 @@
             
           
             
-              <a href="mailto:840459919@qq.com"
+              <a href="mailto:me@xxx.com"
                 class="social fas fa-envelope flat-btn"
                 target="_blank"
                 rel="external nofollow noopener noreferrer">
@@ -742,7 +875,7 @@
             
           
             
-              <a href="https://github.com/Strive087/strive087.github.io"
+              <a href="https://github.com/xaoxuu"
                 class="social fab fa-github flat-btn"
                 target="_blank"
                 rel="external nofollow noopener noreferrer">
@@ -750,7 +883,7 @@
             
           
             
-              <a href="https://music.163.com/#/user/home?id=130611633"
+              <a href="https://music.163.com/#/user/home?id=63035382"
                 class="social fas fa-headphones-alt flat-btn"
                 target="_blank"
                 rel="external nofollow noopener noreferrer">
@@ -776,22 +909,284 @@
     
       
         <div class='copyright'>
-        <p><a href="https://pigbro.online" target="_blank" rel="noopener">Copyright © 2017-2020 PigBro</a></p>
+        <p><a href="/">Copyright © 2017-2020 XXX</a></p>
 
         </div>
       
     
   </footer>
 
-<script>setLoadingBarProgress(80);</script>
 
-
-      <script>setLoadingBarProgress(60);</script>
-    </div>
     <a class="s-top fas fa-arrow-up fa-fw" href='javascript:void(0)'></a>
   </div>
+  <div>
+    
+      
   
-<script src="https://cdn.jsdelivr.net/npm/jquery@3.4/dist/jquery.min.js"></script>
+
+  <div id="rightmenu-wrapper">
+    <ul class="list-v rightmenu" id="rightmenu-content">
+      
+        
+          
+    <li>
+      <a class='vlts-menu fix-cursor-default' 
+        
+        
+        
+          onclick="document.execCommand('copy')"
+        
+        
+          id="menu-copy"
+        >
+        <i class='fa fa-copy fa-fw'></i> 复制文本
+      </a>
+    </li>
+  
+        
+      
+        
+          
+    <li>
+      <a class='vlts-menu fix-cursor-default' 
+        
+        
+        
+        
+          id="menu-copy-img"
+        >
+        <i class='fa fa-link fa-fw'></i> 复制图片链接
+      </a>
+    </li>
+  
+        
+      
+        
+          <li class='navigation'>
+            <a class='nav icon-only' onclick='history.back()'><i class='fa fa-arrow-left fa-fw'></i></a>
+            <a class='nav icon-only' onclick='history.forward()'><i class='fa fa-arrow-right fa-fw'></i></a>
+            <a class='nav icon-only' onclick='window.location.reload()'><i class='fa fa-redo fa-fw'></i></a>
+            <a class='nav icon-only fix-cursor-default' href='/'><i class='fa fa-home fa-fw'></i></a>
+          </li>
+        
+      
+        
+          <hr>
+        
+      
+        
+      
+        
+          
+    <li>
+      <a class='vlts-menu fix-cursor-default' href=https://volantis.js.org/faqs/
+        
+        
+        
+        
+          id="https:volantisjsorgfaqs"
+        >
+        <i class='fa fa-question fa-fw'></i> 常见问题
+      </a>
+    </li>
+  
+        
+      
+        
+          
+    <li>
+      <a class='vlts-menu fix-cursor-default' href=https://volantis.js.org/examples/
+        
+        
+        
+        
+          id="https:volantisjsorgexamples"
+        >
+        <i class='fa fa-rss fa-fw'></i> 示例博客
+      </a>
+    </li>
+  
+        
+      
+        
+          
+    <li>
+      <a class='vlts-menu fix-cursor-default' href=https://volantis.js.org/contributors/
+        
+        
+        
+        
+          id="https:volantisjsorgcontributors"
+        >
+        <i class='fa fa-fan fa-spin fa-fw'></i> 加入社区
+      </a>
+    </li>
+  
+        
+      
+        
+          <hr>
+        
+      
+        
+          
+    <li>
+      <a class='vlts-menu fix-cursor-default' href=https://github.com/volantis-x/volantis-docs/
+        
+        
+        
+        
+          id="https:githubcomvolantis-xvolantis-docs"
+        >
+        <i class='fa fa-code-branch fa-fw'></i> 本站源码
+      </a>
+    </li>
+  
+        
+      
+        
+          
+    <li>
+      <a class='vlts-menu fix-cursor-default' href=https://github.com/volantis-x/hexo-theme-volantis/
+        
+        
+        
+        
+          id="https:githubcomvolantis-xhexo-theme-volantis"
+        >
+        <i class='fa fa-code-branch fa-fw'></i> 主题源码
+      </a>
+    </li>
+  
+        
+      
+        
+          <hr>
+        
+      
+        
+          
+    <li>
+      <a class='vlts-menu fix-cursor-default' 
+        
+        
+        
+          onclick="document.execCommand('print')"
+        
+        >
+        <i class='fa fa-print fa-fw'></i> 打印页面
+      </a>
+    </li>
+  
+        
+      
+        
+          <hr>
+        
+      
+        
+          <li class='music name'>
+            <p class='nav music-title'></p>
+          </li>
+          <li class='music ctrl'>
+            <a class='nav icon-only backward' onclick='aplayerBackward()'><i class='fa fa-step-backward fa-fw'></i></a>
+            <a class='nav icon-only toggle' onclick='aplayerToggle()'><i class='fa fa-play fa-fw'></i></a>
+            <a class='nav icon-only forward' onclick='aplayerForward()'><i class='fa fa-step-forward fa-fw'></i></a>
+          </li>
+          <li class='music volume'>
+            <a class='nav volume'>
+              <div class="aplayer-volume-bar-wrap">
+                <div class="aplayer-volume-bar fix-cursor-pointer">
+                  <div class="aplayer-volume"></div>
+                  <i class='left fa fa-volume-off fa-fw'></i>
+                  <i class='right fa fa-volume-up fa-fw'></i>
+                </div>
+              </div>
+            </a>
+          </li>
+        
+      
+    </ul>
+  </div>
+
+  <script>
+    window.document.oncontextmenu = function () {
+      return false;
+    };
+    document.addEventListener("click", function (event) {
+      var mymenu = document.getElementById('rightmenu-wrapper');
+      mymenu.style.display = "none";
+    });
+    function popMenu(event) {
+      var mymenu = document.getElementById('rightmenu-wrapper');
+      var menuContent = document.getElementById('rightmenu-content');
+      var screenWidth = document.documentElement.clientWidth || document.body.clientWidth;
+      var screenHeight = document.documentElement.clientHeight || document.body.clientHeight;
+      mymenu.style.left = event.clientX + "px"; // 获取鼠标位置
+      mymenu.style.top = event.clientY + "px";
+      mymenu.style.display = 'block';
+      if (event.clientX * 2 > screenWidth) {
+        menuContent.classList.add('left');
+      } else {
+        menuContent.classList.remove('left');
+      }
+      if (event.clientY * 2 > screenHeight) {
+        menuContent.classList.add('top');
+      } else {
+        menuContent.classList.remove('top');
+      }
+
+      // 选中文本
+      if (window.getSelection().toString()) {
+        document.getElementById('menu-copy').style.display = 'block';
+      } else {
+        document.getElementById('menu-copy').style.display = 'none';
+      }
+
+      // 选中图片
+      if (event.toElement.currentSrc) {
+        document.getElementById('menu-copy-img').style.display = 'block';
+        document.getElementById('menu-copy-img').addEventListener("click", function (e) {
+          copyString(event.toElement.currentSrc);
+        });
+      } else {
+        document.getElementById('menu-copy-img').style.display = 'none';
+      }
+
+      // 有音乐播放器
+      if (true == true) {
+        // 如果有aplayer，初始化一下
+      	try {
+      		checkAPlayer();
+          updateTitle();
+      	} catch (error) {
+      		console.log(error);
+      	}
+      }
+
+      console.log(event);
+      return false; // 该行代码确保系统自带的右键菜单不会被调出
+    }
+    function hideMenu() {
+      document.getElementById('rightmenu-wrapper').style.display = 'none';
+    }
+    function copyString(str) {
+      const input = document.createElement('input');
+      input.setAttribute('readonly', 'readonly');
+      document.body.appendChild(input);
+      input.setAttribute('value', str);
+      input.select();
+      document.execCommand('copy');
+      document.body.removeChild(input);
+    }
+    document.execCommand('click');
+  </script>
+
+
+    
+    
+<script src="https://cdn.jsdelivr.net/npm/jquery@3.5/dist/jquery.min.js"></script>
+
 
 
   <script>
@@ -802,39 +1197,10 @@
   </script>
 
 
-  <script async src="https://cdn.jsdelivr.net/gh/xaoxuu/cdn-volantis@2/js/instant_page.js" type="module" defer integrity="sha384-OeDn4XE77tdHo8pGtE1apMPmAipjoxUQ++eeJa6EtJCfHlvijigWiJpD7VDPWXV1"></script>
 
 
-  <script src="https://cdn.jsdelivr.net/npm/scrollreveal@4.0.6/dist/scrollreveal.min.js"></script>
-  <script type="text/javascript">
-    $(function() {
-      ScrollReveal().reveal('.l_main .reveal', {
-        distance: '8px',
-        duration: '800',
-        interval: '100',
-        scale: '1'
-      });
-    });
-  </script>
 
-
-  
-<script src="https://cdn.jsdelivr.net/npm/node-waves@0.7.6/dist/waves.min.js"></script>
-
-  <script type="text/javascript">
-    $(function() {
-      Waves.attach('.flat-btn', ['waves-button']);
-      Waves.attach('.float-btn', ['waves-button', 'waves-float']);
-      Waves.attach('.float-btn-light', ['waves-button', 'waves-float', 'waves-light']);
-      Waves.attach('.flat-box', ['waves-block']);
-      Waves.attach('.float-box', ['waves-block', 'waves-float']);
-      Waves.attach('.waves-image');
-      Waves.init();
-    });
-  </script>
-
-
-  <script defer src="https://cdn.jsdelivr.net/gh/xaoxuu/cdn-busuanzi@2.3/js/busuanzi.pure.mini.js"></script>
+  <script async src="https://cdn.jsdelivr.net/gh/volantis-x/cdn-volantis@2/js/instant_page.js" type="module" defer integrity="sha384-OeDn4XE77tdHo8pGtE1apMPmAipjoxUQ++eeJa6EtJCfHlvijigWiJpD7VDPWXV1"></script>
 
 
 
@@ -846,7 +1212,7 @@
 
     <script type="text/javascript">
       $(function(){
-        var imgs=["https://cdn.jsdelivr.net/gh/xaoxuu/cdn-wallpaper/abstract/41F215B9-261F-48B4-80B5-4E86E165259E.jpeg"];
+        var imgs=["https://gitee.com/wallpapers/minimalist/raw/master/2020/001.jpg", "https://gitee.com/wallpapers/minimalist/raw/master/2020/002.jpg", "https://gitee.com/wallpapers/minimalist/raw/master/2020/003.jpg", "https://gitee.com/wallpapers/minimalist/raw/master/2020/004.jpg", "https://gitee.com/wallpapers/minimalist/raw/master/2020/005.jpg", "https://gitee.com/wallpapers/minimalist/raw/master/2020/006.jpg", "https://gitee.com/wallpapers/minimalist/raw/master/2020/012.jpg", "https://gitee.com/wallpapers/minimalist/raw/master/2020/016.jpg", "https://gitee.com/wallpapers/minimalist/raw/master/2020/019.jpg", "https://gitee.com/wallpapers/minimalist/raw/master/2020/025.jpg", "https://gitee.com/wallpapers/minimalist/raw/master/2020/033.jpg", "https://gitee.com/wallpapers/minimalist/raw/master/2020/034.jpg", "https://gitee.com/wallpapers/minimalist/raw/master/2020/035.jpg", "https://gitee.com/wallpapers/minimalist/raw/master/2020/038.jpg", "https://gitee.com/wallpapers/minimalist/raw/master/2020/039.jpg", "https://gitee.com/wallpapers/minimalist/raw/master/2020/042.jpg", "https://gitee.com/wallpapers/minimalist/raw/master/2020/042.jpg", "https://gitee.com/wallpapers/minimalist/raw/master/2020/046.jpg", "https://gitee.com/wallpapers/minimalist/raw/master/2020/051.jpg", "https://gitee.com/wallpapers/minimalist/raw/master/2020/052.jpg", "https://gitee.com/wallpapers/minimalist/raw/master/2020/054.jpg", "https://gitee.com/wallpapers/minimalist/raw/master/2020/056.jpg"];
         if ('true' == 'true') {
           function shuffle(arr){
             /*From countercurrent-time*/
@@ -881,6 +1247,11 @@
 
 
 
+  <script>
+    let APlayerController = new Object();
+    APlayerController.id = '3175833810';  // 设定全局音乐播放ID
+    APlayerController.volume = '0.7';
+  </script>
   
     
 <script src="https://cdn.jsdelivr.net/npm/aplayer@1.10/dist/APlayer.min.js"></script>
@@ -890,33 +1261,33 @@
 <script src="https://cdn.jsdelivr.net/npm/meting@2.0/dist/Meting.min.js"></script>
 
   
-
-
-
-
-
-
-
-
-
-  
     
-<script src="https://cdn.jsdelivr.net/npm/valine@1.4/dist/Valine.min.js"></script>
+<script src="/js/aplayer.js"></script>
 
   
-  <script>
-  var GUEST_INFO = ['nick','mail','link'];
-  var meta = 'nick,mail,link'.split(',').filter(function(item){
+
+
+
+
+  
+  
+<script src="/js/valine.js"></script>
+
+
+<script>
+  var GUEST_INFO = ['nick', 'mail', 'link'];
+  var meta = 'nick,mail,link'.split(',').filter(function (item) {
     return GUEST_INFO.indexOf(item) > -1
   });
-  var REQUIRED_FIELDS = ['nick','mail','link'];
-  var requiredFields = 'nick,mail'.split(',').filter(function(item){
+  var REQUIRED_FIELDS = ['nick', 'mail', 'link'];
+  var requiredFields = 'nick,mail'.split(',').filter(function (item) {
     return REQUIRED_FIELDS.indexOf(item) > -1
   });
-  var valine = new Valine();
+
   function emoji(path, idx, ext) {
-      return path + "/" + path + "-" + idx + "." + ext;
+    return path + "/" + path + "-" + idx + "." + ext;
   }
+
   var emojiMaps = {};
   for (var i = 1; i <= 54; i++) {
     emojiMaps['tieba-' + i] = emoji('tieba', i, 'png');
@@ -933,107 +1304,108 @@
   for (var i = 1; i <= 4; i++) {
     emojiMaps['weibo-' + i] = emoji('weibo', i, 'png');
   }
-  valine.init({
-    el: '#valine_container',
-    meta: meta,
-    
-    appId: "dogUA2FSKGTo029M1SEwGROT-MdYXbMMI",
-    appKey: "u0NdtQ8nvHoMdJPSYqm1LRxE",
-    placeholder: "快来评论吧~",
-    pageSize:'10',
-    avatar:'robohash',
-    lang:'zh-cn',
-    visitor: 'true',
-    highlight: 'true',
-    mathJax: 'false',
-    enableQQ: 'true',
-    requiredFields: requiredFields,
-    emojiCDN: 'https://cdn.jsdelivr.net/gh/xaoxuu/cdn-assets/emoji/valine/',
-    emojiMaps: emojiMaps
-  })
-  </script>
+
+  function pjax_valine() {
+    var valinePath = $.trim($('#valine-path').text()) === "none" ?
+            window.location.pathname : $.trim($('#valine-path').text());
+
+    var valinePlaceholder = $.trim($('#valine-placeholder').text()) === "none" ?
+            "快来评论吧~" : $.trim($('#valine-placeholder').text());
+
+    var ALLPATH = '';
+    if(ALLPATH != '') valinePath = ALLPATH;
+
+    var valine = new Valine();
+    valine.init({
+      el: '#valine_container',
+      meta: meta,
+      placeholder: valinePlaceholder,
+      path: valinePath,
+      appId: "",
+      appKey: "",
+      pageSize: '10',
+      avatar: 'robohash',
+      lang: 'zh-cn',
+      visitor: 'true',
+      highlight: 'true',
+      mathJax: 'false',
+      enableQQ: 'true',
+      requiredFields: requiredFields,
+      emojiCDN: 'https://cdn.jsdelivr.net/gh/volantis-x/cdn-emoji/valine/',
+      emojiMaps: emojiMaps
+    })
+  }
+
+  $(function () {
+    pjax_valine();
+  });
+</script>
 
 
 
 
-
-  
-<script src="/js/app.js"></script>
-
-
-
-  
-<script src="https://cdn.jsdelivr.net/gh/xaoxuu/cdn-volantis@2.6.5/js/search.js"></script>
-
-
-
-  
-<script src="https://cdn.jsdelivr.net/gh/xaoxuu/cdn-volantis@2/js/comment_typing.js"></script>
-
-
-
-
+<!-- darkmodejs -->
 
 
 <!-- 复制 -->
 
   <script src="https://cdn.jsdelivr.net/npm/clipboard@2/dist/clipboard.min.js"></script>
 <script>
-  function wait(callback, seconds) {
-    var timelag = null;
-    timelag = window.setTimeout(callback, seconds);
-  }
-  !function (e, t, a) {
-    var initCopyCode = function(){
-      var copyHtml = '';
-      copyHtml += '<button class="btn-copy" data-clipboard-snippet="">';
-      copyHtml += '<i class="fas fa-copy"></i><span>COPY</span>';
-      copyHtml += '</button>';
-      $(".highlight .code pre").before(copyHtml);
-      $(".article pre code").before(copyHtml);
-      var clipboard = new ClipboardJS('.btn-copy', {
-        target: function(trigger) {
-          return trigger.nextElementSibling;
+    var clipboard = new ClipboardJS('.btn-copy', {
+        target: function (trigger) {
+            return trigger.nextElementSibling
         }
-      });
-      clipboard.on('success', function(e) {
-        let $btn = $(e.trigger);
-        $btn.addClass('copied');
-        let $icon = $($btn.find('i'));
-        $icon.removeClass('fa-copy');
-        $icon.addClass('fa-check-circle');
-        let $span = $($btn.find('span'));
-        $span[0].innerText = 'COPIED';
-        
-        wait(function () { // 等待两秒钟后恢复
-          $icon.removeClass('fa-check-circle');
-          $icon.addClass('fa-copy');
-          $span[0].innerText = 'COPY';
-        }, 2000);
-      });
-      clipboard.on('error', function(e) {
-        e.clearSelection();
-        let $btn = $(e.trigger);
-        $btn.addClass('copy-failed');
-        let $icon = $($btn.find('i'));
-        $icon.removeClass('fa-copy');
-        $icon.addClass('fa-times-circle');
-        let $span = $($btn.find('span'));
-        $span[0].innerText = 'COPY FAILED';
-        
-        wait(function () { // 等待两秒钟后恢复
-          $icon.removeClass('fa-times-circle');
-          $icon.addClass('fa-copy');
-          $span[0].innerText = 'COPY';
-        }, 2000);
-      });
+    });
+    function wait(callback, seconds) {
+        var timelag = null;
+        timelag = window.setTimeout(callback, seconds)
     }
-    initCopyCode();
-  }(window, document);
+    function pjax_initCopyCode() {
+        var copyHtml = '';
+        copyHtml += '<button class="btn-copy" data-clipboard-snippet="">';
+        copyHtml += '<i class="fas fa-copy"></i><span>COPY</span>';
+        copyHtml += '</button>';
+        $(".highlight .code pre").before(copyHtml);
+        $(".article pre code").before(copyHtml);
+        clipboard.off('success').on('success', function (e) {
+            let $btn = $(e.trigger);
+            $btn.addClass('copied');
+            let $icon = $($btn.find('i'));
+            $icon.removeClass('fa-copy');
+            $icon.addClass('fa-check-circle');
+            let $span = $($btn.find('span'));
+            $span[0].innerText = 'COPIED';
+            wait(function () {
+                $icon.removeClass('fa-check-circle');
+                $icon.addClass('fa-copy');
+                $span[0].innerText = 'COPY'
+            }, 2000)
+        });
+        clipboard.off('error').on('error', function (e) {
+            e.clearSelection();
+            let $btn = $(e.trigger);
+            $btn.addClass('copy-failed');
+            let $icon = $($btn.find('i'));
+            $icon.removeClass('fa-copy');
+            $icon.addClass('fa-times-circle');
+            let $span = $($btn.find('span'));
+            $span[0].innerText = 'COPY FAILED';
+            wait(function () {
+                $icon.removeClass('fa-times-circle');
+                $icon.addClass('fa-copy');
+                $span[0].innerText = 'COPY'
+            }, 2000)
+        })
+    }
+    $(function () {
+        pjax_initCopyCode()
+    });
 </script>
 
 
+<!-- scrollreveal -->
 
+<!-- ******************************** -->
 
 <!-- fancybox -->
 <script src="https://cdn.jsdelivr.net/gh/fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.js"></script>
@@ -1041,6 +1413,7 @@
   function pjax_fancybox() {
     $(".article-entry").find("img").not('.inline').not('a img').each(function () { //渲染 fancybox
       var element = document.createElement("a"); // a 标签
+      $(element).attr("class", "fancybox");
       $(element).attr("pjax-fancybox", "");  // 过滤 pjax
       $(element).attr("href", $(this).attr("src"));
       if ($(this).attr("data-original")) {
@@ -1048,7 +1421,7 @@
       }
       $(element).attr("data-fancybox", "images");
       var caption = "";   // 描述信息
-      if ($(this).attr('alt')) {  // 标准 markdown 描述信息
+      if ($(this).attr('alt')) {  // 判断当前页面是否存在描述信息
         $(element).attr('data-caption', $(this).attr('alt'));
         caption = $(this).attr('alt');
       }
@@ -1080,9 +1453,180 @@
   });
 </script>
 
+<!-- ******************************** -->
+
+
+  
+<script src="/js/app.js"></script>
 
 
 
-  <script>setLoadingBarProgress(100);</script>
+
+  
+    
+<script src="/js/search.js"></script>
+
+  
+
+
+
+  <script defer src="https://cdn.jsdelivr.net/gh/volantis-x/cdn-busuanzi@2.3/js/busuanzi.pure.mini.js" data-pjax></script>
+
+
+
+  
+<script src="https://cdn.jsdelivr.net/npm/node-waves@0.7.6/dist/waves.min.js"></script>
+
+  <script type="text/javascript">
+    $(function () {
+      Waves.attach('.flat-btn', ['waves-button']);
+      Waves.attach('.float-btn', ['waves-button', 'waves-float']);
+      Waves.attach('.float-btn-light', ['waves-button', 'waves-float', 'waves-light']);
+      Waves.attach('.flat-box', ['waves-block']);
+      Waves.attach('.float-box', ['waves-block', 'waves-float']);
+      Waves.attach('.waves-image');
+      Waves.init();
+    });
+  </script>
+
+
+
+  
+<script src="https://cdn.jsdelivr.net/gh/volantis-x/cdn-volantis@2/js/comment_typing.js"></script>
+
+
+
+
+
+
+
+    
+      
+
+
+<script src="https://cdn.jsdelivr.net/npm/pjax@0.2.8/pjax.min.js"></script>
+
+<!-- 样式位于：source/css/_third-party/pjaxanimate.styl -->
+
+<div class="pjax-animate">
+  
+    <script src="https://cdn.jsdelivr.net/npm/nprogress@0.2.0/nprogress.min.js"></script>
+    <div id="loading-bar-wrapper"><script>NProgress.configure({parent:"#loading-bar-wrapper",trickleSpeed: 100})</script></div>
+    <script>
+      window.ShowLoading = function() {
+        NProgress.start();
+      };
+      window.HideLoading = function() {
+        NProgress.done();
+      }
+    </script>
+  
+</div>
+
+<script>
+    var pjax;
+    document.addEventListener('DOMContentLoaded', function () {
+      pjax = new Pjax({
+        elements: 'a[href]:not([href^="#"]):not([href="javascript:void(0)"]):not([pjax-fancybox])',
+        selectors: [
+          "title",
+          "#pjax-container",
+          "#pjax-header-nav-list"
+        ],
+        cacheBust: false,   // url 地址追加时间戳，用以避免浏览器缓存
+        timeout: 5000
+      });
+    });
+
+    document.addEventListener('pjax:send', function (e) {
+      window.stop(); // 相当于点击了浏览器的停止按钮
+
+      try {
+        var currentUrl = window.location.pathname;
+        var targetUrl = e.triggerElement.href;
+        var banUrl = [""];
+        if (banUrl[0] != "") {
+          banUrl.forEach(item => {
+            if(currentUrl.indexOf(item) != -1 || targetUrl.indexOf(item) != -1) {
+              window.location.href = targetUrl;
+            }
+          });
+        }
+      } catch (error) {}
+
+      window.subData = null; // 移除标题（用于一二级导航栏切换处）
+      $.fancybox.close();    // 关闭弹窗
+      $('.nav-main').find('.list-v').not('.menu-phone').css("display","none"); // 移除小尾巴
+      $('.menu-phone.list-v').css("display","none"); // 移除小尾巴
+      $('.l_header .switcher .s-search').removeClass('active'); // 关闭移动端激活的搜索框
+      $('.l_header').removeClass('z_search-open'); // 关闭移动端激活的搜索框
+      $('.wrapper').removeClass('sub'); // 跳转页面时关闭二级导航
+
+      $('.s-top').unbind('click');   // 解绑
+      $('.menu a').unbind('click');  // 解绑
+      $(window).unbind('resize');    // 解绑
+      $(window).unbind('scroll');    // 解绑
+      $(document).unbind('scroll');  // 解绑
+      $(document).unbind('click');   // 解绑
+      $('body').unbind('click');     // 解绑
+      window.ShowLoading();
+    });
+
+    document.addEventListener('pjax:complete', function () {
+      // 关于百度统计对 SPA 页面的处理：
+      // 方案一：百度统计>管理>单页应用设置中，打开开启按钮即可对SPA进行统计。 https://tongji.baidu.com/web/help/article?id=324
+      // 方案二：取消注释下列代码。 https://tongji.baidu.com/web/help/article?id=235
+      // 
+
+      // 关于谷歌统计对 SPA 页面的处理：
+      // 当应用以动态方式加载内容并更新地址栏中的网址时，也应该更新通过 gtag.js 存储的网页网址。
+      // https://developers.google.cn/analytics/devguides/collection/gtagjs/single-page-applications?hl=zh-cn
+      
+
+      $('.nav-main').find('.list-v').not('.menu-phone').removeAttr("style",""); // 移除小尾巴的移除
+      $('.menu-phone.list-v').removeAttr("style",""); // 移除小尾巴的移除
+      $('script[data-pjax], .pjax-reload script').each(function () {
+        $(this).parent().append($(this).remove());
+      });
+
+      try{
+        pjax_fancybox();
+        
+          
+          if ('.cover') {
+            $('.cover').backstretch("resize");
+          } else {
+            $.backstretch("resize");
+          }
+        
+        
+        
+        
+          pjax_initCopyCode();
+        
+        
+          pjax_valine();
+        
+        
+        
+        
+        
+      } catch (e) {
+        console.log(e);
+      }
+      window.HideLoading();
+    });
+
+    document.addEventListener('pjax:error', function (e) {
+      window.HideLoading();
+      window.location.href = e.triggerElement.href;
+    });
+</script>
+
+    
+  </div>
+  
+    <script src="https://cdn.jsdelivr.net/gh/inkss/common@master/hexo/js/cookie.min.js"></script>
+  
 <script src="/live2dw/lib/L2Dwidget.min.js?094cbace49a39548bed64abff5988b05"></script><script>L2Dwidget.init({"model":{"jsonPath":"/live2dw/assets/izumi.model.json"},"display":{"position":"left","width":150,"height":300},"mobile":{"show":true},"log":false,"pluginJsPath":"lib/","pluginModelPath":"assets/","pluginRootPath":"live2dw/","tagMode":false});</script></body>
 </html>
