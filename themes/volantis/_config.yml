@@ -307,7 +307,7 @@ widget:
     header:
       icon: fas fa-folder-open
       title: 文章分类
-      url: /blog/categories/
+      url: /categories/
   # ---------------------------------------
   # tagcloud widget
   tagcloud:
@@ -316,7 +316,7 @@ widget:
     header:
       icon: fas fa-tags
       title: 热门标签
-      url: /blog/tags/
+      url: /tags/
     min_font: 14
     max_font: 24
     color: true
@@ -585,8 +585,8 @@ comments:
   # Valine
   # https://valine.js.org/
   valine: # 请将 appId appKey 修改为自己的，否则评论数据是共享的。
-    appId: # your appId
-    appKey: # your appKey
+    appId: '9YrTrvrqBfB5CFFDyquqRTAF-gzGzoHsz' # your appId
+    appKey: 'UB0DkzHVmRR4qJeGjWMN910Q' # your appKey
     # js: https://cdn.jsdelivr.net/npm/valine@1.4/dist/Valine.min.js
     path: # All pages use the same path (share the same comments data)
     meta: nick,mail,link # valine comment header info
