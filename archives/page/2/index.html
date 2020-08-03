@@ -18,7 +18,7 @@
 
   <!-- 页面元数据 -->
   
-  <title>标签：nodejs - 前端之路</title>
+  <title>归档 - 前端之路</title>
   
 
   
@@ -356,7 +356,7 @@
   
 
 
-  <div class="l_body nocover">
+  <div class="l_body">
     <div class='body-wrapper' id="pjax-container">
       
         <!--此文件用来存放一些不方便取值的变量-->
@@ -379,16 +379,16 @@
 
 <script>
   // 处理封面 此时 jquery 还没加载
-  if ("none" == "none") { // 移除封面
+  if ("blog" == "none") { // 移除封面
     document.getElementsByClassName('cover')[0].style.display = "none";
     document.getElementsByClassName('l_body')[0].classList.add("nocover");
     document.getElementsByClassName('l_header', 'cover-wrapper')[0].classList.add("show");
   } else {
-    if ("none" == "blog") { // 半屏
+    if ("blog" == "blog") { // 半屏
       document.getElementsByClassName('cover')[0].classList.remove("full");
       document.getElementsByClassName('cover')[0].classList.add("half");
       document.getElementsByClassName('scroll-down')[0].style.display = "none";
-    } else if ("none" == "docs") { // 全屏
+    } else if ("blog" == "docs") { // 全屏
       document.getElementsByClassName('cover')[0].classList.remove("half");
       document.getElementsByClassName('cover')[0].classList.add("full");
       document.getElementsByClassName('scroll-down')[0].style.display = "";
@@ -402,172 +402,218 @@
       
       
 
-
 <div class='l_main'>
-  
-    
-      
-  <section class="post-list ">
-    
-      
-        
-          
-        
-      
-    
-    
-      
-        
-          <div class='post-wrapper'>
-            <article class="post white-box shadow reveal ">
-  
-
-
-  <section class='meta'>
-    
-      
-      
-      <div class="meta" id="header-meta">
-        
-          
-  <h2 class="title">
-    <a href="/2020/06/07/npm/">
-      npm切换镜像源
-    </a>
-  </h2>
-
-
-        
-        <div class='new-meta-box'>
-          
-            
-          
-            
-              
-<div class='new-meta-item author'>
-  <a class='author' href="https://strive087.github.io/" rel="nofollow">
-    <img no-lazy src="https://pigbro.online:9608/images/author.jpg">
-    <p>zhuduanlei</p>
-  </a>
-</div>
-
-            
-          
-            
-              
-  
-  <div class='new-meta-item category'>
-    <a href='/categories/nodeJs/' rel="nofollow">
-      <i class="fas fa-folder-open fa-fw" aria-hidden="true"></i>
-      <p>nodeJs</p>
-    </a>
-  </div>
-
-
-            
-          
-            
-              <div class="new-meta-item date">
-  <a class='notlink'>
-    <i class="fas fa-calendar-alt fa-fw" aria-hidden="true"></i>
-    <p>发布于：2020年6月7日</p>
-  </a>
-</div>
-
-            
-          
-            
-              
-
-            
-          
-            
-              
-  <div class="new-meta-item browse valine">
-    <a class='notlink'>
-      <i class="fas fa-eye fa-fw" aria-hidden="true"></i>
-      
-      <span id="/2020/06/07/npm/" class="leancloud_visitors" data-flag-title="npm切换镜像源">
-      <p>
-        <span class="leancloud-visitors-count"></span>
-      </p>
-      </span>
-    </a>
-  </div>
-
-
-            
-          
-            
-              
-<div class="new-meta-item comments-count">
-  
-  <a href="/2020/06/07/npm/#comments">
-    <i class="fas fa-comment-dots fa-fw"></i>
-    <span class="valine-comment-count" data-xid="/2020/06/07/npm/">0</span>
-    <span class="leancloud-comments-count">&nbsp;</span>
-  </a>
-</div>
-
-
-            
-          
-            
-              
-
-            
-          
-        </div>
-        
-          <hr>
-        
-      </div>
-    
-  </section>
-
-
-  <section class="article typo">
-    <div class="article-entry" itemprop="articleBody">
-      
-        <ul>
-<li><p>切换为淘宝镜像</p>
-<p>1.临时使用</p>
-<pre><code>npm --registry https:&#x2F;&#x2F;registry.npm.taobao.org install express;</code></pre>
-<p>2.持久使用</p>
-<pre><code>npm config set registry https:&#x2F;&#x2F;registry.npm.taobao.org</code></pre>
-<p>3.通过cnpm</p>
-<pre><code>npm install -g cnpm --registry&#x3D;https:&#x2F;&#x2F;registry.npm.taobao.org</code></pre></li>
-<li><p>切换官方镜像</p>
-<pre><code>npm config set registry https:&#x2F;&#x2F;registry.npmjs.org&#x2F;</code></pre></li>
-<li><p>查看当前npm源地址</p>
-<pre><code>npm config get registry</code></pre>
-</li>
-</ul>
-
-      
-    </div>
-    
-      
-    
-  </section>
-</article>
-
-          </div>
-        
-      
-    
-  </section>
-  
-    
-    <!-- 根据主题中的设置决定是否在archive中针对摘要部分的MathJax公式加载mathjax.js文件 -->
-    
-    
-
-  
-
-
-    
-  
+	
+	  <article id="archive-page" class="post article white-box reveal shadow">
+	    <section class="archive">
+	      
+	        
+	          
+						
+							
+		            
+			          <div class="archive-item archive-year mark">
+			            <h2>2020</h2>
+			          </div>
+		      		
+		          <div class="archive-item archive-post mark">
+		            <a class='ai' href="/2020/07/22/%E6%AD%A3%E5%88%99%E8%A1%A8%E8%BE%BE%E5%BC%8F/">
+		              <time>07-22</time>
+		              <span class="title">
+		                
+		                  正则表达式
+		                
+		                
+										
+										
+		              </span>
+		            </a>
+		          </div>
+						
+	      
+	          
+						
+							
+		          <div class="archive-item archive-post mark">
+		            <a class='ai' href="/2020/07/13/algorithm/%E4%BA%8C%E5%8F%89%E6%A0%91/">
+		              <time>07-13</time>
+		              <span class="title">
+		                
+		                  二叉树
+		                
+		                
+										
+										
+		              </span>
+		            </a>
+		          </div>
+						
+	      
+	          
+						
+							
+		          <div class="archive-item archive-post mark">
+		            <a class='ai' href="/2020/07/11/algorithm/%E6%95%A3%E5%88%97%E8%A1%A8/">
+		              <time>07-12</time>
+		              <span class="title">
+		                
+		                  散列表（哈希表）
+		                
+		                
+										
+										
+		              </span>
+		            </a>
+		          </div>
+						
+	      
+	          
+						
+							
+		          <div class="archive-item archive-post mark">
+		            <a class='ai' href="/2020/07/06/algorithm/%E5%9F%BA%E6%9C%AC%E6%A6%82%E5%BF%B5/">
+		              <time>07-07</time>
+		              <span class="title">
+		                
+		                  基本概念
+		                
+		                
+										
+										
+		              </span>
+		            </a>
+		          </div>
+						
+	      
+	          
+						
+							
+		          <div class="archive-item archive-post mark">
+		            <a class='ai' href="/2020/06/11/javascript/JS%E5%87%BD%E6%95%B0%E5%BC%8F%E7%BC%96%E7%A8%8B/">
+		              <time>06-11</time>
+		              <span class="title">
+		                
+		                  JS的函数式编程
+		                
+		                
+										
+										
+		              </span>
+		            </a>
+		          </div>
+						
+	      
+	          
+						
+							
+		          <div class="archive-item archive-post mark">
+		            <a class='ai' href="/2020/06/10/javascript/JS%E5%88%9B%E5%BB%BA%E5%AF%B9%E8%B1%A1/">
+		              <time>06-11</time>
+		              <span class="title">
+		                
+		                  JS创建对象
+		                
+		                
+										
+										
+		              </span>
+		            </a>
+		          </div>
+						
+	      
+	          
+						
+							
+		          <div class="archive-item archive-post mark">
+		            <a class='ai' href="/2020/06/10/javascript/JS%E7%9A%84%E8%AF%8D%E6%B3%95%E4%BD%9C%E7%94%A8%E5%9F%9F/">
+		              <time>06-11</time>
+		              <span class="title">
+		                
+		                  JS的词法作用域
+		                
+		                
+										
+										
+		              </span>
+		            </a>
+		          </div>
+						
+	      
+	          
+						
+							
+		          <div class="archive-item archive-post mark">
+		            <a class='ai' href="/2020/06/10/javascript/JS%E7%BB%A7%E6%89%BF/">
+		              <time>06-11</time>
+		              <span class="title">
+		                
+		                  JS继承
+		                
+		                
+										
+										
+		              </span>
+		            </a>
+		          </div>
+						
+	      
+	          
+						
+							
+		          <div class="archive-item archive-post mark">
+		            <a class='ai' href="/2020/06/10/javascript/JS%E9%97%AD%E5%8C%85/">
+		              <time>06-11</time>
+		              <span class="title">
+		                
+		                  JS闭包
+		                
+		                
+										
+										
+		              </span>
+		            </a>
+		          </div>
+						
+	      
+	          
+						
+							
+		          <div class="archive-item archive-post mark">
+		            <a class='ai' href="/2020/06/10/html5%E9%99%80%E8%9E%BA%E4%BB%AA/">
+		              <time>06-11</time>
+		              <span class="title">
+		                
+		                  html5陀螺仪
+		                
+		                
+										
+										
+		              </span>
+		            </a>
+		          </div>
+						
+	      
+	          
+						
+							
+		          <div class="archive-item archive-post mark">
+		            <a class='ai' href="/2020/06/07/npm/">
+		              <time>06-07</time>
+		              <span class="title">
+		                
+		                  npm切换镜像源
+		                
+		                
+										
+										
+		              </span>
+		            </a>
+		          </div>
+						
+	      
+	    </section>
+	  </article>
+	
 </div>
 <aside class='l_side'>
   
@@ -741,6 +787,15 @@
 
 
 </aside>
+
+
+
+
+
+	<!-- 根据主题中的设置决定是否在archive中针对摘要部分的MathJax公式加载mathjax.js文件 -->
+	
+
+	
 
 
     </div>

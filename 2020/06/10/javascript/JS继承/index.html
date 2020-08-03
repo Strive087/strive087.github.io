@@ -5,8 +5,6 @@
   <!-- SEO相关 -->
   
     
-      <meta name="robots" content="noindex,follow">
-    
   
   <!-- 渲染优化 -->
   <meta name="renderer" content="webkit">
@@ -18,7 +16,9 @@
 
   <!-- 页面元数据 -->
   
-  <title>标签：nodejs - 前端之路</title>
+  <title>JS继承 - 前端之路</title>
+  
+    <meta name="keywords" content="javascript">
   
 
   
@@ -77,7 +77,7 @@
   
   
   <div class="cover-wrapper">
-    <cover class='cover ' style="display: none;">
+    <cover class='cover post' style="display: none;">
       <div class='cover-body'>
   <div class='a'>
     
@@ -365,10 +365,10 @@
 
 
 <div id="pjax-data" style="display: none">
-  <div id="pjax-ispage">false</div>
-  <div id="pjax-pageTitle"></div>
+  <div id="pjax-ispage">true</div>
+  <div id="pjax-pageTitle">JS继承</div>
   <div id="pjax-enable-cover">true</div>
-  <div id="pjax-permalink"></div>
+  <div id="pjax-permalink">https://strive087.github.io/2020/06/10/javascript/JS%E7%BB%A7%E6%89%BF/</div>
   
   <div id="valine-path">none</div>
   <div id="valine-placeholder">none</div>
@@ -402,25 +402,12 @@
       
       
 
-
 <div class='l_main'>
   
-    
-      
-  <section class="post-list ">
-    
-      
-        
-          
-        
-      
-    
-    
-      
-        
-          <div class='post-wrapper'>
-            <article class="post white-box shadow reveal ">
+
   
+    <article id="post" class="post white-box reveal shadow article-type-post" itemscope itemprop="blogPost">
+      
 
 
   <section class='meta'>
@@ -430,11 +417,11 @@
       <div class="meta" id="header-meta">
         
           
-  <h2 class="title">
-    <a href="/2020/06/07/npm/">
-      npm切换镜像源
+  <h1 class="title">
+    <a href="/2020/06/10/javascript/JS%E7%BB%A7%E6%89%BF/">
+      JS继承
     </a>
-  </h2>
+  </h1>
 
 
         
@@ -457,9 +444,9 @@
               
   
   <div class='new-meta-item category'>
-    <a href='/categories/nodeJs/' rel="nofollow">
+    <a href='/categories/javascript/' rel="nofollow">
       <i class="fas fa-folder-open fa-fw" aria-hidden="true"></i>
-      <p>nodeJs</p>
+      <p>javascript</p>
     </a>
   </div>
 
@@ -470,45 +457,9 @@
               <div class="new-meta-item date">
   <a class='notlink'>
     <i class="fas fa-calendar-alt fa-fw" aria-hidden="true"></i>
-    <p>发布于：2020年6月7日</p>
+    <p>发布于：2020年6月11日</p>
   </a>
 </div>
-
-            
-          
-            
-              
-
-            
-          
-            
-              
-  <div class="new-meta-item browse valine">
-    <a class='notlink'>
-      <i class="fas fa-eye fa-fw" aria-hidden="true"></i>
-      
-      <span id="/2020/06/07/npm/" class="leancloud_visitors" data-flag-title="npm切换镜像源">
-      <p>
-        <span class="leancloud-visitors-count"></span>
-      </p>
-      </span>
-    </a>
-  </div>
-
-
-            
-          
-            
-              
-<div class="new-meta-item comments-count">
-  
-  <a href="/2020/06/07/npm/#comments">
-    <i class="fas fa-comment-dots fa-fw"></i>
-    <span class="valine-comment-count" data-xid="/2020/06/07/npm/">0</span>
-    <span class="leancloud-comments-count">&nbsp;</span>
-  </a>
-</div>
-
 
             
           
@@ -526,110 +477,77 @@
   </section>
 
 
-  <section class="article typo">
-    <div class="article-entry" itemprop="articleBody">
-      
-        <ul>
-<li><p>切换为淘宝镜像</p>
-<p>1.临时使用</p>
-<pre><code>npm --registry https:&#x2F;&#x2F;registry.npm.taobao.org install express;</code></pre>
-<p>2.持久使用</p>
-<pre><code>npm config set registry https:&#x2F;&#x2F;registry.npm.taobao.org</code></pre>
-<p>3.通过cnpm</p>
-<pre><code>npm install -g cnpm --registry&#x3D;https:&#x2F;&#x2F;registry.npm.taobao.org</code></pre></li>
-<li><p>切换官方镜像</p>
-<pre><code>npm config set registry https:&#x2F;&#x2F;registry.npmjs.org&#x2F;</code></pre></li>
-<li><p>查看当前npm源地址</p>
-<pre><code>npm config get registry</code></pre>
-</li>
-</ul>
+      <section class="article typo">
+        <div class="article-entry" itemprop="articleBody">
+          
+          
+          <p class='p subtitle'>原型链</p>
+<p>原型链实现继承的主要方式就是使一个构造函数的原型对象等于另一个构造函数的实例。</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">father</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">    <span class="keyword">this</span>.friend = [<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>];</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">children</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">    <span class="keyword">this</span>.age = <span class="number">18</span>;</span><br><span class="line">&#125;</span><br><span class="line">children.prototype = <span class="keyword">new</span> father();</span><br><span class="line"><span class="keyword">var</span> person = <span class="keyword">new</span> children();</span><br></pre></td></tr></table></figure>
+<img src='https://pigbro.online:9608/images/javascript/javascript_inherit.png' style='width:300px'>
+<p>但是使用原型链实现继承存在两个问题，一个是在js创建对象中提到的原型对象的引用类型属性共享的问题，另一个是在创建子类型的实例时，无法向超类型的构造函数中传递参数。</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">father</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">    <span class="keyword">this</span>.friend = [<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>];</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">children</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">    <span class="keyword">this</span>.age = <span class="number">18</span>;</span><br><span class="line">&#125;</span><br><span class="line">children.prototype = <span class="keyword">new</span> father();</span><br><span class="line"><span class="keyword">var</span> person1 = <span class="keyword">new</span> children();</span><br><span class="line"><span class="keyword">var</span> person2 = <span class="keyword">new</span> children();</span><br><span class="line">person1.friend.push(<span class="number">4</span>);</span><br><span class="line">alert(person2.friend); <span class="comment">//[1,2,3,4]</span></span><br></pre></td></tr></table></figure>
 
-      
-    </div>
-    
-      
-    
-  </section>
-</article>
+<p class='p subtitle'>借用构造函数</p>
+<p>借用构造函数实现的继承成功解决了上述原型链实现继承存在的两个问题。</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">father</span>(<span class="params">name</span>)</span>&#123;</span><br><span class="line">    <span class="keyword">this</span>.name = name;</span><br><span class="line">    <span class="keyword">this</span>.friend = [<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>];</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">children</span>(<span class="params">name</span>)</span>&#123;</span><br><span class="line">    father.call(<span class="keyword">this</span>,name);</span><br><span class="line">    <span class="keyword">this</span>.age = <span class="number">18</span>;</span><br><span class="line">&#125;</span><br><span class="line">children.prototype = <span class="keyword">new</span> father();</span><br><span class="line"><span class="keyword">var</span> person1 = <span class="keyword">new</span> children(<span class="string">'zhu'</span>);</span><br><span class="line"><span class="keyword">var</span> person2 = <span class="keyword">new</span> children(<span class="string">'duan'</span>);</span><br><span class="line">person1.friend.push(<span class="number">4</span>);</span><br><span class="line">alert(person1.name); <span class="comment">//'zhu'</span></span><br><span class="line">alert(person2.name); <span class="comment">//'duan'</span></span><br><span class="line">alert(person1.friend); <span class="comment">//[1,2,3,4]</span></span><br><span class="line">alert(person2.friend); <span class="comment">//[1,2,3]</span></span><br></pre></td></tr></table></figure>
+<p>但是仅仅使用借用构造函数，那么也将无法避免构造函数模式存在的定义方法复用的问题，在js创建对象中有提及。</p>
+<p class='p subtitle'>组合继承</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">father</span>(<span class="params">name</span>)</span>&#123;</span><br><span class="line">    <span class="keyword">this</span>.name = name;</span><br><span class="line">    <span class="keyword">this</span>.friend = [<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>];</span><br><span class="line">&#125;</span><br><span class="line">father.prototype.sayname = <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">    alert(<span class="keyword">this</span>.name);</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">children</span>(<span class="params">name,age</span>)</span>&#123;</span><br><span class="line">    father.call(<span class="keyword">this</span>,name);</span><br><span class="line">    <span class="keyword">this</span>.age = age;</span><br><span class="line">&#125;</span><br><span class="line">children.prototype = <span class="keyword">new</span> father(<span class="string">'zhu'</span>);</span><br><span class="line">children.prototype.constructor = children;</span><br><span class="line">children.prototype.sayage = <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">    alert(<span class="keyword">this</span>.age);</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">var</span> person1 = <span class="keyword">new</span> children(<span class="string">'duan'</span>,<span class="number">19</span>);</span><br><span class="line"><span class="keyword">var</span> person2 = <span class="keyword">new</span> children(<span class="string">'lei'</span>,<span class="number">18</span>);</span><br><span class="line">person1.friend.push(<span class="number">4</span>);</span><br><span class="line">person1.sayname(); <span class="comment">//'duan'</span></span><br><span class="line">person2.sayname(); <span class="comment">//'lei'</span></span><br><span class="line">person1.sayage(); <span class="comment">//19</span></span><br><span class="line">person2.sayage(); <span class="comment">//18</span></span><br><span class="line">alert(person1.friend); <span class="comment">//[1,2,3,4]</span></span><br><span class="line">alert(person2.friend); <span class="comment">//[1,2,3]</span></span><br></pre></td></tr></table></figure>
+<div class="gallery ">
+              <p><img src="https://pigbro.online:9608/images/javascript/javascript_inherit2.png" alt=""><br><img src="https://pigbro.online:9608/images/javascript/javascript_inherit1.png" alt=""></p>
+            </div>
+<p>组合继承避免了原型链呵借用构造函数的问题，成为最常用的继承模式。</p>
+<p class='p subtitle'>原型式继承</p>
+<p>借助原型可以基于已有对象创建新对象。在只想让一个对象与另一个对象类似的情况下这种模式可以胜任，因为它还是存在共享引用类型属性问题。<br>es5通过新增Object.create()方法规范化了原型式继承。</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">object</span>(<span class="params">o</span>)</span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">function</span> <span class="title">F</span>(<span class="params"></span>)</span>&#123;&#125;</span><br><span class="line">    F.prototype = o;</span><br><span class="line">    <span class="keyword">return</span> <span class="keyword">new</span> F();</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">var</span> person = &#123;</span><br><span class="line">    name : <span class="string">'zhu'</span>,</span><br><span class="line">    friend : [<span class="number">1</span>,<span class="number">2</span>]</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">var</span> person1 = <span class="built_in">Object</span>.create(person,&#123;</span><br><span class="line">    age : &#123;</span><br><span class="line">       value : <span class="number">18</span>,</span><br><span class="line">       writable : <span class="literal">true</span>,</span><br><span class="line">    &#125;,</span><br><span class="line">    sex : &#123;</span><br><span class="line">        value : <span class="string">'man'</span></span><br><span class="line">    &#125;</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
 
-          </div>
-        
-      
-    
-  </section>
-  
-    
-    <!-- 根据主题中的设置决定是否在archive中针对摘要部分的MathJax公式加载mathjax.js文件 -->
-    
-    
+<p class='p subtitle'>寄生式继承</p>
+<p>创建一个用于封装继承过程的函数，在函数内部增强对象。在主要考虑对象而不是自定义类型和构造函数的情况下，这个模式也是有用的。</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">object</span>(<span class="params">o</span>)</span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">function</span> <span class="title">F</span>(<span class="params"></span>)</span>&#123;&#125;</span><br><span class="line">    F.prototype = o;</span><br><span class="line">    <span class="keyword">return</span> <span class="keyword">new</span> F();</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">var</span> person = &#123;</span><br><span class="line">    name : <span class="string">'zhu'</span>,</span><br><span class="line">    friend : [<span class="number">1</span>,<span class="number">2</span>]</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">createAnother</span>(<span class="params">another</span>)</span>&#123;</span><br><span class="line">    <span class="keyword">var</span> clone = object(another);</span><br><span class="line">    clone.sayName = <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">        alert(<span class="keyword">this</span>.name)</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> clone;</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">var</span> anotherPerson = createAnother(person);</span><br></pre></td></tr></table></figure>
 
-  
-
-
-    
-  
-</div>
-<aside class='l_side'>
-  
+<p class='p subtitle'>寄生组合式继承</p>
+<p>回过头看组合式继承的代码，一次在new father()时在children.prototype上创建了father的属性，另一次在children函数内部father.call时在实例上创建了father的属性。<br>寄生组合式继承相比组合式继承，解决了实例属性在原型链上重复的问题。寄生式组合继承通过借构造函数来继承属性，通过原型链的混成形式来继承方法。</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">inheritPrototype</span>(<span class="params">father,children</span>)</span>&#123;</span><br><span class="line">    <span class="keyword">var</span> prototype = <span class="built_in">Object</span>.crearte(father.prototype); <span class="comment">//必须要创建对象</span></span><br><span class="line">    prototype.constructor = children;   <span class="comment">//增强对象</span></span><br><span class="line">    children.prototype = prototype;   <span class="comment">//指定对象</span></span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">father</span>(<span class="params">name</span>)</span>&#123;</span><br><span class="line">    <span class="keyword">this</span>.name = name;</span><br><span class="line">    <span class="keyword">this</span>.friend = [<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>];</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">children</span>(<span class="params">name</span>)</span>&#123;</span><br><span class="line">    father.call(<span class="keyword">this</span>,name);</span><br><span class="line">    <span class="keyword">this</span>.age = <span class="number">18</span>;</span><br><span class="line">&#125;</span><br><span class="line">inheritPrototype(father,children);</span><br></pre></td></tr></table></figure>
+          
+            <div class='article_footer'>
+              
+                
   
     
     
 
-<section class="widget blogger shadow desktop mobile">
+
+
+  
+
+  
+    
+    
+
+
+
+  
+
+  
+    
+    
+
+<section class="widget copyright  desktop mobile">
   <div class='content'>
     
-      
-        <a class='avatar flat-box rectangle' href='/about/'>
-          <img no-lazy src='https://pigbro.online:9608/images/author.jpg'/>
-        </a>
-      
-    
-    
-      <div class='text'>
-        
-        
-        
-          <p><span id="jinrishici-sentence">前端之路</span></p>
-          <script src="https://sdk.jinrishici.com/v2/browser/jinrishici.js" charset="utf-8"></script>
-        
-      </div>
-    
-    
-      <div class="social-wrapper">
+      <blockquote>
         
           
-            <a href="/atom.xml"
-              class="social fas fa-rss flat-btn"
-              target="_blank"
-              rel="external nofollow noopener noreferrer">
-            </a>
+            <p>博客内容遵循 署名-非商业性使用-相同方式共享 4.0 国际 (CC BY-NC-SA 4.0) 协议</p>
+
           
         
           
-            <a href="mailto:840459919@qq.com"
-              class="social fas fa-envelope flat-btn"
-              target="_blank"
-              rel="external nofollow noopener noreferrer">
-            </a>
+            <p>本文永久链接是：<a href=https://strive087.github.io/2020/06/10/javascript/JS%E7%BB%A7%E6%89%BF/>https://strive087.github.io/2020/06/10/javascript/JS%E7%BB%A7%E6%89%BF/</a></p>
           
         
-          
-            <a href="https://github.com/Strive087/strive087.github.io"
-              class="social fab fa-github flat-btn"
-              target="_blank"
-              rel="external nofollow noopener noreferrer">
-            </a>
-          
-        
-          
-            <a href="https://music.163.com/#/user/home?id=130611633"
-              class="social fas fa-headphones-alt flat-btn"
-              target="_blank"
-              rel="external nofollow noopener noreferrer">
-            </a>
-          
-        
-      </div>
+      </blockquote>
     
   </div>
 </section>
@@ -639,108 +557,186 @@
   
     
     
+
+<section class="widget qrcode  desktop mobile">
   
 
-  <section class="widget category shadow desktop">
+  <div class='content article-entry'>
     
-  <header>
+      
+        <div class='fancybox'><img src='https://pigbro.online:9608/images/alipay.jpg'
+        
+          height='80px'
+        ></div>
+      
     
-      <a href='/categories/'><i class="fas fa-folder-open fa-fw" aria-hidden="true"></i><span class='name'>文章分类</span></a>
+      
+        <div class='fancybox'><img src='https://pigbro.online:9608/images/wechatpay.jpg'
+        
+          height='80px'
+        ></div>
+      
     
-  </header>
+  </div>
+</section>
+
+  
 
 
-    <div class='content'>
-      <ul class="entry navigation">
+              
+            </div>
+          
+        </div>
         
-          <li><a class="flat-box"
-            title="/categories/JavaScript/" href="/categories/JavaScript/"
-            id="categoriesJavaScript"
-            ><div class='name'>JavaScript</div><div class='badge'>(1)</div></a></li>
+          
+
+
+  <section class='meta' id="footer-meta">
+    <div class='new-meta-box'>
+      
         
-          <li><a class="flat-box child"
-            title="/categories/JavaScript/RegExp/" href="/categories/JavaScript/RegExp/"
-            id="categoriesJavaScriptRegExp"
-            ><div class='name'>RegExp</div><div class='badge'>(1)</div></a></li>
+          <div class="new-meta-item date" itemprop="dateUpdated" datetime="2020-08-03T09:15:15+00:00">
+  <a class='notlink'>
+    <i class="fas fa-edit fa-fw" aria-hidden="true"></i>
+    <p>更新于：2020年8月3日</p>
+  </a>
+</div>
+
         
-          <li><a class="flat-box"
-            title="/categories/html/" href="/categories/html/"
-            id="categorieshtml"
-            ><div class='name'>html</div><div class='badge'>(1)</div></a></li>
+      
         
-          <li><a class="flat-box"
-            title="/categories/javascript/" href="/categories/javascript/"
-            id="categoriesjavascript"
-            ><div class='name'>javascript</div><div class='badge'>(5)</div></a></li>
+          
+  
+  <div class="new-meta-item meta-tags"><a class="tag" href="/tags/javascript/" rel="nofollow"><i class="fas fa-hashtag fa-fw" aria-hidden="true"></i><p>javascript</p></a></div>
+
+
         
-          <li><a class="flat-box child"
-            title="/categories/javascript/%E4%BD%9C%E7%94%A8%E5%9F%9F/" href="/categories/javascript/%E4%BD%9C%E7%94%A8%E5%9F%9F/"
-            id="categoriesjavascriptE4BD9CE794A8E59F9F"
-            ><div class='name'>作用域</div><div class='badge'>(1)</div></a></li>
+      
         
-          <li><a class="flat-box child"
-            title="/categories/javascript/%E5%87%BD%E6%95%B0%E5%BC%8F%E7%BC%96%E7%A8%8B/" href="/categories/javascript/%E5%87%BD%E6%95%B0%E5%BC%8F%E7%BC%96%E7%A8%8B/"
-            id="categoriesjavascriptE587BDE695B0E5BC8FE7BC96E7A88B"
-            ><div class='name'>函数式编程</div><div class='badge'>(1)</div></a></li>
+          
+
         
-          <li><a class="flat-box"
-            title="/categories/nodeJs/" href="/categories/nodeJs/"
-            id="categoriesnodeJs"
-            ><div class='name'>nodeJs</div><div class='badge'>(1)</div></a></li>
+      
         
-          <li><a class="flat-box"
-            title="/categories/%E7%AE%97%E6%B3%95/" href="/categories/%E7%AE%97%E6%B3%95/"
-            id="categoriesE7AE97E6B395"
-            ><div class='name'>算法</div><div class='badge'>(3)</div></a></li>
+          
+  <div class="new-meta-item share -mob-share-list">
+  <div class="-mob-share-list share-body">
+    
+      
+        <a class="-mob-share-qq" title="" rel="external nofollow noopener noreferrer"
+          
+          href="http://connect.qq.com/widget/shareqq/index.html?url=https://strive087.github.io/2020/06/10/javascript/JS%E7%BB%A7%E6%89%BF/&title=JS继承 - 前端之路&summary="
+          
+          >
+          
+            <img src="https://cdn.jsdelivr.net/gh/volantis-x/cdn-org/logo/128/qq.png">
+          
+        </a>
+      
+    
+      
+        <a class="-mob-share-qzone" title="" rel="external nofollow noopener noreferrer"
+          
+          href="https://sns.qzone.qq.com/cgi-bin/qzshare/cgi_qzshare_onekey?url=https://strive087.github.io/2020/06/10/javascript/JS%E7%BB%A7%E6%89%BF/&title=JS继承 - 前端之路&summary="
+          
+          >
+          
+            <img src="https://cdn.jsdelivr.net/gh/volantis-x/cdn-org/logo/128/qzone.png">
+          
+        </a>
+      
+    
+      
+        <a class="-mob-share-weibo" title="" rel="external nofollow noopener noreferrer"
+          
+          href="http://service.weibo.com/share/share.php?url=https://strive087.github.io/2020/06/10/javascript/JS%E7%BB%A7%E6%89%BF/&title=JS继承 - 前端之路&summary="
+          
+          >
+          
+            <img src="https://cdn.jsdelivr.net/gh/volantis-x/cdn-org/logo/128/weibo.png">
+          
+        </a>
+      
+    
+  </div>
+</div>
+
+
+
         
-          <li><a class="flat-box child"
-            title="/categories/%E7%AE%97%E6%B3%95/%E4%BA%8C%E5%8F%89%E6%A0%91/" href="/categories/%E7%AE%97%E6%B3%95/%E4%BA%8C%E5%8F%89%E6%A0%91/"
-            id="categoriesE7AE97E6B395E4BA8CE58F89E6A091"
-            ><div class='name'>二叉树</div><div class='badge'>(1)</div></a></li>
-        
-          <li><a class="flat-box child"
-            title="/categories/%E7%AE%97%E6%B3%95/%E5%9F%BA%E6%9C%AC%E6%A6%82%E5%BF%B5/" href="/categories/%E7%AE%97%E6%B3%95/%E5%9F%BA%E6%9C%AC%E6%A6%82%E5%BF%B5/"
-            id="categoriesE7AE97E6B395E59FBAE69CACE6A682E5BFB5"
-            ><div class='name'>基本概念</div><div class='badge'>(1)</div></a></li>
-        
-          <li><a class="flat-box child"
-            title="/categories/%E7%AE%97%E6%B3%95/%E6%95%A3%E5%88%97%E8%A1%A8/" href="/categories/%E7%AE%97%E6%B3%95/%E6%95%A3%E5%88%97%E8%A1%A8/"
-            id="categoriesE7AE97E6B395E695A3E58897E8A1A8"
-            ><div class='name'>散列表</div><div class='badge'>(1)</div></a></li>
-        
-      </ul>
+      
     </div>
   </section>
 
 
+        
+        
+          <div class="prev-next">
+            
+              <a class='prev' href='/2020/06/10/javascript/JS%E7%9A%84%E8%AF%8D%E6%B3%95%E4%BD%9C%E7%94%A8%E5%9F%9F/'>
+                <p class='title'><i class="fas fa-chevron-left" aria-hidden="true"></i>JS的词法作用域</p>
+                <p class='content'>作用域
+
+说到词法作用域，我们先讲讲什么是作用域。其实作用域就是一套用来存储变量以及快速查找变量的一套的规则。java
+词法作用域
+</p>
+              </a>
+            
+            
+              <a class='next' href='/2020/06/10/javascript/JS%E9%97%AD%E5%8C%85/'>
+                <p class='title'>JS闭包<i class="fas fa-chevron-right" aria-hidden="true"></i></p>
+                <p class='content'>闭包
+闭包时指有权访问另一个函数作用域中的变量的函数。例如下图，createPerson可以访问到createFunc中的变量name。
+123456789101112function crea...</p>
+              </a>
+            
+          </div>
+        
+      </section>
+    </article>
+  
+
+  
+    
+  <article class="post white-box reveal comments shadow">
+    <section class="article typo">
+      <p ct><i class='fas fa-comments'></i> 评论</p>
+      
+      <section id="comments">
+        <div id="valine_container" class="valine_thread">
+  <i class="fas fa-cog fa-spin fa-fw fa-2x"></i>
+</div>
+
+      </section>
+    </section>
+  </article>
+
+
+  
+
+
+
+
+<!-- 根据页面mathjax变量决定是否加载MathJax数学公式js -->
+
+
+</div>
+<aside class='l_side'>
+  
   
 
   
     
     
-  
-
-  <section class="widget tagcloud shadow desktop mobile">
-    
-  <header>
-    
-      <a href='/tags/'><i class="fas fa-tags fa-fw" aria-hidden="true"></i><span class='name'>热门标签</span></a>
-    
-  </header>
 
 
-    <div class='content'>
-      <a href="/tags/RegExp/" style="font-size: 14px; color: #999">RegExp</a> <a href="/tags/html/" style="font-size: 14px; color: #999">html</a> <a href="/tags/html5/" style="font-size: 14px; color: #999">html5</a> <a href="/tags/javascript/" style="font-size: 24px; color: #555">javascript</a> <a href="/tags/nodejs/" style="font-size: 14px; color: #999">nodejs</a> <a href="/tags/npm/" style="font-size: 14px; color: #999">npm</a> <a href="/tags/%E4%BA%8C%E5%8F%89%E6%A0%91/" style="font-size: 14px; color: #999">二叉树</a> <a href="/tags/%E4%BD%9C%E7%94%A8%E5%9F%9F/" style="font-size: 14px; color: #999">作用域</a> <a href="/tags/%E5%87%BD%E6%95%B0%E5%BC%8F%E7%BC%96%E7%A8%8B/" style="font-size: 14px; color: #999">函数式编程</a> <a href="/tags/%E5%93%88%E5%B8%8C%E8%A1%A8/" style="font-size: 14px; color: #999">哈希表</a> <a href="/tags/%E6%95%A3%E5%88%97%E8%A1%A8/" style="font-size: 14px; color: #999">散列表</a> <a href="/tags/%E7%AE%97%E6%B3%95/" style="font-size: 19px; color: #777">算法</a>
-    </div>
-  </section>
 
-
-  
 
   
 
 
 </aside>
+
 
 
     </div>

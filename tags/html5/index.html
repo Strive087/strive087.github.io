@@ -5,6 +5,8 @@
   <!-- SEO相关 -->
   
     
+      <meta name="robots" content="noindex,follow">
+    
   
   <!-- 渲染优化 -->
   <meta name="renderer" content="webkit">
@@ -16,9 +18,7 @@
 
   <!-- 页面元数据 -->
   
-  <title>JS创建对象 - 前端之路</title>
-  
-    <meta name="keywords" content="javascript">
+  <title>标签：html5 - 前端之路</title>
   
 
   
@@ -77,7 +77,7 @@
   
   
   <div class="cover-wrapper">
-    <cover class='cover post' style="display: none;">
+    <cover class='cover ' style="display: none;">
       <div class='cover-body'>
   <div class='a'>
     
@@ -365,10 +365,10 @@
 
 
 <div id="pjax-data" style="display: none">
-  <div id="pjax-ispage">true</div>
-  <div id="pjax-pageTitle">JS创建对象</div>
+  <div id="pjax-ispage">false</div>
+  <div id="pjax-pageTitle"></div>
   <div id="pjax-enable-cover">true</div>
-  <div id="pjax-permalink">https://strive087.github.io/2020/06/10/JS%E5%88%9B%E5%BB%BA%E5%AF%B9%E8%B1%A1/</div>
+  <div id="pjax-permalink"></div>
   
   <div id="valine-path">none</div>
   <div id="valine-placeholder">none</div>
@@ -402,12 +402,25 @@
       
       
 
+
 <div class='l_main'>
   
-
-  
-    <article id="post" class="post white-box reveal shadow article-type-post" itemscope itemprop="blogPost">
+    
       
+  <section class="post-list ">
+    
+      
+        
+          
+        
+      
+    
+    
+      
+        
+          <div class='post-wrapper'>
+            <article class="post white-box shadow reveal ">
+  
 
 
   <section class='meta'>
@@ -417,11 +430,11 @@
       <div class="meta" id="header-meta">
         
           
-  <h1 class="title">
-    <a href="/2020/06/10/JS%E5%88%9B%E5%BB%BA%E5%AF%B9%E8%B1%A1/">
-      JS创建对象
+  <h2 class="title">
+    <a href="/2020/06/10/html5%E9%99%80%E8%9E%BA%E4%BB%AA/">
+      html5陀螺仪
     </a>
-  </h1>
+  </h2>
 
 
         
@@ -444,9 +457,9 @@
               
   
   <div class='new-meta-item category'>
-    <a href='/categories/javascript/' rel="nofollow">
+    <a href='/categories/html/' rel="nofollow">
       <i class="fas fa-folder-open fa-fw" aria-hidden="true"></i>
-      <p>javascript</p>
+      <p>html</p>
     </a>
   </div>
 
@@ -468,6 +481,42 @@
 
             
           
+            
+              
+  <div class="new-meta-item browse valine">
+    <a class='notlink'>
+      <i class="fas fa-eye fa-fw" aria-hidden="true"></i>
+      
+      <span id="/2020/06/10/html5%E9%99%80%E8%9E%BA%E4%BB%AA/" class="leancloud_visitors" data-flag-title="html5陀螺仪">
+      <p>
+        <span class="leancloud-visitors-count"></span>
+      </p>
+      </span>
+    </a>
+  </div>
+
+
+            
+          
+            
+              
+<div class="new-meta-item comments-count">
+  
+  <a href="/2020/06/10/html5%E9%99%80%E8%9E%BA%E4%BB%AA/#comments">
+    <i class="fas fa-comment-dots fa-fw"></i>
+    <span class="valine-comment-count" data-xid="/2020/06/10/html5%E9%99%80%E8%9E%BA%E4%BB%AA/">0</span>
+    <span class="leancloud-comments-count">&nbsp;</span>
+  </a>
+</div>
+
+
+            
+          
+            
+              
+
+            
+          
         </div>
         
           <hr>
@@ -477,271 +526,208 @@
   </section>
 
 
-      <section class="article typo">
-        <div class="article-entry" itemprop="articleBody">
-          
-          
-          <p class='p subtitle'>工厂模式</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">createPerson</span>(<span class="params">name,age</span>)</span>&#123;</span><br><span class="line">    <span class="keyword">var</span> person = <span class="keyword">new</span> <span class="built_in">Object</span>;</span><br><span class="line">    person.name = name;</span><br><span class="line">    person.age = age;</span><br><span class="line">    person.sayname = <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">        alert(<span class="keyword">this</span>.name);</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> person;</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">var</span> person = createPerson(<span class="string">'zhu'</span>,<span class="number">18</span>);</span><br></pre></td></tr></table></figure>
-
-<p class='p subtitle'>构造函数模式</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">Person</span>(<span class="params">name,age</span>)</span>&#123;</span><br><span class="line">    <span class="keyword">this</span>.name = name;</span><br><span class="line">    <span class="keyword">this</span>.age = age;</span><br><span class="line">    <span class="keyword">this</span>.sayname = <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">        alert(<span class="keyword">this</span>.name);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">var</span> person = <span class="keyword">new</span> Person(<span class="string">'zhu'</span>,<span class="number">18</span>);</span><br></pre></td></tr></table></figure>
-<p>使用new操作符创建新实例必须经历4个阶段:<br> 1.创建一个新的对象<br> 2.将构造函数的作用域赋给新对象（因此this就指向了该对象）<br> 3.执行构造函数中的代码（为新对象添加属性）<br> 4.返回新对象<br>构造函数的问题：<br>对于sayname的函数相当于new Function(‘alert(this.name)’),这就造成不同实例的同名函数不相等，为了解决这个问题可以将函数定义移到构造函数外部。</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">Person</span>(<span class="params">name,age</span>)</span>&#123;</span><br><span class="line">    <span class="keyword">this</span>.name = name;</span><br><span class="line">    <span class="keyword">this</span>.age = age;</span><br><span class="line">    <span class="keyword">this</span>.sayname = sayname；</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">sayname</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">    alert(<span class="keyword">this</span>.name);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p>这样做多个对象共享了全局作用域中同一个函数，但是如果函数增多，那么在全局作用域中定义的函数也增多，那么封装的意义何在？好在这些问题在原型模式中解决。</p>
-<p class='p subtitle'>原型模式</p>
-<p>原型模式成功封装并共享同一函数，但是在原型对象对于包含引用类型的数据时，不同实例不会像基本值类型那样在实例上添加同名属性，而是共用同一引用类型数据，这也就是原型模式最大的问题。</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">Person</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line"></span><br><span class="line">&#125;</span><br><span class="line">Person.prototype = &#123;</span><br><span class="line">    <span class="keyword">constructor</span> : Person,</span><br><span class="line">    name : 'zhu',</span><br><span class="line">    age : 18,</span><br><span class="line">    friend : ['fan','hou'],</span><br><span class="line">    sayName : function()&#123;</span><br><span class="line">        alert(<span class="keyword">this</span>.name)</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">var</span> person1 = <span class="keyword">new</span> Person();</span><br><span class="line"><span class="keyword">var</span> person2 = <span class="keyword">new</span> Person();</span><br><span class="line">person1.friend.push(<span class="string">'hang'</span>);</span><br><span class="line">alert(person2.friend)   <span class="comment">//['fan','hou','hang']</span></span><br></pre></td></tr></table></figure>
-
-<p class='p subtitle'>组合使用原型模式和构造函数模式</p>
-<p>这种混合模式是es5中使用最广泛、认同度最高的一种创建自定义类型的方法。</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">Person</span>(<span class="params">name,age</span>)</span>&#123;</span><br><span class="line">    <span class="keyword">this</span>.name = name;</span><br><span class="line">    <span class="keyword">this</span>.age = age ;</span><br><span class="line">    <span class="keyword">this</span>.friend = [<span class="string">'fan'</span>,<span class="string">'hou'</span>];</span><br><span class="line">&#125;</span><br><span class="line">Person.prototype = &#123;</span><br><span class="line">    <span class="keyword">constructor</span> : Person,</span><br><span class="line">    sayName : function()&#123;</span><br><span class="line">        alert(<span class="keyword">this</span>.name)</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">var</span> person1 = <span class="keyword">new</span> Person();</span><br><span class="line"><span class="keyword">var</span> person2 = <span class="keyword">new</span> Person();</span><br><span class="line">person1.friend.push(<span class="string">'hang'</span>);</span><br><span class="line">alert(person1.friend)   <span class="comment">//['fan','hou','hang']</span></span><br><span class="line">alert(person2.friend)   <span class="comment">//['fan','hou']</span></span><br></pre></td></tr></table></figure>
-
-<p class='p subtitle'>动态原型模式</p>
-<p>对于混合模式，在有OO语言开发经验的开发人员来说可能会很困惑，那么动态原型模式，将所有信息都封装在了构造函数中，对原型对象的初始化只会在第一次执行时产生。<br>这里特别强调，在对原型对象初始化时不可使用对象字面量重写原型，因为已经产生了实例，这样会断开实例与原型对象的联系。</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">Person</span>(<span class="params">name,age</span>)</span>&#123;</span><br><span class="line">    <span class="keyword">this</span>.name = name;</span><br><span class="line">    <span class="keyword">this</span>.age = age;</span><br><span class="line">    <span class="keyword">this</span>.friend = [<span class="string">'fan'</span>,<span class="string">'hou'</span>];</span><br><span class="line">    <span class="keyword">if</span>(<span class="keyword">typeof</span> <span class="keyword">this</span>.sayname != <span class="string">'function'</span>)&#123;</span><br><span class="line">        Person.prototype.sayname = <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;alert(<span class="keyword">this</span>.name)&#125;;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<p class='p subtitle'>寄生构造函数模式</p>
-<p>如果前面提到几种模式都不适用，那么可以适用寄生构造函数。</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">Person</span>(<span class="params">name,age</span>)</span>&#123;</span><br><span class="line">    <span class="keyword">var</span> person = <span class="keyword">new</span> <span class="built_in">Object</span>;</span><br><span class="line">    person.name = name;</span><br><span class="line">    person.age = age;</span><br><span class="line">    person.sayname = <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">        alert(<span class="keyword">this</span>.name);</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> person;</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">var</span> person = <span class="keyword">new</span> Person(<span class="string">'zhu'</span>,<span class="number">19</span>);</span><br></pre></td></tr></table></figure>
-<p>这里特别说明下，在构造函数不返回值的情况下，会默认返回新对象实例。在末尾加上return可以重写返回值。但是这里返回的对象与构造函数或者构造函数的原型对象没有任何关系，所以叫做寄生。</p>
-<p class='p subtitle'>稳妥构造函数模式</p>
-<p>稳妥对象，没有公共属性，而且方法也不引用this。稳妥构造函数与寄生构造函数最大不同在于，稳妥构造函数模式实例方法不引用this，而且不是用new来调用构造函数。</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">Person</span>(<span class="params">name, age</span>) </span>&#123;</span><br><span class="line">    <span class="keyword">var</span> person = <span class="keyword">new</span> <span class="built_in">Object</span>();</span><br><span class="line">    <span class="comment">// private members</span></span><br><span class="line">    <span class="keyword">var</span> nameUC = name.toUpperCase();</span><br><span class="line">    <span class="comment">// public members</span></span><br><span class="line">    person.sayName = <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">        alert(name);</span><br><span class="line">    &#125;;</span><br><span class="line">    person.sayNameUC = <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">        alert(nameUC);</span><br><span class="line">    &#125;;</span><br><span class="line">    <span class="keyword">return</span> person;</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">var</span> person = Person(<span class="string">"zhu"</span>, <span class="number">18</span>);</span><br><span class="line">person.sayName(); <span class="comment">// "zhu"</span></span><br><span class="line">person.sayNameUC(); <span class="comment">// "ZHU"</span></span><br><span class="line">alert(person.name);  <span class="comment">// undefined</span></span><br><span class="line">alert(person.nameUC);  <span class="comment">// undefined</span></span><br></pre></td></tr></table></figure>
-          
-            <div class='article_footer'>
-              
-                
-  
-    
-    
-
-
-
-  
-
-  
-    
-    
-
-
-
-  
-
-  
-    
-    
-
-<section class="widget copyright  desktop mobile">
-  <div class='content'>
-    
-      <blockquote>
-        
-          
-            <p>博客内容遵循 署名-非商业性使用-相同方式共享 4.0 国际 (CC BY-NC-SA 4.0) 协议</p>
-
-          
-        
-          
-            <p>本文永久链接是：<a href=https://strive087.github.io/2020/06/10/JS%E5%88%9B%E5%BB%BA%E5%AF%B9%E8%B1%A1/>https://strive087.github.io/2020/06/10/JS%E5%88%9B%E5%BB%BA%E5%AF%B9%E8%B1%A1/</a></p>
-          
-        
-      </blockquote>
-    
-  </div>
-</section>
-
-  
-
-  
-    
-    
-
-<section class="widget qrcode  desktop mobile">
-  
-
-  <div class='content article-entry'>
-    
+  <section class="article typo">
+    <div class="article-entry" itemprop="articleBody">
       
-        <div class='fancybox'><img src='https://pigbro.online:9608/images/alipay.jpg'
-        
-          height='80px'
-        ></div>
-      
-    
-      
-        <div class='fancybox'><img src='https://pigbro.online:9608/images/wechatpay.jpg'
-        
-          height='80px'
-        ></div>
-      
-    
-  </div>
-</section>
-
-  
-
-
-              
-            </div>
-          
-        </div>
-        
-          
-
-
-  <section class='meta' id="footer-meta">
-    <div class='new-meta-box'>
-      
-        
-          <div class="new-meta-item date" itemprop="dateUpdated" datetime="2020-08-02T06:23:18+00:00">
-  <a class='notlink'>
-    <i class="fas fa-edit fa-fw" aria-hidden="true"></i>
-    <p>更新于：2020年8月2日</p>
-  </a>
-</div>
-
-        
-      
-        
-          
-  
-  <div class="new-meta-item meta-tags"><a class="tag" href="/tags/javascript/" rel="nofollow"><i class="fas fa-hashtag fa-fw" aria-hidden="true"></i><p>javascript</p></a></div>
-
-
-        
-      
-        
-          
-
-        
-      
-        
-          
-  <div class="new-meta-item share -mob-share-list">
-  <div class="-mob-share-list share-body">
-    
-      
-        <a class="-mob-share-qq" title="" rel="external nofollow noopener noreferrer"
-          
-          href="http://connect.qq.com/widget/shareqq/index.html?url=https://strive087.github.io/2020/06/10/JS%E5%88%9B%E5%BB%BA%E5%AF%B9%E8%B1%A1/&title=JS创建对象 - 前端之路&summary="
-          
-          >
-          
-            <img src="https://cdn.jsdelivr.net/gh/volantis-x/cdn-org/logo/128/qq.png">
-          
-        </a>
-      
-    
-      
-        <a class="-mob-share-qzone" title="" rel="external nofollow noopener noreferrer"
-          
-          href="https://sns.qzone.qq.com/cgi-bin/qzshare/cgi_qzshare_onekey?url=https://strive087.github.io/2020/06/10/JS%E5%88%9B%E5%BB%BA%E5%AF%B9%E8%B1%A1/&title=JS创建对象 - 前端之路&summary="
-          
-          >
-          
-            <img src="https://cdn.jsdelivr.net/gh/volantis-x/cdn-org/logo/128/qzone.png">
-          
-        </a>
-      
-    
-      
-        <a class="-mob-share-weibo" title="" rel="external nofollow noopener noreferrer"
-          
-          href="http://service.weibo.com/share/share.php?url=https://strive087.github.io/2020/06/10/JS%E5%88%9B%E5%BB%BA%E5%AF%B9%E8%B1%A1/&title=JS创建对象 - 前端之路&summary="
-          
-          >
-          
-            <img src="https://cdn.jsdelivr.net/gh/volantis-x/cdn-org/logo/128/weibo.png">
-          
-        </a>
-      
-    
-  </div>
-</div>
-
-
-
-        
+        <p>deviceorientation : 设备的物理方向，表示为一系列的本地坐标系旋角。<br>devicemotion : 提供设备的重力加速信息。<br>compassneedscalibration : 罗盘校准。</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&lt;!DOCTYPE <span class="meta-keyword">html</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">html</span> <span class="attr">lang</span>=<span class="string">"en"</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">head</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">meta</span> <span class="attr">charset</span>=<span class="string">"UTF-8"</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">meta</span> <span class="attr">name</span>=<span class="string">"viewport"</span> <span class="attr">content</span>=<span class="string">"width=device-width, initial-scale=1.0"</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">title</span>&gt;</span>html5陀螺仪<span class="tag">&lt;/<span class="name">title</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">link</span> <span class="attr">rel</span>=<span class="string">"stylesheet"</span> <span class="attr">href</span>=<span class="string">"http://at.alicdn.com/t/font_1872916_9bxpvrr3gw.css"</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">script</span> <span class="attr">src</span>=<span class="string">"https://cdn.bootcdn.net/ajax/libs/jquery/3.5.1/jquery.min.js"</span>&gt;</span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">head</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">body</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">h1</span> <span class="attr">style</span>=<span class="string">"text-align: center;"</span>&gt;</span>摇一摇有惊喜！<span class="tag">&lt;/<span class="name">h1</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">div</span> <span class="attr">align</span> = <span class="string">"center"</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">img</span> <span class="attr">src</span>=<span class="string">"https://pigbro.online:9608/images/surprise/1.jpg"</span> <span class="attr">alt</span>=<span class="string">"surprise"</span>&gt;</span> </span><br><span class="line">    <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">script</span>&gt;</span></span><br><span class="line"><span class="actionscript">        <span class="comment">//获取手机屏幕宽度</span></span></span><br><span class="line"><span class="javascript">        <span class="keyword">var</span> deviceWidth = <span class="built_in">document</span>.documentElement.clientWidth;</span></span><br><span class="line"><span class="actionscript">        <span class="keyword">var</span> speed = <span class="number">30</span>;</span></span><br><span class="line"><span class="actionscript">        <span class="keyword">var</span> picture = <span class="number">1</span>;</span></span><br><span class="line"><span class="actionscript">        <span class="keyword">var</span> x=y=z=lastx=lasty=lastz=<span class="number">0</span>;</span></span><br><span class="line"><span class="javascript">        $(<span class="string">'img'</span>).width(deviceWidth*<span class="number">0.9</span>);</span></span><br><span class="line"><span class="actionscript">        <span class="keyword">var</span> flag = <span class="literal">true</span>;</span></span><br><span class="line"><span class="javascript">        <span class="keyword">if</span> (<span class="built_in">window</span>.DeviceOrientationEvent) &#123;</span></span><br><span class="line"><span class="javascript">            <span class="built_in">window</span>.addEventListener(<span class="string">'deviceorientation'</span>, (event) =&gt; &#123;</span></span><br><span class="line"><span class="actionscript">                <span class="keyword">var</span> x = event.beta;</span></span><br><span class="line"><span class="actionscript">                <span class="keyword">var</span> y = event.gamma;</span></span><br><span class="line"><span class="actionscript">                <span class="keyword">var</span> z = event.alpha;</span></span><br><span class="line"><span class="javascript">                <span class="keyword">if</span>((<span class="built_in">Math</span>.abs(x-lastx)&gt;speed || <span class="built_in">Math</span>.abs(y-lasty)&gt;speed || <span class="built_in">Math</span>.abs(z-lastz)&gt;speed) &amp;&amp; flag)&#123;</span></span><br><span class="line">                    if(++picture &gt; 7)&#123;</span><br><span class="line">                        picture = 1;</span><br><span class="line">                    &#125;</span><br><span class="line"><span class="javascript">                    $(<span class="string">'img'</span>).attr(<span class="string">'src'</span>,<span class="string">'https://pigbro.online:9608/images/surprise/'</span>+picture+<span class="string">'.jpg'</span>);</span></span><br><span class="line"><span class="actionscript">                    flag = <span class="literal">false</span>;</span></span><br><span class="line">                &#125;</span><br><span class="line">                lastx = x;</span><br><span class="line">                lasty = y;</span><br><span class="line">                lastz = z;</span><br><span class="line">            &#125;);</span><br><span class="line">            wi</span><br><span class="line">        &#125;</span><br><span class="line"><span class="javascript">        $(<span class="string">'img'</span>).on(<span class="string">'load'</span>, <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span></span><br><span class="line"><span class="actionscript">            setTimeout(<span class="function"><span class="keyword">function</span><span class="params">()</span></span>&#123;</span></span><br><span class="line"><span class="actionscript">                flag = <span class="literal">true</span>;</span></span><br><span class="line">            &#125;,1000);</span><br><span class="line">        &#125;);</span><br><span class="line">    <span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">body</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">html</span>&gt;</span></span><br></pre></td></tr></table></figure>
       
     </div>
+    
+      
+    
   </section>
+</article>
 
-
-        
-        
-          <div class="prev-next">
-            
-              <a class='prev' href='/2020/06/11/JS%E5%87%BD%E6%95%B0%E5%BC%8F%E7%BC%96%E7%A8%8B/'>
-                <p class='title'><i class="fas fa-chevron-left" aria-hidden="true"></i>JS的函数式编程</p>
-                <p class='content'>函数式编程特点：
-
-函数是”第一等公民”  (与变量的)
-只用”表达式”，不用”语句”  
-没有”副作用”  
-不修改状态  
-引用透明（函数运行只靠参数）
-
-函数curry多参数函数转化成一个...</p>
-              </a>
-            
-            
-              <a class='next' href='/2020/06/10/JS%E7%9A%84%E8%AF%8D%E6%B3%95%E4%BD%9C%E7%94%A8%E5%9F%9F/'>
-                <p class='title'>JS的词法作用域<i class="fas fa-chevron-right" aria-hidden="true"></i></p>
-                <p class='content'>作用域
-
-说到词法作用域，我们先讲讲什么是作用域。其实作用域就是一套用来存储变量以及快速查找变量的一套的规则。java
-词法作用域
-</p>
-              </a>
-            
           </div>
         
-      </section>
-    </article>
-  
-
+      
+    
+  </section>
   
     
-  <article class="post white-box reveal comments shadow">
-    <section class="article typo">
-      <p ct><i class='fas fa-comments'></i> 评论</p>
-      
-      <section id="comments">
-        <div id="valine_container" class="valine_thread">
-  <i class="fas fa-cog fa-spin fa-fw fa-2x"></i>
-</div>
-
-      </section>
-    </section>
-  </article>
-
+    <!-- 根据主题中的设置决定是否在archive中针对摘要部分的MathJax公式加载mathjax.js文件 -->
+    
+    
 
   
 
 
-
-
-<!-- 根据页面mathjax变量决定是否加载MathJax数学公式js -->
-
-
+    
+  
 </div>
 <aside class='l_side'>
   
   
+    
+    
+
+<section class="widget blogger shadow desktop mobile">
+  <div class='content'>
+    
+      
+        <a class='avatar flat-box rectangle' href='/about/'>
+          <img no-lazy src='https://pigbro.online:9608/images/author.jpg'/>
+        </a>
+      
+    
+    
+      <div class='text'>
+        
+        
+        
+          <p><span id="jinrishici-sentence">前端之路</span></p>
+          <script src="https://sdk.jinrishici.com/v2/browser/jinrishici.js" charset="utf-8"></script>
+        
+      </div>
+    
+    
+      <div class="social-wrapper">
+        
+          
+            <a href="/atom.xml"
+              class="social fas fa-rss flat-btn"
+              target="_blank"
+              rel="external nofollow noopener noreferrer">
+            </a>
+          
+        
+          
+            <a href="mailto:840459919@qq.com"
+              class="social fas fa-envelope flat-btn"
+              target="_blank"
+              rel="external nofollow noopener noreferrer">
+            </a>
+          
+        
+          
+            <a href="https://github.com/Strive087/strive087.github.io"
+              class="social fab fa-github flat-btn"
+              target="_blank"
+              rel="external nofollow noopener noreferrer">
+            </a>
+          
+        
+          
+            <a href="https://music.163.com/#/user/home?id=130611633"
+              class="social fas fa-headphones-alt flat-btn"
+              target="_blank"
+              rel="external nofollow noopener noreferrer">
+            </a>
+          
+        
+      </div>
+    
+  </div>
+</section>
+
+  
 
   
     
     
+  
+
+  <section class="widget category shadow desktop">
+    
+  <header>
+    
+      <a href='/categories/'><i class="fas fa-folder-open fa-fw" aria-hidden="true"></i><span class='name'>文章分类</span></a>
+    
+  </header>
 
 
+    <div class='content'>
+      <ul class="entry navigation">
+        
+          <li><a class="flat-box"
+            title="/categories/JavaScript/" href="/categories/JavaScript/"
+            id="categoriesJavaScript"
+            ><div class='name'>JavaScript</div><div class='badge'>(1)</div></a></li>
+        
+          <li><a class="flat-box child"
+            title="/categories/JavaScript/RegExp/" href="/categories/JavaScript/RegExp/"
+            id="categoriesJavaScriptRegExp"
+            ><div class='name'>RegExp</div><div class='badge'>(1)</div></a></li>
+        
+          <li><a class="flat-box"
+            title="/categories/html/" href="/categories/html/"
+            id="categorieshtml"
+            ><div class='name'>html</div><div class='badge'>(1)</div></a></li>
+        
+          <li><a class="flat-box"
+            title="/categories/javascript/" href="/categories/javascript/"
+            id="categoriesjavascript"
+            ><div class='name'>javascript</div><div class='badge'>(5)</div></a></li>
+        
+          <li><a class="flat-box child"
+            title="/categories/javascript/%E4%BD%9C%E7%94%A8%E5%9F%9F/" href="/categories/javascript/%E4%BD%9C%E7%94%A8%E5%9F%9F/"
+            id="categoriesjavascriptE4BD9CE794A8E59F9F"
+            ><div class='name'>作用域</div><div class='badge'>(1)</div></a></li>
+        
+          <li><a class="flat-box child"
+            title="/categories/javascript/%E5%87%BD%E6%95%B0%E5%BC%8F%E7%BC%96%E7%A8%8B/" href="/categories/javascript/%E5%87%BD%E6%95%B0%E5%BC%8F%E7%BC%96%E7%A8%8B/"
+            id="categoriesjavascriptE587BDE695B0E5BC8FE7BC96E7A88B"
+            ><div class='name'>函数式编程</div><div class='badge'>(1)</div></a></li>
+        
+          <li><a class="flat-box"
+            title="/categories/nodeJs/" href="/categories/nodeJs/"
+            id="categoriesnodeJs"
+            ><div class='name'>nodeJs</div><div class='badge'>(1)</div></a></li>
+        
+          <li><a class="flat-box"
+            title="/categories/%E7%AE%97%E6%B3%95/" href="/categories/%E7%AE%97%E6%B3%95/"
+            id="categoriesE7AE97E6B395"
+            ><div class='name'>算法</div><div class='badge'>(3)</div></a></li>
+        
+          <li><a class="flat-box child"
+            title="/categories/%E7%AE%97%E6%B3%95/%E4%BA%8C%E5%8F%89%E6%A0%91/" href="/categories/%E7%AE%97%E6%B3%95/%E4%BA%8C%E5%8F%89%E6%A0%91/"
+            id="categoriesE7AE97E6B395E4BA8CE58F89E6A091"
+            ><div class='name'>二叉树</div><div class='badge'>(1)</div></a></li>
+        
+          <li><a class="flat-box child"
+            title="/categories/%E7%AE%97%E6%B3%95/%E5%9F%BA%E6%9C%AC%E6%A6%82%E5%BF%B5/" href="/categories/%E7%AE%97%E6%B3%95/%E5%9F%BA%E6%9C%AC%E6%A6%82%E5%BF%B5/"
+            id="categoriesE7AE97E6B395E59FBAE69CACE6A682E5BFB5"
+            ><div class='name'>基本概念</div><div class='badge'>(1)</div></a></li>
+        
+          <li><a class="flat-box child"
+            title="/categories/%E7%AE%97%E6%B3%95/%E6%95%A3%E5%88%97%E8%A1%A8/" href="/categories/%E7%AE%97%E6%B3%95/%E6%95%A3%E5%88%97%E8%A1%A8/"
+            id="categoriesE7AE97E6B395E695A3E58897E8A1A8"
+            ><div class='name'>散列表</div><div class='badge'>(1)</div></a></li>
+        
+      </ul>
+    </div>
+  </section>
 
+
+  
+
+  
+    
+    
+  
+
+  <section class="widget tagcloud shadow desktop mobile">
+    
+  <header>
+    
+      <a href='/tags/'><i class="fas fa-tags fa-fw" aria-hidden="true"></i><span class='name'>热门标签</span></a>
+    
+  </header>
+
+
+    <div class='content'>
+      <a href="/tags/RegExp/" style="font-size: 14px; color: #999">RegExp</a> <a href="/tags/html/" style="font-size: 14px; color: #999">html</a> <a href="/tags/html5/" style="font-size: 14px; color: #999">html5</a> <a href="/tags/javascript/" style="font-size: 24px; color: #555">javascript</a> <a href="/tags/nodejs/" style="font-size: 14px; color: #999">nodejs</a> <a href="/tags/npm/" style="font-size: 14px; color: #999">npm</a> <a href="/tags/%E4%BA%8C%E5%8F%89%E6%A0%91/" style="font-size: 14px; color: #999">二叉树</a> <a href="/tags/%E4%BD%9C%E7%94%A8%E5%9F%9F/" style="font-size: 14px; color: #999">作用域</a> <a href="/tags/%E5%87%BD%E6%95%B0%E5%BC%8F%E7%BC%96%E7%A8%8B/" style="font-size: 14px; color: #999">函数式编程</a> <a href="/tags/%E5%93%88%E5%B8%8C%E8%A1%A8/" style="font-size: 14px; color: #999">哈希表</a> <a href="/tags/%E6%95%A3%E5%88%97%E8%A1%A8/" style="font-size: 14px; color: #999">散列表</a> <a href="/tags/%E7%AE%97%E6%B3%95/" style="font-size: 19px; color: #777">算法</a>
+    </div>
+  </section>
+
+
+  
 
   
 
 
 </aside>
-
 
 
     </div>
@@ -1241,8 +1227,8 @@
       meta: meta,
       placeholder: valinePlaceholder,
       path: valinePath,
-      appId: "",
-      appKey: "",
+      appId: "9YrTrvrqBfB5CFFDyquqRTAF-gzGzoHsz",
+      appKey: "UB0DkzHVmRR4qJeGjWMN910Q",
       pageSize: '10',
       avatar: 'robohash',
       lang: 'zh-cn',

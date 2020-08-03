@@ -18,7 +18,7 @@
 
   <!-- 页面元数据 -->
   
-  <title>标签：nodejs - 前端之路</title>
+  <title>归档：2020 - 前端之路</title>
   
 
   
@@ -356,7 +356,7 @@
   
 
 
-  <div class="l_body nocover">
+  <div class="l_body">
     <div class='body-wrapper' id="pjax-container">
       
         <!--此文件用来存放一些不方便取值的变量-->
@@ -379,16 +379,16 @@
 
 <script>
   // 处理封面 此时 jquery 还没加载
-  if ("none" == "none") { // 移除封面
+  if ("blog" == "none") { // 移除封面
     document.getElementsByClassName('cover')[0].style.display = "none";
     document.getElementsByClassName('l_body')[0].classList.add("nocover");
     document.getElementsByClassName('l_header', 'cover-wrapper')[0].classList.add("show");
   } else {
-    if ("none" == "blog") { // 半屏
+    if ("blog" == "blog") { // 半屏
       document.getElementsByClassName('cover')[0].classList.remove("full");
       document.getElementsByClassName('cover')[0].classList.add("half");
       document.getElementsByClassName('scroll-down')[0].style.display = "none";
-    } else if ("none" == "docs") { // 全屏
+    } else if ("blog" == "docs") { // 全屏
       document.getElementsByClassName('cover')[0].classList.remove("half");
       document.getElementsByClassName('cover')[0].classList.add("full");
       document.getElementsByClassName('scroll-down')[0].style.display = "";
@@ -402,18 +402,10 @@
       
       
 
-
 <div class='l_main'>
-  
-    
-      
+	
+		
   <section class="post-list ">
-    
-      
-        
-          
-        
-      
     
     
       
@@ -559,6 +551,21 @@
   </section>
   
     
+      <br>
+      <div class="prev-next">
+        
+          <a class="prev" rel="prev" href="/archives/2020/">
+            <section class="post prev white-box shadow" >
+              <i class="fas fa-chevron-left" aria-hidden="true"></i>&nbsp;上一页&nbsp;
+            </section>
+          </a>
+        
+        <p class="current">
+          2 / 2
+        </p>
+        
+      </div>
+    
     <!-- 根据主题中的设置决定是否在archive中针对摘要部分的MathJax公式加载mathjax.js文件 -->
     
     
@@ -566,8 +573,7 @@
   
 
 
-    
-  
+	
 </div>
 <aside class='l_side'>
   
@@ -741,6 +747,15 @@
 
 
 </aside>
+
+
+
+
+
+	<!-- 根据主题中的设置决定是否在archive中针对摘要部分的MathJax公式加载mathjax.js文件 -->
+	
+
+	
 
 
     </div>

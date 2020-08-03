@@ -16,9 +16,9 @@
 
   <!-- 页面元数据 -->
   
-  <title>JS的函数式编程 - 前端之路</title>
+  <title>JS闭包 - 前端之路</title>
   
-    <meta name="keywords" content="javascript,函数式编程">
+    <meta name="keywords" content="javascript">
   
 
   
@@ -366,9 +366,9 @@
 
 <div id="pjax-data" style="display: none">
   <div id="pjax-ispage">true</div>
-  <div id="pjax-pageTitle">JS的函数式编程</div>
+  <div id="pjax-pageTitle">JS闭包</div>
   <div id="pjax-enable-cover">true</div>
-  <div id="pjax-permalink">https://strive087.github.io/2020/06/11/JS%E5%87%BD%E6%95%B0%E5%BC%8F%E7%BC%96%E7%A8%8B/</div>
+  <div id="pjax-permalink">https://strive087.github.io/2020/06/10/javascript/JS%E9%97%AD%E5%8C%85/</div>
   
   <div id="valine-path">none</div>
   <div id="valine-placeholder">none</div>
@@ -418,8 +418,8 @@
         
           
   <h1 class="title">
-    <a href="/2020/06/11/JS%E5%87%BD%E6%95%B0%E5%BC%8F%E7%BC%96%E7%A8%8B/">
-      JS的函数式编程
+    <a href="/2020/06/10/javascript/JS%E9%97%AD%E5%8C%85/">
+      JS闭包
     </a>
   </h1>
 
@@ -444,9 +444,9 @@
               
   
   <div class='new-meta-item category'>
-    <a href='/categories/javascript/%E5%87%BD%E6%95%B0%E5%BC%8F%E7%BC%96%E7%A8%8B/' rel="nofollow">
+    <a href='/categories/javascript/' rel="nofollow">
       <i class="fas fa-folder-open fa-fw" aria-hidden="true"></i>
-      <p>javascript/函数式编程</p>
+      <p>javascript</p>
     </a>
   </div>
 
@@ -481,16 +481,16 @@
         <div class="article-entry" itemprop="articleBody">
           
           
-          <p>函数式编程特点：</p>
-<ol>
-<li>函数是”第一等公民”  (与变量的)</li>
-<li>只用”表达式”，不用”语句”  </li>
-<li>没有”副作用”  </li>
-<li>不修改状态  </li>
-<li>引用透明（函数运行只靠参数）</li>
-</ol>
-<p>函数curry<br>多参数函数转化成一个嵌套的一元函数<br>好处：一种函数的预加载的方法,相当于-缓存，保存作用域链<br>闭包必定会有内存泄漏</p>
-
+          <p class='p subtitle'>闭包</p>
+<p>闭包时指有权访问另一个函数作用域中的变量的函数。例如下图，createPerson可以访问到createFunc中的变量name。</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">createFunc</span>(<span class="params">name</span>)</span>&#123;</span><br><span class="line">    <span class="keyword">return</span> <span class="function"><span class="keyword">function</span>(<span class="params">age</span>)</span>&#123;</span><br><span class="line">        <span class="keyword">var</span> person = &#123;&#125;;</span><br><span class="line">        person.name = name;</span><br><span class="line">        person.age = age</span><br><span class="line">        <span class="keyword">return</span> person;</span><br><span class="line">    &#125;;</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">var</span> createPerson = createFunc(<span class="string">'zhu'</span>);</span><br><span class="line"><span class="keyword">var</span> person = createPerson(<span class="number">18</span>);</span><br><span class="line">alert(person.name)  <span class="comment">//'zhu'</span></span><br><span class="line">createPerson = <span class="literal">null</span>;</span><br></pre></td></tr></table></figure>
+<img src='https://pigbro.online:9608/images/javascript/javascript_closure.png' style='width:500px'>
+<p>由于闭包会携带包含他的函数作用域，也因此他会比其他函数占用更多的内存，所有不要过度使用闭包。</p>
+<p class='p subtitle'>常见的闭包与变量的陷阱</p>
+<p>由于闭包在执行的时候，他只会取得包含函数中任何变量的最终值。</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> funcArr = [];</span><br><span class="line"><span class="keyword">for</span>(<span class="keyword">var</span> i = <span class="number">0</span>; i &lt; <span class="number">5</span>; i++)&#123;</span><br><span class="line">    funcArr[i] = <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">        <span class="keyword">return</span> i;</span><br><span class="line">    &#125;;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>所以在执行funcArr数组中的闭包时，然会的i全为5。这时我们可以通过创建一个匿名函数去立即执行返回一个匿名函数。</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> funcArr = [];</span><br><span class="line"><span class="keyword">for</span>(<span class="keyword">var</span> i = <span class="number">0</span>; i &lt; <span class="number">5</span>; i++)&#123;</span><br><span class="line">    funcArr[i] = (<span class="function"><span class="keyword">function</span>(<span class="params">num</span>)</span>&#123;</span><br><span class="line">        <span class="keyword">return</span> <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">            <span class="keyword">return</span> num;</span><br><span class="line">        &#125;;</span><br><span class="line">    &#125;)(i);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
           
             <div class='article_footer'>
               
@@ -526,7 +526,7 @@
           
         
           
-            <p>本文永久链接是：<a href=https://strive087.github.io/2020/06/11/JS%E5%87%BD%E6%95%B0%E5%BC%8F%E7%BC%96%E7%A8%8B/>https://strive087.github.io/2020/06/11/JS%E5%87%BD%E6%95%B0%E5%BC%8F%E7%BC%96%E7%A8%8B/</a></p>
+            <p>本文永久链接是：<a href=https://strive087.github.io/2020/06/10/javascript/JS%E9%97%AD%E5%8C%85/>https://strive087.github.io/2020/06/10/javascript/JS%E9%97%AD%E5%8C%85/</a></p>
           
         
       </blockquote>
@@ -577,10 +577,10 @@
     <div class='new-meta-box'>
       
         
-          <div class="new-meta-item date" itemprop="dateUpdated" datetime="2020-08-02T06:23:18+00:00">
+          <div class="new-meta-item date" itemprop="dateUpdated" datetime="2020-08-03T09:15:15+00:00">
   <a class='notlink'>
     <i class="fas fa-edit fa-fw" aria-hidden="true"></i>
-    <p>更新于：2020年8月2日</p>
+    <p>更新于：2020年8月3日</p>
   </a>
 </div>
 
@@ -589,7 +589,7 @@
         
           
   
-  <div class="new-meta-item meta-tags"><a class="tag" href="/tags/javascript/" rel="nofollow"><i class="fas fa-hashtag fa-fw" aria-hidden="true"></i><p>javascript</p></a></div> <div class="new-meta-item meta-tags"><a class="tag" href="/tags/%E5%87%BD%E6%95%B0%E5%BC%8F%E7%BC%96%E7%A8%8B/" rel="nofollow"><i class="fas fa-hashtag fa-fw" aria-hidden="true"></i><p>函数式编程</p></a></div>
+  <div class="new-meta-item meta-tags"><a class="tag" href="/tags/javascript/" rel="nofollow"><i class="fas fa-hashtag fa-fw" aria-hidden="true"></i><p>javascript</p></a></div>
 
 
         
@@ -607,7 +607,7 @@
       
         <a class="-mob-share-qq" title="" rel="external nofollow noopener noreferrer"
           
-          href="http://connect.qq.com/widget/shareqq/index.html?url=https://strive087.github.io/2020/06/11/JS%E5%87%BD%E6%95%B0%E5%BC%8F%E7%BC%96%E7%A8%8B/&title=JS的函数式编程 - 前端之路&summary="
+          href="http://connect.qq.com/widget/shareqq/index.html?url=https://strive087.github.io/2020/06/10/javascript/JS%E9%97%AD%E5%8C%85/&title=JS闭包 - 前端之路&summary="
           
           >
           
@@ -619,7 +619,7 @@
       
         <a class="-mob-share-qzone" title="" rel="external nofollow noopener noreferrer"
           
-          href="https://sns.qzone.qq.com/cgi-bin/qzshare/cgi_qzshare_onekey?url=https://strive087.github.io/2020/06/11/JS%E5%87%BD%E6%95%B0%E5%BC%8F%E7%BC%96%E7%A8%8B/&title=JS的函数式编程 - 前端之路&summary="
+          href="https://sns.qzone.qq.com/cgi-bin/qzshare/cgi_qzshare_onekey?url=https://strive087.github.io/2020/06/10/javascript/JS%E9%97%AD%E5%8C%85/&title=JS闭包 - 前端之路&summary="
           
           >
           
@@ -631,7 +631,7 @@
       
         <a class="-mob-share-weibo" title="" rel="external nofollow noopener noreferrer"
           
-          href="http://service.weibo.com/share/share.php?url=https://strive087.github.io/2020/06/11/JS%E5%87%BD%E6%95%B0%E5%BC%8F%E7%BC%96%E7%A8%8B/&title=JS的函数式编程 - 前端之路&summary="
+          href="http://service.weibo.com/share/share.php?url=https://strive087.github.io/2020/06/10/javascript/JS%E9%97%AD%E5%8C%85/&title=JS闭包 - 前端之路&summary="
           
           >
           
@@ -655,19 +655,17 @@
         
           <div class="prev-next">
             
-              <a class='prev' href='/2020/07/06/algorithm/%E5%9F%BA%E6%9C%AC%E6%A6%82%E5%BF%B5/'>
-                <p class='title'><i class="fas fa-chevron-left" aria-hidden="true"></i>基本概念</p>
-                <p class='content'>算法
-在数学领域里，算法是用于解决某一类 问题的公式和思想。计算机科学领域的算法，它的本质是一系列程序指令，用于解决特定的运算和逻辑问题。
-数据结构
-数据结构是数据的组织、管理和存储格式， 其使...</p>
+              <a class='prev' href='/2020/06/10/javascript/JS%E7%BB%A7%E6%89%BF/'>
+                <p class='title'><i class="fas fa-chevron-left" aria-hidden="true"></i>JS继承</p>
+                <p class='content'>原型链
+原型链实现继承的主要方式就是使一个构造函数的原型对象等于另一个构造函数的实例。
+12345678function father()&#123;    this.friend = [1,2...</p>
               </a>
             
             
-              <a class='next' href='/2020/06/10/JS%E5%88%9B%E5%BB%BA%E5%AF%B9%E8%B1%A1/'>
-                <p class='title'>JS创建对象<i class="fas fa-chevron-right" aria-hidden="true"></i></p>
-                <p class='content'>工厂模式
-12345678910function createPerson(name,age)&#123;    var person = new Object;    person.name ...</p>
+              <a class='next' href='/2020/06/10/html5%E9%99%80%E8%9E%BA%E4%BB%AA/'>
+                <p class='title'>html5陀螺仪<i class="fas fa-chevron-right" aria-hidden="true"></i></p>
+                <p class='content'>deviceorientation : 设备的物理方向，表示为一系列的本地坐标系旋角。devicemotion : 提供设备的重力加速信息。compassneedscalibration : 罗...</p>
               </a>
             
           </div>
@@ -1216,8 +1214,8 @@
       meta: meta,
       placeholder: valinePlaceholder,
       path: valinePath,
-      appId: "",
-      appKey: "",
+      appId: "9YrTrvrqBfB5CFFDyquqRTAF-gzGzoHsz",
+      appKey: "UB0DkzHVmRR4qJeGjWMN910Q",
       pageSize: '10',
       avatar: 'robohash',
       lang: 'zh-cn',
