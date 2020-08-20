@@ -1,7 +1,7 @@
 ---
 layout: post
 title: JS创建对象
-date: 2020-06-11 07:05:49
+date: 2020-07-15 07:05:49
 tags: [javascript]
 categories : [javascript]
 ---

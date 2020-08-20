@@ -1,7 +1,7 @@
 ---
 layout: post
 title: JS闭包
-date: 2020-06-11 07:05:49
+date: 2020-08-02 17:23:19
 tags: [javascript]
 categories : [javascript]
 ---
@@ -44,4 +44,23 @@ for(var i = 0; i < 5; i++){
         };
     })(i);
 }
+{% endcodeblock %}
+
+{% p subtitle, 内存泄漏 %}
+在ie9之前对于js和dom对象使用不同的垃圾收集例程。因此如果闭包的作用域中保存着一个html元素，那么该元素将无法销毁。
+{% codeblock lang:javascript %}
+var element = document.getElementById('one');
+elememt.onclick = function(){
+    alert(elememt.id);
+}
+{% endcodeblock %}
+
+那么这时可以采用如下方法解决
+{% codeblock lang:javascript %}
+var element = document.getElementById('one');
+var id = elememt.id;
+elememt.onclick = function(){
+    alert(id);
+}
+elememt = null;
 {% endcodeblock %}

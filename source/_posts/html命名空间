@@ -1,0 +1,13 @@
+命名空间
+HTML命名空间为：http://www.w3.org/1999/xhtml
+
+MathML命名空间为：http://www.w3.org/1998/Math/MathML
+
+HTML命名空间为：http://www.w3.org/2000/svg
+
+HTML命名空间为：http://www.w3.org/1999/xlink
+
+HTML命名空间为：http://www.w3.org/XML/1998/namespace
+
+HTML命名空间为：http://www.w3.org/2000/xmlns/
+注：在HTML语法中，命名空间前缀和命名空间声明不会在XML中产生相同的效果。例如：在HTML元素名称中，冒号没有特别的意义。

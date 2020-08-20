@@ -1,7 +1,7 @@
 ---
 layout: post
 title: JS继承
-date: 2020-06-11 07:05:49
+date: 2020-07-16 09:34:14
 tags: [javascript]
 categories : [javascript]
 ---
