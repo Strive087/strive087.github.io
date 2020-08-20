@@ -16,7 +16,7 @@
 
   <!-- 页面元数据 -->
   
-  <title>JS继承 - 前端之路</title>
+  <title>JS闭包 - 前端之路</title>
   
     <meta name="keywords" content="javascript">
   
@@ -366,9 +366,9 @@
 
 <div id="pjax-data" style="display: none">
   <div id="pjax-ispage">true</div>
-  <div id="pjax-pageTitle">JS继承</div>
+  <div id="pjax-pageTitle">JS闭包</div>
   <div id="pjax-enable-cover">true</div>
-  <div id="pjax-permalink">https://strive087.github.io/2020/06/10/javascript/JS%E7%BB%A7%E6%89%BF/</div>
+  <div id="pjax-permalink">https://strive087.github.io/2020/08/02/javascript/JS%E9%97%AD%E5%8C%85/</div>
   
   <div id="valine-path">none</div>
   <div id="valine-placeholder">none</div>
@@ -418,8 +418,8 @@
         
           
   <h1 class="title">
-    <a href="/2020/06/10/javascript/JS%E7%BB%A7%E6%89%BF/">
-      JS继承
+    <a href="/2020/08/02/javascript/JS%E9%97%AD%E5%8C%85/">
+      JS闭包
     </a>
   </h1>
 
@@ -457,7 +457,7 @@
               <div class="new-meta-item date">
   <a class='notlink'>
     <i class="fas fa-calendar-alt fa-fw" aria-hidden="true"></i>
-    <p>发布于：2020年6月11日</p>
+    <p>发布于：2020年8月2日</p>
   </a>
 </div>
 
@@ -481,34 +481,24 @@
         <div class="article-entry" itemprop="articleBody">
           
           
-          <p class='p subtitle'>原型链</p>
-<p>原型链实现继承的主要方式就是使一个构造函数的原型对象等于另一个构造函数的实例。</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">father</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">    <span class="keyword">this</span>.friend = [<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>];</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">children</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">    <span class="keyword">this</span>.age = <span class="number">18</span>;</span><br><span class="line">&#125;</span><br><span class="line">children.prototype = <span class="keyword">new</span> father();</span><br><span class="line"><span class="keyword">var</span> person = <span class="keyword">new</span> children();</span><br></pre></td></tr></table></figure>
-<img src='https://pigbro.online:9608/images/javascript/javascript_inherit.png' style='width:300px'>
-<p>但是使用原型链实现继承存在两个问题，一个是在js创建对象中提到的原型对象的引用类型属性共享的问题，另一个是在创建子类型的实例时，无法向超类型的构造函数中传递参数。</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">father</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">    <span class="keyword">this</span>.friend = [<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>];</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">children</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">    <span class="keyword">this</span>.age = <span class="number">18</span>;</span><br><span class="line">&#125;</span><br><span class="line">children.prototype = <span class="keyword">new</span> father();</span><br><span class="line"><span class="keyword">var</span> person1 = <span class="keyword">new</span> children();</span><br><span class="line"><span class="keyword">var</span> person2 = <span class="keyword">new</span> children();</span><br><span class="line">person1.friend.push(<span class="number">4</span>);</span><br><span class="line">alert(person2.friend); <span class="comment">//[1,2,3,4]</span></span><br></pre></td></tr></table></figure>
+          <p class='p subtitle'>闭包</p>
+<p>闭包时指有权访问另一个函数作用域中的变量的函数。例如下图，createPerson可以访问到createFunc中的变量name。</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">createFunc</span>(<span class="params">name</span>)</span>&#123;</span><br><span class="line">    <span class="keyword">return</span> <span class="function"><span class="keyword">function</span>(<span class="params">age</span>)</span>&#123;</span><br><span class="line">        <span class="keyword">var</span> person = &#123;&#125;;</span><br><span class="line">        person.name = name;</span><br><span class="line">        person.age = age</span><br><span class="line">        <span class="keyword">return</span> person;</span><br><span class="line">    &#125;;</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">var</span> createPerson = createFunc(<span class="string">'zhu'</span>);</span><br><span class="line"><span class="keyword">var</span> person = createPerson(<span class="number">18</span>);</span><br><span class="line">alert(person.name)  <span class="comment">//'zhu'</span></span><br><span class="line">createPerson = <span class="literal">null</span>;</span><br></pre></td></tr></table></figure>
+<img src='https://pigbro.online:9608/images/javascript/javascript_closure.png' style='width:500px'>
+<p>由于闭包会携带包含他的函数作用域，也因此他会比其他函数占用更多的内存，所有不要过度使用闭包。</p>
+<p class='p subtitle'>常见的闭包与变量的陷阱</p>
+<p>由于闭包在执行的时候，他只会取得包含函数中任何变量的最终值。</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> funcArr = [];</span><br><span class="line"><span class="keyword">for</span>(<span class="keyword">var</span> i = <span class="number">0</span>; i &lt; <span class="number">5</span>; i++)&#123;</span><br><span class="line">    funcArr[i] = <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">        <span class="keyword">return</span> i;</span><br><span class="line">    &#125;;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>所以在执行funcArr数组中的闭包时，然会的i全为5。这时我们可以通过创建一个匿名函数去立即执行返回一个匿名函数。</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> funcArr = [];</span><br><span class="line"><span class="keyword">for</span>(<span class="keyword">var</span> i = <span class="number">0</span>; i &lt; <span class="number">5</span>; i++)&#123;</span><br><span class="line">    funcArr[i] = (<span class="function"><span class="keyword">function</span>(<span class="params">num</span>)</span>&#123;</span><br><span class="line">        <span class="keyword">return</span> <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">            <span class="keyword">return</span> num;</span><br><span class="line">        &#125;;</span><br><span class="line">    &#125;)(i);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
-<p class='p subtitle'>借用构造函数</p>
-<p>借用构造函数实现的继承成功解决了上述原型链实现继承存在的两个问题。</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">father</span>(<span class="params">name</span>)</span>&#123;</span><br><span class="line">    <span class="keyword">this</span>.name = name;</span><br><span class="line">    <span class="keyword">this</span>.friend = [<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>];</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">children</span>(<span class="params">name</span>)</span>&#123;</span><br><span class="line">    father.call(<span class="keyword">this</span>,name);</span><br><span class="line">    <span class="keyword">this</span>.age = <span class="number">18</span>;</span><br><span class="line">&#125;</span><br><span class="line">children.prototype = <span class="keyword">new</span> father();</span><br><span class="line"><span class="keyword">var</span> person1 = <span class="keyword">new</span> children(<span class="string">'zhu'</span>);</span><br><span class="line"><span class="keyword">var</span> person2 = <span class="keyword">new</span> children(<span class="string">'duan'</span>);</span><br><span class="line">person1.friend.push(<span class="number">4</span>);</span><br><span class="line">alert(person1.name); <span class="comment">//'zhu'</span></span><br><span class="line">alert(person2.name); <span class="comment">//'duan'</span></span><br><span class="line">alert(person1.friend); <span class="comment">//[1,2,3,4]</span></span><br><span class="line">alert(person2.friend); <span class="comment">//[1,2,3]</span></span><br></pre></td></tr></table></figure>
-<p>但是仅仅使用借用构造函数，那么也将无法避免构造函数模式存在的定义方法复用的问题，在js创建对象中有提及。</p>
-<p class='p subtitle'>组合继承</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">father</span>(<span class="params">name</span>)</span>&#123;</span><br><span class="line">    <span class="keyword">this</span>.name = name;</span><br><span class="line">    <span class="keyword">this</span>.friend = [<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>];</span><br><span class="line">&#125;</span><br><span class="line">father.prototype.sayname = <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">    alert(<span class="keyword">this</span>.name);</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">children</span>(<span class="params">name,age</span>)</span>&#123;</span><br><span class="line">    father.call(<span class="keyword">this</span>,name);</span><br><span class="line">    <span class="keyword">this</span>.age = age;</span><br><span class="line">&#125;</span><br><span class="line">children.prototype = <span class="keyword">new</span> father(<span class="string">'zhu'</span>);</span><br><span class="line">children.prototype.constructor = children;</span><br><span class="line">children.prototype.sayage = <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">    alert(<span class="keyword">this</span>.age);</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">var</span> person1 = <span class="keyword">new</span> children(<span class="string">'duan'</span>,<span class="number">19</span>);</span><br><span class="line"><span class="keyword">var</span> person2 = <span class="keyword">new</span> children(<span class="string">'lei'</span>,<span class="number">18</span>);</span><br><span class="line">person1.friend.push(<span class="number">4</span>);</span><br><span class="line">person1.sayname(); <span class="comment">//'duan'</span></span><br><span class="line">person2.sayname(); <span class="comment">//'lei'</span></span><br><span class="line">person1.sayage(); <span class="comment">//19</span></span><br><span class="line">person2.sayage(); <span class="comment">//18</span></span><br><span class="line">alert(person1.friend); <span class="comment">//[1,2,3,4]</span></span><br><span class="line">alert(person2.friend); <span class="comment">//[1,2,3]</span></span><br></pre></td></tr></table></figure>
-<div class="gallery ">
-              <p><img src="https://pigbro.online:9608/images/javascript/javascript_inherit2.png" alt=""><br><img src="https://pigbro.online:9608/images/javascript/javascript_inherit1.png" alt=""></p>
-            </div>
-<p>组合继承避免了原型链呵借用构造函数的问题，成为最常用的继承模式。</p>
-<p class='p subtitle'>原型式继承</p>
-<p>借助原型可以基于已有对象创建新对象。在只想让一个对象与另一个对象类似的情况下这种模式可以胜任，因为它还是存在共享引用类型属性问题。<br>es5通过新增Object.create()方法规范化了原型式继承。</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">object</span>(<span class="params">o</span>)</span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">function</span> <span class="title">F</span>(<span class="params"></span>)</span>&#123;&#125;</span><br><span class="line">    F.prototype = o;</span><br><span class="line">    <span class="keyword">return</span> <span class="keyword">new</span> F();</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">var</span> person = &#123;</span><br><span class="line">    name : <span class="string">'zhu'</span>,</span><br><span class="line">    friend : [<span class="number">1</span>,<span class="number">2</span>]</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">var</span> person1 = <span class="built_in">Object</span>.create(person,&#123;</span><br><span class="line">    age : &#123;</span><br><span class="line">       value : <span class="number">18</span>,</span><br><span class="line">       writable : <span class="literal">true</span>,</span><br><span class="line">    &#125;,</span><br><span class="line">    sex : &#123;</span><br><span class="line">        value : <span class="string">'man'</span></span><br><span class="line">    &#125;</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
+<p class='p subtitle'>内存泄漏</p>
+<p>在ie9之前对于js和dom对象使用不同的垃圾收集例程。因此如果闭包的作用域中保存着一个html元素，那么该元素将无法销毁。</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> element = <span class="built_in">document</span>.getElementById(<span class="string">'one'</span>);</span><br><span class="line">elememt.onclick = <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">    alert(elememt.id);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
-<p class='p subtitle'>寄生式继承</p>
-<p>创建一个用于封装继承过程的函数，在函数内部增强对象。在主要考虑对象而不是自定义类型和构造函数的情况下，这个模式也是有用的。</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">object</span>(<span class="params">o</span>)</span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">function</span> <span class="title">F</span>(<span class="params"></span>)</span>&#123;&#125;</span><br><span class="line">    F.prototype = o;</span><br><span class="line">    <span class="keyword">return</span> <span class="keyword">new</span> F();</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">var</span> person = &#123;</span><br><span class="line">    name : <span class="string">'zhu'</span>,</span><br><span class="line">    friend : [<span class="number">1</span>,<span class="number">2</span>]</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">createAnother</span>(<span class="params">another</span>)</span>&#123;</span><br><span class="line">    <span class="keyword">var</span> clone = object(another);</span><br><span class="line">    clone.sayName = <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">        alert(<span class="keyword">this</span>.name)</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> clone;</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">var</span> anotherPerson = createAnother(person);</span><br></pre></td></tr></table></figure>
+<p>那么这时可以采用如下方法解决</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> element = <span class="built_in">document</span>.getElementById(<span class="string">'one'</span>);</span><br><span class="line"><span class="keyword">var</span> id = elememt.id;</span><br><span class="line">elememt.onclick = <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">    alert(id);</span><br><span class="line">&#125;</span><br><span class="line">elememt = <span class="literal">null</span>;</span><br></pre></td></tr></table></figure>
 
-<p class='p subtitle'>寄生组合式继承</p>
-<p>回过头看组合式继承的代码，一次在new father()时在children.prototype上创建了father的属性，另一次在children函数内部father.call时在实例上创建了father的属性。<br>寄生组合式继承相比组合式继承，解决了实例属性在原型链上重复的问题。寄生式组合继承通过借构造函数来继承属性，通过原型链的混成形式来继承方法。</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">inheritPrototype</span>(<span class="params">father,children</span>)</span>&#123;</span><br><span class="line">    <span class="keyword">var</span> prototype = <span class="built_in">Object</span>.crearte(father.prototype); <span class="comment">//必须要创建对象</span></span><br><span class="line">    prototype.constructor = children;   <span class="comment">//增强对象</span></span><br><span class="line">    children.prototype = prototype;   <span class="comment">//指定对象</span></span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">father</span>(<span class="params">name</span>)</span>&#123;</span><br><span class="line">    <span class="keyword">this</span>.name = name;</span><br><span class="line">    <span class="keyword">this</span>.friend = [<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>];</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">children</span>(<span class="params">name</span>)</span>&#123;</span><br><span class="line">    father.call(<span class="keyword">this</span>,name);</span><br><span class="line">    <span class="keyword">this</span>.age = <span class="number">18</span>;</span><br><span class="line">&#125;</span><br><span class="line">inheritPrototype(father,children);</span><br></pre></td></tr></table></figure>
           
             <div class='article_footer'>
               
@@ -544,7 +534,7 @@
           
         
           
-            <p>本文永久链接是：<a href=https://strive087.github.io/2020/06/10/javascript/JS%E7%BB%A7%E6%89%BF/>https://strive087.github.io/2020/06/10/javascript/JS%E7%BB%A7%E6%89%BF/</a></p>
+            <p>本文永久链接是：<a href=https://strive087.github.io/2020/08/02/javascript/JS%E9%97%AD%E5%8C%85/>https://strive087.github.io/2020/08/02/javascript/JS%E9%97%AD%E5%8C%85/</a></p>
           
         
       </blockquote>
@@ -595,10 +585,10 @@
     <div class='new-meta-box'>
       
         
-          <div class="new-meta-item date" itemprop="dateUpdated" datetime="2020-08-03T09:15:15+00:00">
+          <div class="new-meta-item date" itemprop="dateUpdated" datetime="2020-08-20T14:45:22+00:00">
   <a class='notlink'>
     <i class="fas fa-edit fa-fw" aria-hidden="true"></i>
-    <p>更新于：2020年8月3日</p>
+    <p>更新于：2020年8月20日</p>
   </a>
 </div>
 
@@ -625,7 +615,7 @@
       
         <a class="-mob-share-qq" title="" rel="external nofollow noopener noreferrer"
           
-          href="http://connect.qq.com/widget/shareqq/index.html?url=https://strive087.github.io/2020/06/10/javascript/JS%E7%BB%A7%E6%89%BF/&title=JS继承 - 前端之路&summary="
+          href="http://connect.qq.com/widget/shareqq/index.html?url=https://strive087.github.io/2020/08/02/javascript/JS%E9%97%AD%E5%8C%85/&title=JS闭包 - 前端之路&summary="
           
           >
           
@@ -637,7 +627,7 @@
       
         <a class="-mob-share-qzone" title="" rel="external nofollow noopener noreferrer"
           
-          href="https://sns.qzone.qq.com/cgi-bin/qzshare/cgi_qzshare_onekey?url=https://strive087.github.io/2020/06/10/javascript/JS%E7%BB%A7%E6%89%BF/&title=JS继承 - 前端之路&summary="
+          href="https://sns.qzone.qq.com/cgi-bin/qzshare/cgi_qzshare_onekey?url=https://strive087.github.io/2020/08/02/javascript/JS%E9%97%AD%E5%8C%85/&title=JS闭包 - 前端之路&summary="
           
           >
           
@@ -649,7 +639,7 @@
       
         <a class="-mob-share-weibo" title="" rel="external nofollow noopener noreferrer"
           
-          href="http://service.weibo.com/share/share.php?url=https://strive087.github.io/2020/06/10/javascript/JS%E7%BB%A7%E6%89%BF/&title=JS继承 - 前端之路&summary="
+          href="http://service.weibo.com/share/share.php?url=https://strive087.github.io/2020/08/02/javascript/JS%E9%97%AD%E5%8C%85/&title=JS闭包 - 前端之路&summary="
           
           >
           
@@ -673,21 +663,11 @@
         
           <div class="prev-next">
             
-              <a class='prev' href='/2020/06/10/javascript/JS%E7%9A%84%E8%AF%8D%E6%B3%95%E4%BD%9C%E7%94%A8%E5%9F%9F/'>
-                <p class='title'><i class="fas fa-chevron-left" aria-hidden="true"></i>JS的词法作用域</p>
-                <p class='content'>作用域
-
-说到词法作用域，我们先讲讲什么是作用域。其实作用域就是一套用来存储变量以及快速查找变量的一套的规则。java
-词法作用域
+            
+              <a class='next' href='/2020/07/22/%E6%AD%A3%E5%88%99%E8%A1%A8%E8%BE%BE%E5%BC%8F/'>
+                <p class='title'>正则表达式<i class="fas fa-chevron-right" aria-hidden="true"></i></p>
+                <p class='content'>正则表达式是匹配模式，要么匹配字符，要么匹配位置。
 </p>
-              </a>
-            
-            
-              <a class='next' href='/2020/06/10/javascript/JS%E9%97%AD%E5%8C%85/'>
-                <p class='title'>JS闭包<i class="fas fa-chevron-right" aria-hidden="true"></i></p>
-                <p class='content'>闭包
-闭包时指有权访问另一个函数作用域中的变量的函数。例如下图，createPerson可以访问到createFunc中的变量name。
-123456789101112function crea...</p>
               </a>
             
           </div>
@@ -1186,7 +1166,7 @@
 
   
   
-<script src="/js/valine.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/valine@1.4/dist/Valine.min.js"></script>
 
 
 <script>
