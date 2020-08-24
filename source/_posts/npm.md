@@ -27,3 +27,10 @@ npm config set registry https://registry.npmjs.org/
 {% codeblock lang:sh highlight:false line_number:false %}
 npm config get registry
 {% endcodeblock %}
+
+取消代理
+npm config delete proxy
+npm config delete https-proxy
+npm代理
+npm config set proxy http://127.0.0.1:1087
+npm config set https-proxy http://127.0.0.1:1087

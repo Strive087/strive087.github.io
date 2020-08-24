@@ -143,3 +143,17 @@ person.sayNameUC(); // "ZHU"
 alert(person.name);  // undefined
 alert(person.nameUC);  // undefined
 {% endcodeblock %}
+
+{% p subtitle, new操作符发生了什么 %}
+{% codeblock lang:javascript %}
+function Person(){
+    this.name = 'zhu';
+    return 1;
+}
+var person = new Person;
+1.var obj = {}
+2.obj.__proto__ = Person.prototype
+3.Person.call(obj)
+4.return obj
+{% endcodeblock %}
+在JavaScript构造函数中：如果return值类型，那么对构造函数没有影响，实例化对象返回空对象；如果return引用类型（数组，函数，对象），那么实例化对象就会返回该引用类型；
