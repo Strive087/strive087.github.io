@@ -25,7 +25,7 @@
 
   <!-- feed -->
   
-    <link rel="alternate" href="/atom.xml" title="前端之路">
+    <link rel="alternate" href="/atom.xml" title="前端之路" type="application/atom+xml">
   
 
   <!-- import meta -->
@@ -95,14 +95,14 @@
       <div class='list-h'>
         
           
-            <a href="https://volantis.js.org/getting-started/"
+            <a target="_blank" rel="noopener" href="https://volantis.js.org/getting-started/"
               
               
               id="https:volantisjsorggetting-started">
               <i class='fas fa-book fa-fw'></i><p>文档</p>
             </a>
           
-            <a href="https://volantis.js.org/archives/"
+            <a target="_blank" rel="noopener" href="https://volantis.js.org/archives/"
               
               
               id="https:volantisjsorgarchives">
@@ -120,7 +120,7 @@
               <i class='fas fa-file-code fa-fw'></i><p>源码</p>
             </a>
           
-            <a href="https://volantis.js.org/contributors/"
+            <a target="_blank" rel="noopener" href="https://volantis.js.org/contributors/"
               
               
               id="https:volantisjsorgcontributors">
@@ -482,7 +482,7 @@
           
           
           <p>deviceorientation : 设备的物理方向，表示为一系列的本地坐标系旋角。<br>devicemotion : 提供设备的重力加速信息。<br>compassneedscalibration : 罗盘校准。</p>
-<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&lt;!DOCTYPE <span class="meta-keyword">html</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">html</span> <span class="attr">lang</span>=<span class="string">"en"</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">head</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">meta</span> <span class="attr">charset</span>=<span class="string">"UTF-8"</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">meta</span> <span class="attr">name</span>=<span class="string">"viewport"</span> <span class="attr">content</span>=<span class="string">"width=device-width, initial-scale=1.0"</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">title</span>&gt;</span>html5陀螺仪<span class="tag">&lt;/<span class="name">title</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">link</span> <span class="attr">rel</span>=<span class="string">"stylesheet"</span> <span class="attr">href</span>=<span class="string">"http://at.alicdn.com/t/font_1872916_9bxpvrr3gw.css"</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">script</span> <span class="attr">src</span>=<span class="string">"https://cdn.bootcdn.net/ajax/libs/jquery/3.5.1/jquery.min.js"</span>&gt;</span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">head</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">body</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">h1</span> <span class="attr">style</span>=<span class="string">"text-align: center;"</span>&gt;</span>摇一摇有惊喜！<span class="tag">&lt;/<span class="name">h1</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">div</span> <span class="attr">align</span> = <span class="string">"center"</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">img</span> <span class="attr">src</span>=<span class="string">"https://pigbro.online:9608/images/surprise/1.jpg"</span> <span class="attr">alt</span>=<span class="string">"surprise"</span>&gt;</span> </span><br><span class="line">    <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">script</span>&gt;</span></span><br><span class="line"><span class="actionscript">        <span class="comment">//获取手机屏幕宽度</span></span></span><br><span class="line"><span class="javascript">        <span class="keyword">var</span> deviceWidth = <span class="built_in">document</span>.documentElement.clientWidth;</span></span><br><span class="line"><span class="actionscript">        <span class="keyword">var</span> speed = <span class="number">30</span>;</span></span><br><span class="line"><span class="actionscript">        <span class="keyword">var</span> picture = <span class="number">1</span>;</span></span><br><span class="line"><span class="actionscript">        <span class="keyword">var</span> x=y=z=lastx=lasty=lastz=<span class="number">0</span>;</span></span><br><span class="line"><span class="javascript">        $(<span class="string">'img'</span>).width(deviceWidth*<span class="number">0.9</span>);</span></span><br><span class="line"><span class="actionscript">        <span class="keyword">var</span> flag = <span class="literal">true</span>;</span></span><br><span class="line"><span class="javascript">        <span class="keyword">if</span> (<span class="built_in">window</span>.DeviceOrientationEvent) &#123;</span></span><br><span class="line"><span class="javascript">            <span class="built_in">window</span>.addEventListener(<span class="string">'deviceorientation'</span>, (event) =&gt; &#123;</span></span><br><span class="line"><span class="actionscript">                <span class="keyword">var</span> x = event.beta;</span></span><br><span class="line"><span class="actionscript">                <span class="keyword">var</span> y = event.gamma;</span></span><br><span class="line"><span class="actionscript">                <span class="keyword">var</span> z = event.alpha;</span></span><br><span class="line"><span class="javascript">                <span class="keyword">if</span>((<span class="built_in">Math</span>.abs(x-lastx)&gt;speed || <span class="built_in">Math</span>.abs(y-lasty)&gt;speed || <span class="built_in">Math</span>.abs(z-lastz)&gt;speed) &amp;&amp; flag)&#123;</span></span><br><span class="line">                    if(++picture &gt; 7)&#123;</span><br><span class="line">                        picture = 1;</span><br><span class="line">                    &#125;</span><br><span class="line"><span class="javascript">                    $(<span class="string">'img'</span>).attr(<span class="string">'src'</span>,<span class="string">'https://pigbro.online:9608/images/surprise/'</span>+picture+<span class="string">'.jpg'</span>);</span></span><br><span class="line"><span class="actionscript">                    flag = <span class="literal">false</span>;</span></span><br><span class="line">                &#125;</span><br><span class="line">                lastx = x;</span><br><span class="line">                lasty = y;</span><br><span class="line">                lastz = z;</span><br><span class="line">            &#125;);</span><br><span class="line">            wi</span><br><span class="line">        &#125;</span><br><span class="line"><span class="javascript">        $(<span class="string">'img'</span>).on(<span class="string">'load'</span>, <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span></span><br><span class="line"><span class="actionscript">            setTimeout(<span class="function"><span class="keyword">function</span><span class="params">()</span></span>&#123;</span></span><br><span class="line"><span class="actionscript">                flag = <span class="literal">true</span>;</span></span><br><span class="line">            &#125;,1000);</span><br><span class="line">        &#125;);</span><br><span class="line">    <span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">body</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">html</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&lt;!DOCTYPE <span class="meta-keyword">html</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">html</span> <span class="attr">lang</span>=<span class="string">&quot;en&quot;</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">head</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">meta</span> <span class="attr">charset</span>=<span class="string">&quot;UTF-8&quot;</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">meta</span> <span class="attr">name</span>=<span class="string">&quot;viewport&quot;</span> <span class="attr">content</span>=<span class="string">&quot;width=device-width, initial-scale=1.0&quot;</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">title</span>&gt;</span>html5陀螺仪<span class="tag">&lt;/<span class="name">title</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">link</span> <span class="attr">rel</span>=<span class="string">&quot;stylesheet&quot;</span> <span class="attr">href</span>=<span class="string">&quot;http://at.alicdn.com/t/font_1872916_9bxpvrr3gw.css&quot;</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">script</span> <span class="attr">src</span>=<span class="string">&quot;https://cdn.bootcdn.net/ajax/libs/jquery/3.5.1/jquery.min.js&quot;</span>&gt;</span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">head</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">body</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">h1</span> <span class="attr">style</span>=<span class="string">&quot;text-align: center;&quot;</span>&gt;</span>摇一摇有惊喜！<span class="tag">&lt;/<span class="name">h1</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">div</span> <span class="attr">align</span> = <span class="string">&quot;center&quot;</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">img</span> <span class="attr">src</span>=<span class="string">&quot;https://pigbro.online:9608/images/surprise/1.jpg&quot;</span> <span class="attr">alt</span>=<span class="string">&quot;surprise&quot;</span>&gt;</span> </span><br><span class="line">    <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">script</span>&gt;</span></span><br><span class="line"><span class="javascript">        <span class="comment">//获取手机屏幕宽度</span></span></span><br><span class="line"><span class="javascript">        <span class="keyword">var</span> deviceWidth = <span class="built_in">document</span>.documentElement.clientWidth;</span></span><br><span class="line"><span class="javascript">        <span class="keyword">var</span> speed = <span class="number">30</span>;</span></span><br><span class="line"><span class="javascript">        <span class="keyword">var</span> picture = <span class="number">1</span>;</span></span><br><span class="line"><span class="javascript">        <span class="keyword">var</span> x=y=z=lastx=lasty=lastz=<span class="number">0</span>;</span></span><br><span class="line"><span class="javascript">        $(<span class="string">&#x27;img&#x27;</span>).width(deviceWidth*<span class="number">0.9</span>);</span></span><br><span class="line"><span class="javascript">        <span class="keyword">var</span> flag = <span class="literal">true</span>;</span></span><br><span class="line"><span class="javascript">        <span class="keyword">if</span> (<span class="built_in">window</span>.DeviceOrientationEvent) &#123;</span></span><br><span class="line"><span class="javascript">            <span class="built_in">window</span>.addEventListener(<span class="string">&#x27;deviceorientation&#x27;</span>, <span class="function">(<span class="params">event</span>) =&gt;</span> &#123;</span></span><br><span class="line"><span class="javascript">                <span class="keyword">var</span> x = event.beta;</span></span><br><span class="line"><span class="javascript">                <span class="keyword">var</span> y = event.gamma;</span></span><br><span class="line"><span class="javascript">                <span class="keyword">var</span> z = event.alpha;</span></span><br><span class="line"><span class="javascript">                <span class="keyword">if</span>((<span class="built_in">Math</span>.abs(x-lastx)&gt;speed || <span class="built_in">Math</span>.abs(y-lasty)&gt;speed || <span class="built_in">Math</span>.abs(z-lastz)&gt;speed) &amp;&amp; flag)&#123;</span></span><br><span class="line">                    if(++picture &gt; 7)&#123;</span><br><span class="line">                        picture = 1;</span><br><span class="line">                    &#125;</span><br><span class="line"><span class="javascript">                    $(<span class="string">&#x27;img&#x27;</span>).attr(<span class="string">&#x27;src&#x27;</span>,<span class="string">&#x27;https://pigbro.online:9608/images/surprise/&#x27;</span>+picture+<span class="string">&#x27;.jpg&#x27;</span>);</span></span><br><span class="line"><span class="javascript">                    flag = <span class="literal">false</span>;</span></span><br><span class="line">                &#125;</span><br><span class="line">                lastx = x;</span><br><span class="line">                lasty = y;</span><br><span class="line">                lastz = z;</span><br><span class="line">            &#125;);</span><br><span class="line">            wi</span><br><span class="line">        &#125;</span><br><span class="line"><span class="javascript">        $(<span class="string">&#x27;img&#x27;</span>).on(<span class="string">&#x27;load&#x27;</span>, <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span></span><br><span class="line"><span class="javascript">            <span class="built_in">setTimeout</span>(<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</span></span><br><span class="line"><span class="javascript">                flag = <span class="literal">true</span>;</span></span><br><span class="line">            &#125;,1000);</span><br><span class="line">        &#125;);</span><br><span class="line">    <span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">body</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">html</span>&gt;</span></span><br></pre></td></tr></table></figure>
           
             <div class='article_footer'>
               
@@ -569,10 +569,10 @@
     <div class='new-meta-box'>
       
         
-          <div class="new-meta-item date" itemprop="dateUpdated" datetime="2020-08-20T14:45:22+00:00">
+          <div class="new-meta-item date" itemprop="dateUpdated" datetime="2020-08-24T03:31:22+00:00">
   <a class='notlink'>
     <i class="fas fa-edit fa-fw" aria-hidden="true"></i>
-    <p>更新于：2020年8月20日</p>
+    <p>更新于：2020年8月24日</p>
   </a>
 </div>
 
@@ -597,9 +597,9 @@
   <div class="-mob-share-list share-body">
     
       
-        <a class="-mob-share-qq" title="" rel="external nofollow noopener noreferrer"
+        <a class="-mob-share-qq" title="" rel="external nofollow noopener noreferrer noopener"
           
-          href="http://connect.qq.com/widget/shareqq/index.html?url=https://strive087.github.io/2020/06/10/html5%E9%99%80%E8%9E%BA%E4%BB%AA/&title=html5陀螺仪 - 前端之路&summary="
+          target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://strive087.github.io/2020/06/10/html5%E9%99%80%E8%9E%BA%E4%BB%AA/&title=html5陀螺仪 - 前端之路&summary="
           
           >
           
@@ -609,9 +609,9 @@
       
     
       
-        <a class="-mob-share-qzone" title="" rel="external nofollow noopener noreferrer"
+        <a class="-mob-share-qzone" title="" rel="external nofollow noopener noreferrer noopener"
           
-          href="https://sns.qzone.qq.com/cgi-bin/qzshare/cgi_qzshare_onekey?url=https://strive087.github.io/2020/06/10/html5%E9%99%80%E8%9E%BA%E4%BB%AA/&title=html5陀螺仪 - 前端之路&summary="
+          target="_blank" href="https://sns.qzone.qq.com/cgi-bin/qzshare/cgi_qzshare_onekey?url=https://strive087.github.io/2020/06/10/html5%E9%99%80%E8%9E%BA%E4%BB%AA/&title=html5陀螺仪 - 前端之路&summary="
           
           >
           
@@ -621,9 +621,9 @@
       
     
       
-        <a class="-mob-share-weibo" title="" rel="external nofollow noopener noreferrer"
+        <a class="-mob-share-weibo" title="" rel="external nofollow noopener noreferrer noopener"
           
-          href="http://service.weibo.com/share/share.php?url=https://strive087.github.io/2020/06/10/html5%E9%99%80%E8%9E%BA%E4%BB%AA/&title=html5陀螺仪 - 前端之路&summary="
+          target="_blank" href="http://service.weibo.com/share/share.php?url=https://strive087.github.io/2020/06/10/html5%E9%99%80%E8%9E%BA%E4%BB%AA/&title=html5陀螺仪 - 前端之路&summary="
           
           >
           
@@ -648,12 +648,9 @@
           <div class="prev-next">
             
               <a class='prev' href='/2020/06/10/javascript/JS%E7%9A%84%E8%AF%8D%E6%B3%95%E4%BD%9C%E7%94%A8%E5%9F%9F/'>
-                <p class='title'><i class="fas fa-chevron-left" aria-hidden="true"></i>JS的词法作用域</p>
+                <p class='title'><i class="fas fa-chevron-left" aria-hidden="true"></i>JS的作用域</p>
                 <p class='content'>作用域
-
-说到词法作用域，我们先讲讲什么是作用域。其实作用域就是一套用来存储变量以及快速查找变量的一套的规则。java
-词法作用域
-</p>
+其实作用域就是一套用来存储变量以及快速查找变量的一套的规则。分为全局、函数、块级作用域这三种。块级作用域可通过新增命令let和const声明，所声明的变量在指定块的作用域外无法被访问。块...</p>
               </a>
             
             
@@ -786,7 +783,7 @@ npm --registry https:&#x2F;&#x2F;registry.npm.taobao.org install express;
       
     
       
-        <div><p>博客内容遵循 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh" target="_blank" rel="noopener">署名-非商业性使用-相同方式共享 4.0 国际 (CC BY-NC-SA 4.0) 协议</a></p>
+        <div><p>博客内容遵循 <a target="_blank" rel="noopener" href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh">署名-非商业性使用-相同方式共享 4.0 国际 (CC BY-NC-SA 4.0) 协议</a></p>
 </div>
       
     
@@ -801,7 +798,7 @@ npm --registry https:&#x2F;&#x2F;registry.npm.taobao.org install express;
     
       
         <div class='copyright'>
-        <p><a href="https://pigbro.online" target="_blank" rel="noopener">Copyright © 2017-2020 PigBro</a></p>
+        <p><a target="_blank" rel="noopener" href="https://pigbro.online">Copyright © 2017-2020 PigBro</a></p>
 
         </div>
       

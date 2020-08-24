@@ -25,7 +25,7 @@
 
   <!-- feed -->
   
-    <link rel="alternate" href="/atom.xml" title="前端之路">
+    <link rel="alternate" href="/atom.xml" title="前端之路" type="application/atom+xml">
   
 
   <!-- import meta -->
@@ -95,14 +95,14 @@
       <div class='list-h'>
         
           
-            <a href="https://volantis.js.org/getting-started/"
+            <a target="_blank" rel="noopener" href="https://volantis.js.org/getting-started/"
               
               
               id="https:volantisjsorggetting-started">
               <i class='fas fa-book fa-fw'></i><p>文档</p>
             </a>
           
-            <a href="https://volantis.js.org/archives/"
+            <a target="_blank" rel="noopener" href="https://volantis.js.org/archives/"
               
               
               id="https:volantisjsorgarchives">
@@ -120,7 +120,7 @@
               <i class='fas fa-file-code fa-fw'></i><p>源码</p>
             </a>
           
-            <a href="https://volantis.js.org/contributors/"
+            <a target="_blank" rel="noopener" href="https://volantis.js.org/contributors/"
               
               
               id="https:volantisjsorgcontributors">
@@ -582,7 +582,7 @@
           
   <h2 class="title">
     <a href="/2020/06/10/javascript/JS%E7%9A%84%E8%AF%8D%E6%B3%95%E4%BD%9C%E7%94%A8%E5%9F%9F/">
-      JS的词法作用域
+      JS的作用域
     </a>
   </h2>
 
@@ -631,7 +631,7 @@
   <div class="new-meta-item wordcount">
     <a class='notlink'>
       <i class="fas fa-keyboard fa-fw" aria-hidden="true"></i>
-      <p>字数：56字</p>
+      <p>字数：350字</p>
     </a>
   </div>
   <div class="new-meta-item readtime">
@@ -650,7 +650,7 @@
     <a class='notlink'>
       <i class="fas fa-eye fa-fw" aria-hidden="true"></i>
       
-      <span id="/2020/06/10/javascript/JS%E7%9A%84%E8%AF%8D%E6%B3%95%E4%BD%9C%E7%94%A8%E5%9F%9F/" class="leancloud_visitors" data-flag-title="JS的词法作用域">
+      <span id="/2020/06/10/javascript/JS%E7%9A%84%E8%AF%8D%E6%B3%95%E4%BD%9C%E7%94%A8%E5%9F%9F/" class="leancloud_visitors" data-flag-title="JS的作用域">
       <p>
         <span class="leancloud-visitors-count"></span>
       </p>
@@ -693,9 +693,21 @@
     <div class="article-entry" itemprop="articleBody">
       
         <p class='p subtitle'>作用域</p>
+<p>其实作用域就是一套用来存储变量以及快速查找变量的一套的规则。分为全局、函数、块级作用域这三种。<br>块级作用域可通过新增命令let和const声明，所声明的变量在指定块的作用域外无法被访问。块级作用域在如下情况被创建：</p>
+<ol>
+<li>在一个函数内部</li>
+<li>在一个代码块（由一对花括号包裹）内部</li>
+</ol>
+<p>作用域是分层的，内层作用域可以访问外层作用域的变量，反之则不行。</p>
+<img src='https://zhuduanlei-1256381138.cos.ap-guangzhou.myqcloud.com/uPic/169590b8c66f551b.jpg' style='width:300px'>
 
-<p>说到词法作用域，我们先讲讲什么是作用域。<br>其实作用域就是一套用来存储变量以及快速查找变量的一套的规则。<br>java</p>
 <p class='p subtitle'>词法作用域</p>
+
+<p class='p subtitle'>关于自由变量的取值</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> x = <span class="number">10</span></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">fn</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">  <span class="built_in">console</span>.log(x)</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">show</span>(<span class="params">f</span>) </span>&#123;</span><br><span class="line">  <span class="keyword">var</span> x = <span class="number">20</span></span><br><span class="line">  (<span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">    f() <span class="comment">//10，而不是20</span></span><br><span class="line">  &#125;)()</span><br><span class="line">&#125;</span><br><span class="line">show(fn)</span><br></pre></td></tr></table></figure>
+<p>在fn函数中，取自由变量x的值时，要到哪个作用域中取？——要到创建fn函数的那个作用域中取，无论fn函数将在哪里调用。</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> a = <span class="number">10</span></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">fn</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">  <span class="keyword">var</span> b = <span class="number">20</span></span><br><span class="line">  <span class="function"><span class="keyword">function</span> <span class="title">bar</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">    <span class="built_in">console</span>.log(a + b) <span class="comment">//30</span></span><br><span class="line">  &#125;</span><br><span class="line">  <span class="keyword">return</span> bar</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">var</span> x = fn(),</span><br><span class="line">  b = <span class="number">200</span></span><br><span class="line">x() <span class="comment">//bar()</span></span><br></pre></td></tr></table></figure>
+<p>fn()返回的是bar函数，赋值给x。执行x()，即执行bar函数代码。取b的值时，直接在fn作用域取出。取a的值时，试图在fn作用域取，但是取不到，只能转向创建fn的那个作用域中去查找，结果找到了,所以最后的结果是30</p>
 
       
     </div>
@@ -772,7 +784,7 @@
   <div class="new-meta-item wordcount">
     <a class='notlink'>
       <i class="fas fa-keyboard fa-fw" aria-hidden="true"></i>
-      <p>字数：294字</p>
+      <p>字数：332字</p>
     </a>
   </div>
   <div class="new-meta-item readtime">
@@ -834,7 +846,7 @@
     <div class="article-entry" itemprop="articleBody">
       
         <p>deviceorientation : 设备的物理方向，表示为一系列的本地坐标系旋角。<br>devicemotion : 提供设备的重力加速信息。<br>compassneedscalibration : 罗盘校准。</p>
-<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&lt;!DOCTYPE <span class="meta-keyword">html</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">html</span> <span class="attr">lang</span>=<span class="string">"en"</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">head</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">meta</span> <span class="attr">charset</span>=<span class="string">"UTF-8"</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">meta</span> <span class="attr">name</span>=<span class="string">"viewport"</span> <span class="attr">content</span>=<span class="string">"width=device-width, initial-scale=1.0"</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">title</span>&gt;</span>html5陀螺仪<span class="tag">&lt;/<span class="name">title</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">link</span> <span class="attr">rel</span>=<span class="string">"stylesheet"</span> <span class="attr">href</span>=<span class="string">"http://at.alicdn.com/t/font_1872916_9bxpvrr3gw.css"</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">script</span> <span class="attr">src</span>=<span class="string">"https://cdn.bootcdn.net/ajax/libs/jquery/3.5.1/jquery.min.js"</span>&gt;</span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">head</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">body</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">h1</span> <span class="attr">style</span>=<span class="string">"text-align: center;"</span>&gt;</span>摇一摇有惊喜！<span class="tag">&lt;/<span class="name">h1</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">div</span> <span class="attr">align</span> = <span class="string">"center"</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">img</span> <span class="attr">src</span>=<span class="string">"https://pigbro.online:9608/images/surprise/1.jpg"</span> <span class="attr">alt</span>=<span class="string">"surprise"</span>&gt;</span> </span><br><span class="line">    <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">script</span>&gt;</span></span><br><span class="line"><span class="actionscript">        <span class="comment">//获取手机屏幕宽度</span></span></span><br><span class="line"><span class="javascript">        <span class="keyword">var</span> deviceWidth = <span class="built_in">document</span>.documentElement.clientWidth;</span></span><br><span class="line"><span class="actionscript">        <span class="keyword">var</span> speed = <span class="number">30</span>;</span></span><br><span class="line"><span class="actionscript">        <span class="keyword">var</span> picture = <span class="number">1</span>;</span></span><br><span class="line"><span class="actionscript">        <span class="keyword">var</span> x=y=z=lastx=lasty=lastz=<span class="number">0</span>;</span></span><br><span class="line"><span class="javascript">        $(<span class="string">'img'</span>).width(deviceWidth*<span class="number">0.9</span>);</span></span><br><span class="line"><span class="actionscript">        <span class="keyword">var</span> flag = <span class="literal">true</span>;</span></span><br><span class="line"><span class="javascript">        <span class="keyword">if</span> (<span class="built_in">window</span>.DeviceOrientationEvent) &#123;</span></span><br><span class="line"><span class="javascript">            <span class="built_in">window</span>.addEventListener(<span class="string">'deviceorientation'</span>, (event) =&gt; &#123;</span></span><br><span class="line"><span class="actionscript">                <span class="keyword">var</span> x = event.beta;</span></span><br><span class="line"><span class="actionscript">                <span class="keyword">var</span> y = event.gamma;</span></span><br><span class="line"><span class="actionscript">                <span class="keyword">var</span> z = event.alpha;</span></span><br><span class="line"><span class="javascript">                <span class="keyword">if</span>((<span class="built_in">Math</span>.abs(x-lastx)&gt;speed || <span class="built_in">Math</span>.abs(y-lasty)&gt;speed || <span class="built_in">Math</span>.abs(z-lastz)&gt;speed) &amp;&amp; flag)&#123;</span></span><br><span class="line">                    if(++picture &gt; 7)&#123;</span><br><span class="line">                        picture = 1;</span><br><span class="line">                    &#125;</span><br><span class="line"><span class="javascript">                    $(<span class="string">'img'</span>).attr(<span class="string">'src'</span>,<span class="string">'https://pigbro.online:9608/images/surprise/'</span>+picture+<span class="string">'.jpg'</span>);</span></span><br><span class="line"><span class="actionscript">                    flag = <span class="literal">false</span>;</span></span><br><span class="line">                &#125;</span><br><span class="line">                lastx = x;</span><br><span class="line">                lasty = y;</span><br><span class="line">                lastz = z;</span><br><span class="line">            &#125;);</span><br><span class="line">            wi</span><br><span class="line">        &#125;</span><br><span class="line"><span class="javascript">        $(<span class="string">'img'</span>).on(<span class="string">'load'</span>, <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span></span><br><span class="line"><span class="actionscript">            setTimeout(<span class="function"><span class="keyword">function</span><span class="params">()</span></span>&#123;</span></span><br><span class="line"><span class="actionscript">                flag = <span class="literal">true</span>;</span></span><br><span class="line">            &#125;,1000);</span><br><span class="line">        &#125;);</span><br><span class="line">    <span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">body</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">html</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&lt;!DOCTYPE <span class="meta-keyword">html</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">html</span> <span class="attr">lang</span>=<span class="string">&quot;en&quot;</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">head</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">meta</span> <span class="attr">charset</span>=<span class="string">&quot;UTF-8&quot;</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">meta</span> <span class="attr">name</span>=<span class="string">&quot;viewport&quot;</span> <span class="attr">content</span>=<span class="string">&quot;width=device-width, initial-scale=1.0&quot;</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">title</span>&gt;</span>html5陀螺仪<span class="tag">&lt;/<span class="name">title</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">link</span> <span class="attr">rel</span>=<span class="string">&quot;stylesheet&quot;</span> <span class="attr">href</span>=<span class="string">&quot;http://at.alicdn.com/t/font_1872916_9bxpvrr3gw.css&quot;</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">script</span> <span class="attr">src</span>=<span class="string">&quot;https://cdn.bootcdn.net/ajax/libs/jquery/3.5.1/jquery.min.js&quot;</span>&gt;</span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">head</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">body</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">h1</span> <span class="attr">style</span>=<span class="string">&quot;text-align: center;&quot;</span>&gt;</span>摇一摇有惊喜！<span class="tag">&lt;/<span class="name">h1</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">div</span> <span class="attr">align</span> = <span class="string">&quot;center&quot;</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">img</span> <span class="attr">src</span>=<span class="string">&quot;https://pigbro.online:9608/images/surprise/1.jpg&quot;</span> <span class="attr">alt</span>=<span class="string">&quot;surprise&quot;</span>&gt;</span> </span><br><span class="line">    <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">script</span>&gt;</span></span><br><span class="line"><span class="javascript">        <span class="comment">//获取手机屏幕宽度</span></span></span><br><span class="line"><span class="javascript">        <span class="keyword">var</span> deviceWidth = <span class="built_in">document</span>.documentElement.clientWidth;</span></span><br><span class="line"><span class="javascript">        <span class="keyword">var</span> speed = <span class="number">30</span>;</span></span><br><span class="line"><span class="javascript">        <span class="keyword">var</span> picture = <span class="number">1</span>;</span></span><br><span class="line"><span class="javascript">        <span class="keyword">var</span> x=y=z=lastx=lasty=lastz=<span class="number">0</span>;</span></span><br><span class="line"><span class="javascript">        $(<span class="string">&#x27;img&#x27;</span>).width(deviceWidth*<span class="number">0.9</span>);</span></span><br><span class="line"><span class="javascript">        <span class="keyword">var</span> flag = <span class="literal">true</span>;</span></span><br><span class="line"><span class="javascript">        <span class="keyword">if</span> (<span class="built_in">window</span>.DeviceOrientationEvent) &#123;</span></span><br><span class="line"><span class="javascript">            <span class="built_in">window</span>.addEventListener(<span class="string">&#x27;deviceorientation&#x27;</span>, <span class="function">(<span class="params">event</span>) =&gt;</span> &#123;</span></span><br><span class="line"><span class="javascript">                <span class="keyword">var</span> x = event.beta;</span></span><br><span class="line"><span class="javascript">                <span class="keyword">var</span> y = event.gamma;</span></span><br><span class="line"><span class="javascript">                <span class="keyword">var</span> z = event.alpha;</span></span><br><span class="line"><span class="javascript">                <span class="keyword">if</span>((<span class="built_in">Math</span>.abs(x-lastx)&gt;speed || <span class="built_in">Math</span>.abs(y-lasty)&gt;speed || <span class="built_in">Math</span>.abs(z-lastz)&gt;speed) &amp;&amp; flag)&#123;</span></span><br><span class="line">                    if(++picture &gt; 7)&#123;</span><br><span class="line">                        picture = 1;</span><br><span class="line">                    &#125;</span><br><span class="line"><span class="javascript">                    $(<span class="string">&#x27;img&#x27;</span>).attr(<span class="string">&#x27;src&#x27;</span>,<span class="string">&#x27;https://pigbro.online:9608/images/surprise/&#x27;</span>+picture+<span class="string">&#x27;.jpg&#x27;</span>);</span></span><br><span class="line"><span class="javascript">                    flag = <span class="literal">false</span>;</span></span><br><span class="line">                &#125;</span><br><span class="line">                lastx = x;</span><br><span class="line">                lasty = y;</span><br><span class="line">                lastz = z;</span><br><span class="line">            &#125;);</span><br><span class="line">            wi</span><br><span class="line">        &#125;</span><br><span class="line"><span class="javascript">        $(<span class="string">&#x27;img&#x27;</span>).on(<span class="string">&#x27;load&#x27;</span>, <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span></span><br><span class="line"><span class="javascript">            <span class="built_in">setTimeout</span>(<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</span></span><br><span class="line"><span class="javascript">                flag = <span class="literal">true</span>;</span></span><br><span class="line">            &#125;,1000);</span><br><span class="line">        &#125;);</span><br><span class="line">    <span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">body</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">html</span>&gt;</span></span><br></pre></td></tr></table></figure>
       
     </div>
     
@@ -910,7 +922,7 @@
   <div class="new-meta-item wordcount">
     <a class='notlink'>
       <i class="fas fa-keyboard fa-fw" aria-hidden="true"></i>
-      <p>字数：85字</p>
+      <p>字数：118字</p>
     </a>
   </div>
   <div class="new-meta-item readtime">
@@ -983,8 +995,10 @@
 <pre><code>npm config set registry https:&#x2F;&#x2F;registry.npmjs.org&#x2F;</code></pre></li>
 <li><p>查看当前npm源地址</p>
 <pre><code>npm config get registry</code></pre>
+
 </li>
 </ul>
+<p>取消代理<br>npm config delete proxy<br>npm config delete https-proxy<br>npm代理<br>npm config set proxy <a target="_blank" rel="noopener" href="http://127.0.0.1:1087">http://127.0.0.1:1087</a><br>npm config set https-proxy <a target="_blank" rel="noopener" href="http://127.0.0.1:1087">http://127.0.0.1:1087</a></p>
 
       
     </div>
@@ -1112,7 +1126,7 @@
           <li><a class="flat-box"
             title="/categories/javascript/" href="/categories/javascript/"
             id="categoriesjavascript"
-            ><div class='name'>javascript</div><div class='badge'>(5)</div></a></li>
+            ><div class='name'>javascript</div><div class='badge'>(8)</div></a></li>
         
           <li><a class="flat-box child"
             title="/categories/javascript/%E4%BD%9C%E7%94%A8%E5%9F%9F/" href="/categories/javascript/%E4%BD%9C%E7%94%A8%E5%9F%9F/"
@@ -1171,7 +1185,7 @@
 
 
     <div class='content'>
-      <a href="/tags/RegExp/" style="font-size: 14px; color: #999">RegExp</a> <a href="/tags/html/" style="font-size: 14px; color: #999">html</a> <a href="/tags/html5/" style="font-size: 14px; color: #999">html5</a> <a href="/tags/javascript/" style="font-size: 24px; color: #555">javascript</a> <a href="/tags/nodejs/" style="font-size: 14px; color: #999">nodejs</a> <a href="/tags/npm/" style="font-size: 14px; color: #999">npm</a> <a href="/tags/%E4%BA%8C%E5%8F%89%E6%A0%91/" style="font-size: 14px; color: #999">二叉树</a> <a href="/tags/%E4%BD%9C%E7%94%A8%E5%9F%9F/" style="font-size: 14px; color: #999">作用域</a> <a href="/tags/%E5%87%BD%E6%95%B0%E5%BC%8F%E7%BC%96%E7%A8%8B/" style="font-size: 14px; color: #999">函数式编程</a> <a href="/tags/%E5%93%88%E5%B8%8C%E8%A1%A8/" style="font-size: 14px; color: #999">哈希表</a> <a href="/tags/%E6%95%A3%E5%88%97%E8%A1%A8/" style="font-size: 14px; color: #999">散列表</a> <a href="/tags/%E7%AE%97%E6%B3%95/" style="font-size: 19px; color: #777">算法</a>
+      <a href="/tags/RegExp/" style="font-size: 14px; color: #999">RegExp</a> <a href="/tags/es6/" style="font-size: 14px; color: #999">es6</a> <a href="/tags/html/" style="font-size: 14px; color: #999">html</a> <a href="/tags/html5/" style="font-size: 14px; color: #999">html5</a> <a href="/tags/javascript/" style="font-size: 24px; color: #555">javascript</a> <a href="/tags/nodejs/" style="font-size: 14px; color: #999">nodejs</a> <a href="/tags/npm/" style="font-size: 14px; color: #999">npm</a> <a href="/tags/this/" style="font-size: 14px; color: #999">this</a> <a href="/tags/xhr/" style="font-size: 14px; color: #999">xhr</a> <a href="/tags/%E4%BA%8C%E5%8F%89%E6%A0%91/" style="font-size: 14px; color: #999">二叉树</a> <a href="/tags/%E4%BD%9C%E7%94%A8%E5%9F%9F/" style="font-size: 14px; color: #999">作用域</a> <a href="/tags/%E5%87%BD%E6%95%B0%E5%BC%8F%E7%BC%96%E7%A8%8B/" style="font-size: 14px; color: #999">函数式编程</a> <a href="/tags/%E5%93%88%E5%B8%8C%E8%A1%A8/" style="font-size: 14px; color: #999">哈希表</a> <a href="/tags/%E6%95%A3%E5%88%97%E8%A1%A8/" style="font-size: 14px; color: #999">散列表</a> <a href="/tags/%E7%AE%97%E6%B3%95/" style="font-size: 19px; color: #777">算法</a>
     </div>
   </section>
 
@@ -1263,7 +1277,7 @@
       
     
       
-        <div><p>博客内容遵循 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh" target="_blank" rel="noopener">署名-非商业性使用-相同方式共享 4.0 国际 (CC BY-NC-SA 4.0) 协议</a></p>
+        <div><p>博客内容遵循 <a target="_blank" rel="noopener" href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh">署名-非商业性使用-相同方式共享 4.0 国际 (CC BY-NC-SA 4.0) 协议</a></p>
 </div>
       
     
@@ -1278,7 +1292,7 @@
     
       
         <div class='copyright'>
-        <p><a href="https://pigbro.online" target="_blank" rel="noopener">Copyright © 2017-2020 PigBro</a></p>
+        <p><a target="_blank" rel="noopener" href="https://pigbro.online">Copyright © 2017-2020 PigBro</a></p>
 
         </div>
       

@@ -5,8 +5,6 @@
   <!-- SEO相关 -->
   
     
-      <meta name="robots" content="noindex,follow">
-    
   
   <!-- 渲染优化 -->
   <meta name="renderer" content="webkit">
@@ -18,7 +16,9 @@
 
   <!-- 页面元数据 -->
   
-  <title>归档：2020 - 前端之路</title>
+  <title>XHR的使用 - 前端之路</title>
+  
+    <meta name="keywords" content="javascript,xhr">
   
 
   
@@ -77,7 +77,7 @@
   
   
   <div class="cover-wrapper">
-    <cover class='cover ' style="display: none;">
+    <cover class='cover post' style="display: none;">
       <div class='cover-body'>
   <div class='a'>
     
@@ -356,7 +356,7 @@
   
 
 
-  <div class="l_body">
+  <div class="l_body nocover">
     <div class='body-wrapper' id="pjax-container">
       
         <!--此文件用来存放一些不方便取值的变量-->
@@ -365,10 +365,10 @@
 
 
 <div id="pjax-data" style="display: none">
-  <div id="pjax-ispage">false</div>
-  <div id="pjax-pageTitle"></div>
+  <div id="pjax-ispage">true</div>
+  <div id="pjax-pageTitle">XHR的使用</div>
   <div id="pjax-enable-cover">true</div>
-  <div id="pjax-permalink"></div>
+  <div id="pjax-permalink">https://strive087.github.io/2020/08/23/javascript/XHR%E7%9A%84%E4%BD%BF%E7%94%A8/</div>
   
   <div id="valine-path">none</div>
   <div id="valine-placeholder">none</div>
@@ -379,16 +379,16 @@
 
 <script>
   // 处理封面 此时 jquery 还没加载
-  if ("blog" == "none") { // 移除封面
+  if ("none" == "none") { // 移除封面
     document.getElementsByClassName('cover')[0].style.display = "none";
     document.getElementsByClassName('l_body')[0].classList.add("nocover");
     document.getElementsByClassName('l_header', 'cover-wrapper')[0].classList.add("show");
   } else {
-    if ("blog" == "blog") { // 半屏
+    if ("none" == "blog") { // 半屏
       document.getElementsByClassName('cover')[0].classList.remove("full");
       document.getElementsByClassName('cover')[0].classList.add("half");
       document.getElementsByClassName('scroll-down')[0].style.display = "none";
-    } else if ("blog" == "docs") { // 全屏
+    } else if ("none" == "docs") { // 全屏
       document.getElementsByClassName('cover')[0].classList.remove("half");
       document.getElementsByClassName('cover')[0].classList.add("full");
       document.getElementsByClassName('scroll-down')[0].style.display = "";
@@ -403,16 +403,11 @@
       
 
 <div class='l_main'>
-	
-		
-  <section class="post-list ">
-    
-    
-      
-        
-          <div class='post-wrapper'>
-            <article class="post white-box shadow reveal ">
   
+
+  
+    <article id="post" class="post white-box reveal shadow article-type-post" itemscope itemprop="blogPost">
+      
 
 
   <section class='meta'>
@@ -422,11 +417,11 @@
       <div class="meta" id="header-meta">
         
           
-  <h2 class="title">
-    <a href="/2020/06/11/javascript/JS%E5%87%BD%E6%95%B0%E5%BC%8F%E7%BC%96%E7%A8%8B/">
-      JS的函数式编程
+  <h1 class="title">
+    <a href="/2020/08/23/javascript/XHR%E7%9A%84%E4%BD%BF%E7%94%A8/">
+      XHR的使用
     </a>
-  </h2>
+  </h1>
 
 
         
@@ -449,9 +444,9 @@
               
   
   <div class='new-meta-item category'>
-    <a href='/categories/javascript/%E5%87%BD%E6%95%B0%E5%BC%8F%E7%BC%96%E7%A8%8B/' rel="nofollow">
+    <a href='/categories/javascript/' rel="nofollow">
       <i class="fas fa-folder-open fa-fw" aria-hidden="true"></i>
-      <p>javascript/函数式编程</p>
+      <p>javascript</p>
     </a>
   </div>
 
@@ -462,58 +457,9 @@
               <div class="new-meta-item date">
   <a class='notlink'>
     <i class="fas fa-calendar-alt fa-fw" aria-hidden="true"></i>
-    <p>发布于：2020年6月11日</p>
+    <p>发布于：2020年8月23日</p>
   </a>
 </div>
-
-            
-          
-            
-              
-  <div class="new-meta-item wordcount">
-    <a class='notlink'>
-      <i class="fas fa-keyboard fa-fw" aria-hidden="true"></i>
-      <p>字数：104字</p>
-    </a>
-  </div>
-  <div class="new-meta-item readtime">
-    <a class='notlink'>
-      <i class="fas fa-hourglass-half fa-fw" aria-hidden="true"></i>
-      <p>时长：1分钟</p>
-    </a>
-  </div>
-
-
-            
-          
-            
-              
-  <div class="new-meta-item browse valine">
-    <a class='notlink'>
-      <i class="fas fa-eye fa-fw" aria-hidden="true"></i>
-      
-      <span id="/2020/06/11/javascript/JS%E5%87%BD%E6%95%B0%E5%BC%8F%E7%BC%96%E7%A8%8B/" class="leancloud_visitors" data-flag-title="JS的函数式编程">
-      <p>
-        <span class="leancloud-visitors-count"></span>
-      </p>
-      </span>
-    </a>
-  </div>
-
-
-            
-          
-            
-              
-<div class="new-meta-item comments-count">
-  
-  <a href="/2020/06/11/javascript/JS%E5%87%BD%E6%95%B0%E5%BC%8F%E7%BC%96%E7%A8%8B/#comments">
-    <i class="fas fa-comment-dots fa-fw"></i>
-    <span class="valine-comment-count" data-xid="/2020/06/11/javascript/JS%E5%87%BD%E6%95%B0%E5%BC%8F%E7%BC%96%E7%A8%8B/">0</span>
-    <span class="leancloud-comments-count">&nbsp;</span>
-  </a>
-</div>
-
 
             
           
@@ -531,563 +477,106 @@
   </section>
 
 
-  <section class="article typo">
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>函数式编程特点：</p>
+      <section class="article typo">
+        <div class="article-entry" itemprop="articleBody">
+          
+          
+          <p class='p subtitle'>xhr基本用法</p>
+
 <ol>
-<li>函数是”第一等公民”  (与变量的)</li>
-<li>只用”表达式”，不用”语句”  </li>
-<li>没有”副作用”  </li>
-<li>不修改状态  </li>
-<li>引用透明（函数运行只靠参数）</li>
-</ol>
-<p>函数curry<br>多参数函数转化成一个嵌套的一元函数<br>好处：一种函数的预加载的方法,相当于-缓存，保存作用域链<br>闭包必定会有内存泄漏</p>
-
-      
-    </div>
-    
-      
-    
-  </section>
-</article>
-
-          </div>
-        
-      
-        
-          <div class='post-wrapper'>
-            <article class="post white-box shadow reveal ">
-  
-
-
-  <section class='meta'>
-    
-      
-      
-      <div class="meta" id="header-meta">
-        
-          
-  <h2 class="title">
-    <a href="/2020/06/10/javascript/JS%E7%9A%84%E8%AF%8D%E6%B3%95%E4%BD%9C%E7%94%A8%E5%9F%9F/">
-      JS的作用域
-    </a>
-  </h2>
-
-
-        
-        <div class='new-meta-box'>
-          
-            
-          
-            
-              
-<div class='new-meta-item author'>
-  <a class='author' href="https://strive087.github.io/" rel="nofollow">
-    <img no-lazy src="https://pigbro.online:9608/images/author.jpg">
-    <p>zhuduanlei</p>
-  </a>
-</div>
-
-            
-          
-            
-              
-  
-  <div class='new-meta-item category'>
-    <a href='/categories/javascript/%E4%BD%9C%E7%94%A8%E5%9F%9F/' rel="nofollow">
-      <i class="fas fa-folder-open fa-fw" aria-hidden="true"></i>
-      <p>javascript/作用域</p>
-    </a>
-  </div>
-
-
-            
-          
-            
-              <div class="new-meta-item date">
-  <a class='notlink'>
-    <i class="fas fa-calendar-alt fa-fw" aria-hidden="true"></i>
-    <p>发布于：2020年6月11日</p>
-  </a>
-</div>
-
-            
-          
-            
-              
-  <div class="new-meta-item wordcount">
-    <a class='notlink'>
-      <i class="fas fa-keyboard fa-fw" aria-hidden="true"></i>
-      <p>字数：350字</p>
-    </a>
-  </div>
-  <div class="new-meta-item readtime">
-    <a class='notlink'>
-      <i class="fas fa-hourglass-half fa-fw" aria-hidden="true"></i>
-      <p>时长：1分钟</p>
-    </a>
-  </div>
-
-
-            
-          
-            
-              
-  <div class="new-meta-item browse valine">
-    <a class='notlink'>
-      <i class="fas fa-eye fa-fw" aria-hidden="true"></i>
-      
-      <span id="/2020/06/10/javascript/JS%E7%9A%84%E8%AF%8D%E6%B3%95%E4%BD%9C%E7%94%A8%E5%9F%9F/" class="leancloud_visitors" data-flag-title="JS的作用域">
-      <p>
-        <span class="leancloud-visitors-count"></span>
-      </p>
-      </span>
-    </a>
-  </div>
-
-
-            
-          
-            
-              
-<div class="new-meta-item comments-count">
-  
-  <a href="/2020/06/10/javascript/JS%E7%9A%84%E8%AF%8D%E6%B3%95%E4%BD%9C%E7%94%A8%E5%9F%9F/#comments">
-    <i class="fas fa-comment-dots fa-fw"></i>
-    <span class="valine-comment-count" data-xid="/2020/06/10/javascript/JS%E7%9A%84%E8%AF%8D%E6%B3%95%E4%BD%9C%E7%94%A8%E5%9F%9F/">0</span>
-    <span class="leancloud-comments-count">&nbsp;</span>
-  </a>
-</div>
-
-
-            
-          
-            
-              
-
-            
-          
-        </div>
-        
-          <hr>
-        
-      </div>
-    
-  </section>
-
-
-  <section class="article typo">
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p class='p subtitle'>作用域</p>
-<p>其实作用域就是一套用来存储变量以及快速查找变量的一套的规则。分为全局、函数、块级作用域这三种。<br>块级作用域可通过新增命令let和const声明，所声明的变量在指定块的作用域外无法被访问。块级作用域在如下情况被创建：</p>
-<ol>
-<li>在一个函数内部</li>
-<li>在一个代码块（由一对花括号包裹）内部</li>
-</ol>
-<p>作用域是分层的，内层作用域可以访问外层作用域的变量，反之则不行。</p>
-<img src='https://zhuduanlei-1256381138.cos.ap-guangzhou.myqcloud.com/uPic/169590b8c66f551b.jpg' style='width:300px'>
-
-<p class='p subtitle'>词法作用域</p>
-
-<p class='p subtitle'>关于自由变量的取值</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> x = <span class="number">10</span></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">fn</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">  <span class="built_in">console</span>.log(x)</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">show</span>(<span class="params">f</span>) </span>&#123;</span><br><span class="line">  <span class="keyword">var</span> x = <span class="number">20</span></span><br><span class="line">  (<span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">    f() <span class="comment">//10，而不是20</span></span><br><span class="line">  &#125;)()</span><br><span class="line">&#125;</span><br><span class="line">show(fn)</span><br></pre></td></tr></table></figure>
-<p>在fn函数中，取自由变量x的值时，要到哪个作用域中取？——要到创建fn函数的那个作用域中取，无论fn函数将在哪里调用。</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> a = <span class="number">10</span></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">fn</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">  <span class="keyword">var</span> b = <span class="number">20</span></span><br><span class="line">  <span class="function"><span class="keyword">function</span> <span class="title">bar</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">    <span class="built_in">console</span>.log(a + b) <span class="comment">//30</span></span><br><span class="line">  &#125;</span><br><span class="line">  <span class="keyword">return</span> bar</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">var</span> x = fn(),</span><br><span class="line">  b = <span class="number">200</span></span><br><span class="line">x() <span class="comment">//bar()</span></span><br></pre></td></tr></table></figure>
-<p>fn()返回的是bar函数，赋值给x。执行x()，即执行bar函数代码。取b的值时，直接在fn作用域取出。取a的值时，试图在fn作用域取，但是取不到，只能转向创建fn的那个作用域中去查找，结果找到了,所以最后的结果是30</p>
-
-      
-    </div>
-    
-      
-    
-  </section>
-</article>
-
-          </div>
-        
-      
-        
-          <div class='post-wrapper'>
-            <article class="post white-box shadow reveal ">
-  
-
-
-  <section class='meta'>
-    
-      
-      
-      <div class="meta" id="header-meta">
-        
-          
-  <h2 class="title">
-    <a href="/2020/06/10/html5%E9%99%80%E8%9E%BA%E4%BB%AA/">
-      html5陀螺仪
-    </a>
-  </h2>
-
-
-        
-        <div class='new-meta-box'>
-          
-            
-          
-            
-              
-<div class='new-meta-item author'>
-  <a class='author' href="https://strive087.github.io/" rel="nofollow">
-    <img no-lazy src="https://pigbro.online:9608/images/author.jpg">
-    <p>zhuduanlei</p>
-  </a>
-</div>
-
-            
-          
-            
-              
-  
-  <div class='new-meta-item category'>
-    <a href='/categories/html/' rel="nofollow">
-      <i class="fas fa-folder-open fa-fw" aria-hidden="true"></i>
-      <p>html</p>
-    </a>
-  </div>
-
-
-            
-          
-            
-              <div class="new-meta-item date">
-  <a class='notlink'>
-    <i class="fas fa-calendar-alt fa-fw" aria-hidden="true"></i>
-    <p>发布于：2020年6月11日</p>
-  </a>
-</div>
-
-            
-          
-            
-              
-  <div class="new-meta-item wordcount">
-    <a class='notlink'>
-      <i class="fas fa-keyboard fa-fw" aria-hidden="true"></i>
-      <p>字数：332字</p>
-    </a>
-  </div>
-  <div class="new-meta-item readtime">
-    <a class='notlink'>
-      <i class="fas fa-hourglass-half fa-fw" aria-hidden="true"></i>
-      <p>时长：1分钟</p>
-    </a>
-  </div>
-
-
-            
-          
-            
-              
-  <div class="new-meta-item browse valine">
-    <a class='notlink'>
-      <i class="fas fa-eye fa-fw" aria-hidden="true"></i>
-      
-      <span id="/2020/06/10/html5%E9%99%80%E8%9E%BA%E4%BB%AA/" class="leancloud_visitors" data-flag-title="html5陀螺仪">
-      <p>
-        <span class="leancloud-visitors-count"></span>
-      </p>
-      </span>
-    </a>
-  </div>
-
-
-            
-          
-            
-              
-<div class="new-meta-item comments-count">
-  
-  <a href="/2020/06/10/html5%E9%99%80%E8%9E%BA%E4%BB%AA/#comments">
-    <i class="fas fa-comment-dots fa-fw"></i>
-    <span class="valine-comment-count" data-xid="/2020/06/10/html5%E9%99%80%E8%9E%BA%E4%BB%AA/">0</span>
-    <span class="leancloud-comments-count">&nbsp;</span>
-  </a>
-</div>
-
-
-            
-          
-            
-              
-
-            
-          
-        </div>
-        
-          <hr>
-        
-      </div>
-    
-  </section>
-
-
-  <section class="article typo">
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>deviceorientation : 设备的物理方向，表示为一系列的本地坐标系旋角。<br>devicemotion : 提供设备的重力加速信息。<br>compassneedscalibration : 罗盘校准。</p>
-<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&lt;!DOCTYPE <span class="meta-keyword">html</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">html</span> <span class="attr">lang</span>=<span class="string">&quot;en&quot;</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">head</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">meta</span> <span class="attr">charset</span>=<span class="string">&quot;UTF-8&quot;</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">meta</span> <span class="attr">name</span>=<span class="string">&quot;viewport&quot;</span> <span class="attr">content</span>=<span class="string">&quot;width=device-width, initial-scale=1.0&quot;</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">title</span>&gt;</span>html5陀螺仪<span class="tag">&lt;/<span class="name">title</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">link</span> <span class="attr">rel</span>=<span class="string">&quot;stylesheet&quot;</span> <span class="attr">href</span>=<span class="string">&quot;http://at.alicdn.com/t/font_1872916_9bxpvrr3gw.css&quot;</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">script</span> <span class="attr">src</span>=<span class="string">&quot;https://cdn.bootcdn.net/ajax/libs/jquery/3.5.1/jquery.min.js&quot;</span>&gt;</span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">head</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">body</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">h1</span> <span class="attr">style</span>=<span class="string">&quot;text-align: center;&quot;</span>&gt;</span>摇一摇有惊喜！<span class="tag">&lt;/<span class="name">h1</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">div</span> <span class="attr">align</span> = <span class="string">&quot;center&quot;</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">img</span> <span class="attr">src</span>=<span class="string">&quot;https://pigbro.online:9608/images/surprise/1.jpg&quot;</span> <span class="attr">alt</span>=<span class="string">&quot;surprise&quot;</span>&gt;</span> </span><br><span class="line">    <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">script</span>&gt;</span></span><br><span class="line"><span class="javascript">        <span class="comment">//获取手机屏幕宽度</span></span></span><br><span class="line"><span class="javascript">        <span class="keyword">var</span> deviceWidth = <span class="built_in">document</span>.documentElement.clientWidth;</span></span><br><span class="line"><span class="javascript">        <span class="keyword">var</span> speed = <span class="number">30</span>;</span></span><br><span class="line"><span class="javascript">        <span class="keyword">var</span> picture = <span class="number">1</span>;</span></span><br><span class="line"><span class="javascript">        <span class="keyword">var</span> x=y=z=lastx=lasty=lastz=<span class="number">0</span>;</span></span><br><span class="line"><span class="javascript">        $(<span class="string">&#x27;img&#x27;</span>).width(deviceWidth*<span class="number">0.9</span>);</span></span><br><span class="line"><span class="javascript">        <span class="keyword">var</span> flag = <span class="literal">true</span>;</span></span><br><span class="line"><span class="javascript">        <span class="keyword">if</span> (<span class="built_in">window</span>.DeviceOrientationEvent) &#123;</span></span><br><span class="line"><span class="javascript">            <span class="built_in">window</span>.addEventListener(<span class="string">&#x27;deviceorientation&#x27;</span>, <span class="function">(<span class="params">event</span>) =&gt;</span> &#123;</span></span><br><span class="line"><span class="javascript">                <span class="keyword">var</span> x = event.beta;</span></span><br><span class="line"><span class="javascript">                <span class="keyword">var</span> y = event.gamma;</span></span><br><span class="line"><span class="javascript">                <span class="keyword">var</span> z = event.alpha;</span></span><br><span class="line"><span class="javascript">                <span class="keyword">if</span>((<span class="built_in">Math</span>.abs(x-lastx)&gt;speed || <span class="built_in">Math</span>.abs(y-lasty)&gt;speed || <span class="built_in">Math</span>.abs(z-lastz)&gt;speed) &amp;&amp; flag)&#123;</span></span><br><span class="line">                    if(++picture &gt; 7)&#123;</span><br><span class="line">                        picture = 1;</span><br><span class="line">                    &#125;</span><br><span class="line"><span class="javascript">                    $(<span class="string">&#x27;img&#x27;</span>).attr(<span class="string">&#x27;src&#x27;</span>,<span class="string">&#x27;https://pigbro.online:9608/images/surprise/&#x27;</span>+picture+<span class="string">&#x27;.jpg&#x27;</span>);</span></span><br><span class="line"><span class="javascript">                    flag = <span class="literal">false</span>;</span></span><br><span class="line">                &#125;</span><br><span class="line">                lastx = x;</span><br><span class="line">                lasty = y;</span><br><span class="line">                lastz = z;</span><br><span class="line">            &#125;);</span><br><span class="line">            wi</span><br><span class="line">        &#125;</span><br><span class="line"><span class="javascript">        $(<span class="string">&#x27;img&#x27;</span>).on(<span class="string">&#x27;load&#x27;</span>, <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span></span><br><span class="line"><span class="javascript">            <span class="built_in">setTimeout</span>(<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</span></span><br><span class="line"><span class="javascript">                flag = <span class="literal">true</span>;</span></span><br><span class="line">            &#125;,1000);</span><br><span class="line">        &#125;);</span><br><span class="line">    <span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">body</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">html</span>&gt;</span></span><br></pre></td></tr></table></figure>
-      
-    </div>
-    
-      
-    
-  </section>
-</article>
-
-          </div>
-        
-      
-        
-          <div class='post-wrapper'>
-            <article class="post white-box shadow reveal ">
-  
-
-
-  <section class='meta'>
-    
-      
-      
-      <div class="meta" id="header-meta">
-        
-          
-  <h2 class="title">
-    <a href="/2020/06/07/npm/">
-      npm切换镜像源
-    </a>
-  </h2>
-
-
-        
-        <div class='new-meta-box'>
-          
-            
-          
-            
-              
-<div class='new-meta-item author'>
-  <a class='author' href="https://strive087.github.io/" rel="nofollow">
-    <img no-lazy src="https://pigbro.online:9608/images/author.jpg">
-    <p>zhuduanlei</p>
-  </a>
-</div>
-
-            
-          
-            
-              
-  
-  <div class='new-meta-item category'>
-    <a href='/categories/nodeJs/' rel="nofollow">
-      <i class="fas fa-folder-open fa-fw" aria-hidden="true"></i>
-      <p>nodeJs</p>
-    </a>
-  </div>
-
-
-            
-          
-            
-              <div class="new-meta-item date">
-  <a class='notlink'>
-    <i class="fas fa-calendar-alt fa-fw" aria-hidden="true"></i>
-    <p>发布于：2020年6月7日</p>
-  </a>
-</div>
-
-            
-          
-            
-              
-  <div class="new-meta-item wordcount">
-    <a class='notlink'>
-      <i class="fas fa-keyboard fa-fw" aria-hidden="true"></i>
-      <p>字数：118字</p>
-    </a>
-  </div>
-  <div class="new-meta-item readtime">
-    <a class='notlink'>
-      <i class="fas fa-hourglass-half fa-fw" aria-hidden="true"></i>
-      <p>时长：1分钟</p>
-    </a>
-  </div>
-
-
-            
-          
-            
-              
-  <div class="new-meta-item browse valine">
-    <a class='notlink'>
-      <i class="fas fa-eye fa-fw" aria-hidden="true"></i>
-      
-      <span id="/2020/06/07/npm/" class="leancloud_visitors" data-flag-title="npm切换镜像源">
-      <p>
-        <span class="leancloud-visitors-count"></span>
-      </p>
-      </span>
-    </a>
-  </div>
-
-
-            
-          
-            
-              
-<div class="new-meta-item comments-count">
-  
-  <a href="/2020/06/07/npm/#comments">
-    <i class="fas fa-comment-dots fa-fw"></i>
-    <span class="valine-comment-count" data-xid="/2020/06/07/npm/">0</span>
-    <span class="leancloud-comments-count">&nbsp;</span>
-  </a>
-</div>
-
-
-            
-          
-            
-              
-
-            
-          
-        </div>
-        
-          <hr>
-        
-      </div>
-    
-  </section>
-
-
-  <section class="article typo">
-    <div class="article-entry" itemprop="articleBody">
-      
-        <ul>
-<li><p>切换为淘宝镜像</p>
-<p>1.临时使用</p>
-<pre><code>npm --registry https:&#x2F;&#x2F;registry.npm.taobao.org install express;</code></pre>
-<p>2.持久使用</p>
-<pre><code>npm config set registry https:&#x2F;&#x2F;registry.npm.taobao.org</code></pre>
-<p>3.通过cnpm</p>
-<pre><code>npm install -g cnpm --registry&#x3D;https:&#x2F;&#x2F;registry.npm.taobao.org</code></pre></li>
-<li><p>切换官方镜像</p>
-<pre><code>npm config set registry https:&#x2F;&#x2F;registry.npmjs.org&#x2F;</code></pre></li>
-<li><p>查看当前npm源地址</p>
-<pre><code>npm config get registry</code></pre>
-
+<li><p>XMLHttpRequest是原生xhr对象，可使用new操作符生成xhr对象。</p>
 </li>
+<li><p>open方法接受3个参数，发送请求的类型、url和是否异步发送。open方法并未真正发送，只是启动以备发送。</p>
+</li>
+<li><p>send方法接受1个参数，作为请求主体发送的数据，若不需要请求主体发送数据则必须传入null。调用该方法后便会发送请求到服务器，如果请求是同步的，JavaScript代码将等到服务器响应之后再继续执行，收到响应后，响应的数据会自动填入xhr对象属性。</p>
+</li>
+<li><p>xhr对象有个readystatechange事件，可以监听xhr的readyState属性的变化。以下readyState的属性值代表的含义：</p>
+<ul>
+<li>0: 未初始化。</li>
+<li>1: 启动未发送。</li>
+<li>2: 发送。</li>
+<li>3: 接收部分数据。</li>
+<li>4: 完成接收所有数据。</li>
 </ul>
-<p>取消代理<br>npm config delete proxy<br>npm config delete https-proxy<br>npm代理<br>npm config set proxy <a target="_blank" rel="noopener" href="http://127.0.0.1:1087">http://127.0.0.1:1087</a><br>npm config set https-proxy <a target="_blank" rel="noopener" href="http://127.0.0.1:1087">http://127.0.0.1:1087</a></p>
+</li>
+<li><p>abort方法，在接收到响应数据之前调用该方法可以取消异步请求。</p>
+</li>
+</ol>
+<p class='p subtitle'>http头部请求</p>
 
-      
-    </div>
-    
-      
-    
-  </section>
-</article>
+<ol>
+<li>setRequestHeader方法接受2个参数，头部字段的名称和值。该方法必须在open方法调用之后、send方法调用之前使用才有效。</li>
+<li>getResponseHeader方法接受1个参数，头部字段名称获取值。</li>
+<li>getAllResponseHeader获取所有头部信息。</li>
+</ol>
+<p class='p subtitle'>表单数据传达</p>
+<p>FormData为序列化表单以及创建与表单格式相同的数据提供了便利。</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> xhr = <span class="keyword">new</span> XMLHttpRequest;</span><br><span class="line"><span class="keyword">var</span> form = <span class="built_in">document</span>.getElementById(<span class="string">&#x27;user-info&#x27;</span>);</span><br><span class="line">xhr.open(...)</span><br><span class="line">xhr.send(<span class="keyword">new</span> FormData(form));</span><br></pre></td></tr></table></figure>
 
-          </div>
-        
-      
-    
-  </section>
+<p class='p subtitle'>超时设定</p>
+<p>xhr有timeout属性和ontimeout事件，当请求时间到达timeout属性时间后请求就会自动终止，终止时触发ontimeout时间。<br>需要注意的是在终止之后访问status属性将导致错误。</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> xhr = <span class="keyword">new</span> XMLHttpRequest;</span><br><span class="line">xhr.open(...)</span><br><span class="line">xhr.timeout = <span class="number">1000</span>;</span><br><span class="line">xhr.ontimeout = <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;...&#125;;</span><br><span class="line">xhr.send(<span class="literal">null</span>);</span><br></pre></td></tr></table></figure>
+
+<p class='p subtitle'>overrideMimeType</p>
+<p>overrideMimeType方法重写xhr响应的MIME类型。</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> xhr = <span class="keyword">new</span> XMLHttpRequest;</span><br><span class="line">xhr.open(...)</span><br><span class="line">xhr.overrideMimeType(<span class="string">&quot;text/xml&quot;</span>)</span><br><span class="line">xhr.send(<span class="literal">null</span>);</span><br></pre></td></tr></table></figure>
+
+<p>ç<br>进度事件有如下几种：</p>
+<ul>
+<li>onloadstart：接收到响应数据第一个字节触发</li>
+<li>onprogress：在接收响应数据期间不断触发</li>
+<li>onerror：请求发送错误触发</li>
+<li>onabort：调用abort方法触发</li>
+<li>onload：接收到完整响应数据触发</li>
+<li>onloadend：通信完成或者触发error、abort或load事件后触发</li>
+</ul>
+<p>其中onprogress事件会接收一个event对象。</p>
+<ul>
+<li>event.target指向xhr对象</li>
+<li>event.lengthComputable是个布尔值代表进度信息是否可用</li>
+<li>event.position表示已经接收的字节数</li>
+<li>event.totalSize表示根据Content-Length响应头部确定的预期字节数 </li>
+</ul>
+
+          
+            <div class='article_footer'>
+              
+                
   
     
-      <br>
-      <div class="prev-next">
-        
-          <a class="prev" rel="prev" href="/archives/2020/">
-            <section class="post prev white-box shadow" >
-              <i class="fas fa-chevron-left" aria-hidden="true"></i>&nbsp;上一页&nbsp;
-            </section>
-          </a>
-        
-        <p class="current">
-          2 / 2
-        </p>
-        
-      </div>
     
-    <!-- 根据主题中的设置决定是否在archive中针对摘要部分的MathJax公式加载mathjax.js文件 -->
-    
-    
+
+
 
   
 
-
-	
-</div>
-<aside class='l_side'>
-  
   
     
     
 
-<section class="widget blogger shadow desktop mobile">
+
+
+  
+
+  
+    
+    
+
+<section class="widget copyright  desktop mobile">
   <div class='content'>
     
-      
-        <a class='avatar flat-box rectangle' href='/about/'>
-          <img no-lazy src='https://pigbro.online:9608/images/author.jpg'/>
-        </a>
-      
-    
-    
-      <div class='text'>
-        
-        
-        
-          <p><span id="jinrishici-sentence">前端之路</span></p>
-          <script src="https://sdk.jinrishici.com/v2/browser/jinrishici.js" charset="utf-8"></script>
-        
-      </div>
-    
-    
-      <div class="social-wrapper">
+      <blockquote>
         
           
-            <a href="/atom.xml"
-              class="social fas fa-rss flat-btn"
-              target="_blank"
-              rel="external nofollow noopener noreferrer">
-            </a>
+            <p>博客内容遵循 署名-非商业性使用-相同方式共享 4.0 国际 (CC BY-NC-SA 4.0) 协议</p>
+
           
         
           
-            <a href="mailto:840459919@qq.com"
-              class="social fas fa-envelope flat-btn"
-              target="_blank"
-              rel="external nofollow noopener noreferrer">
-            </a>
+            <p>本文永久链接是：<a href=https://strive087.github.io/2020/08/23/javascript/XHR%E7%9A%84%E4%BD%BF%E7%94%A8/>https://strive087.github.io/2020/08/23/javascript/XHR%E7%9A%84%E4%BD%BF%E7%94%A8/</a></p>
           
         
-          
-            <a href="https://github.com/Strive087/strive087.github.io"
-              class="social fab fa-github flat-btn"
-              target="_blank"
-              rel="external nofollow noopener noreferrer">
-            </a>
-          
-        
-          
-            <a href="https://music.163.com/#/user/home?id=130611633"
-              class="social fas fa-headphones-alt flat-btn"
-              target="_blank"
-              rel="external nofollow noopener noreferrer">
-            </a>
-          
-        
-      </div>
+      </blockquote>
     
   </div>
 </section>
@@ -1097,117 +586,176 @@
   
     
     
+
+<section class="widget qrcode  desktop mobile">
   
 
-  <section class="widget category shadow desktop">
+  <div class='content article-entry'>
     
-  <header>
+      
+        <div class='fancybox'><img src='https://pigbro.online:9608/images/alipay.jpg'
+        
+          height='80px'
+        ></div>
+      
     
-      <a href='/categories/'><i class="fas fa-folder-open fa-fw" aria-hidden="true"></i><span class='name'>文章分类</span></a>
+      
+        <div class='fancybox'><img src='https://pigbro.online:9608/images/wechatpay.jpg'
+        
+          height='80px'
+        ></div>
+      
     
-  </header>
+  </div>
+</section>
+
+  
 
 
-    <div class='content'>
-      <ul class="entry navigation">
+              
+            </div>
+          
+        </div>
         
-          <li><a class="flat-box"
-            title="/categories/JavaScript/" href="/categories/JavaScript/"
-            id="categoriesJavaScript"
-            ><div class='name'>JavaScript</div><div class='badge'>(1)</div></a></li>
+          
+
+
+  <section class='meta' id="footer-meta">
+    <div class='new-meta-box'>
+      
         
-          <li><a class="flat-box child"
-            title="/categories/JavaScript/RegExp/" href="/categories/JavaScript/RegExp/"
-            id="categoriesJavaScriptRegExp"
-            ><div class='name'>RegExp</div><div class='badge'>(1)</div></a></li>
+          <div class="new-meta-item date" itemprop="dateUpdated" datetime="2020-08-24T03:31:22+00:00">
+  <a class='notlink'>
+    <i class="fas fa-edit fa-fw" aria-hidden="true"></i>
+    <p>更新于：2020年8月24日</p>
+  </a>
+</div>
+
         
-          <li><a class="flat-box"
-            title="/categories/html/" href="/categories/html/"
-            id="categorieshtml"
-            ><div class='name'>html</div><div class='badge'>(1)</div></a></li>
+      
         
-          <li><a class="flat-box"
-            title="/categories/javascript/" href="/categories/javascript/"
-            id="categoriesjavascript"
-            ><div class='name'>javascript</div><div class='badge'>(8)</div></a></li>
+          
+  
+  <div class="new-meta-item meta-tags"><a class="tag" href="/tags/javascript/" rel="nofollow"><i class="fas fa-hashtag fa-fw" aria-hidden="true"></i><p>javascript</p></a></div> <div class="new-meta-item meta-tags"><a class="tag" href="/tags/xhr/" rel="nofollow"><i class="fas fa-hashtag fa-fw" aria-hidden="true"></i><p>xhr</p></a></div>
+
+
         
-          <li><a class="flat-box child"
-            title="/categories/javascript/%E4%BD%9C%E7%94%A8%E5%9F%9F/" href="/categories/javascript/%E4%BD%9C%E7%94%A8%E5%9F%9F/"
-            id="categoriesjavascriptE4BD9CE794A8E59F9F"
-            ><div class='name'>作用域</div><div class='badge'>(1)</div></a></li>
+      
         
-          <li><a class="flat-box child"
-            title="/categories/javascript/%E5%87%BD%E6%95%B0%E5%BC%8F%E7%BC%96%E7%A8%8B/" href="/categories/javascript/%E5%87%BD%E6%95%B0%E5%BC%8F%E7%BC%96%E7%A8%8B/"
-            id="categoriesjavascriptE587BDE695B0E5BC8FE7BC96E7A88B"
-            ><div class='name'>函数式编程</div><div class='badge'>(1)</div></a></li>
+          
+
         
-          <li><a class="flat-box"
-            title="/categories/nodeJs/" href="/categories/nodeJs/"
-            id="categoriesnodeJs"
-            ><div class='name'>nodeJs</div><div class='badge'>(1)</div></a></li>
+      
         
-          <li><a class="flat-box"
-            title="/categories/%E7%AE%97%E6%B3%95/" href="/categories/%E7%AE%97%E6%B3%95/"
-            id="categoriesE7AE97E6B395"
-            ><div class='name'>算法</div><div class='badge'>(3)</div></a></li>
+          
+  <div class="new-meta-item share -mob-share-list">
+  <div class="-mob-share-list share-body">
+    
+      
+        <a class="-mob-share-qq" title="" rel="external nofollow noopener noreferrer noopener"
+          
+          target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://strive087.github.io/2020/08/23/javascript/XHR%E7%9A%84%E4%BD%BF%E7%94%A8/&title=XHR的使用 - 前端之路&summary="
+          
+          >
+          
+            <img src="https://cdn.jsdelivr.net/gh/volantis-x/cdn-org/logo/128/qq.png">
+          
+        </a>
+      
+    
+      
+        <a class="-mob-share-qzone" title="" rel="external nofollow noopener noreferrer noopener"
+          
+          target="_blank" href="https://sns.qzone.qq.com/cgi-bin/qzshare/cgi_qzshare_onekey?url=https://strive087.github.io/2020/08/23/javascript/XHR%E7%9A%84%E4%BD%BF%E7%94%A8/&title=XHR的使用 - 前端之路&summary="
+          
+          >
+          
+            <img src="https://cdn.jsdelivr.net/gh/volantis-x/cdn-org/logo/128/qzone.png">
+          
+        </a>
+      
+    
+      
+        <a class="-mob-share-weibo" title="" rel="external nofollow noopener noreferrer noopener"
+          
+          target="_blank" href="http://service.weibo.com/share/share.php?url=https://strive087.github.io/2020/08/23/javascript/XHR%E7%9A%84%E4%BD%BF%E7%94%A8/&title=XHR的使用 - 前端之路&summary="
+          
+          >
+          
+            <img src="https://cdn.jsdelivr.net/gh/volantis-x/cdn-org/logo/128/weibo.png">
+          
+        </a>
+      
+    
+  </div>
+</div>
+
+
+
         
-          <li><a class="flat-box child"
-            title="/categories/%E7%AE%97%E6%B3%95/%E4%BA%8C%E5%8F%89%E6%A0%91/" href="/categories/%E7%AE%97%E6%B3%95/%E4%BA%8C%E5%8F%89%E6%A0%91/"
-            id="categoriesE7AE97E6B395E4BA8CE58F89E6A091"
-            ><div class='name'>二叉树</div><div class='badge'>(1)</div></a></li>
-        
-          <li><a class="flat-box child"
-            title="/categories/%E7%AE%97%E6%B3%95/%E5%9F%BA%E6%9C%AC%E6%A6%82%E5%BF%B5/" href="/categories/%E7%AE%97%E6%B3%95/%E5%9F%BA%E6%9C%AC%E6%A6%82%E5%BF%B5/"
-            id="categoriesE7AE97E6B395E59FBAE69CACE6A682E5BFB5"
-            ><div class='name'>基本概念</div><div class='badge'>(1)</div></a></li>
-        
-          <li><a class="flat-box child"
-            title="/categories/%E7%AE%97%E6%B3%95/%E6%95%A3%E5%88%97%E8%A1%A8/" href="/categories/%E7%AE%97%E6%B3%95/%E6%95%A3%E5%88%97%E8%A1%A8/"
-            id="categoriesE7AE97E6B395E695A3E58897E8A1A8"
-            ><div class='name'>散列表</div><div class='badge'>(1)</div></a></li>
-        
-      </ul>
+      
     </div>
   </section>
 
 
+        
+        
+          <div class="prev-next">
+            
+            
+              <a class='next' href='/2020/08/22/javascript/ES6/let%E5%92%8Cconst%E5%91%BD%E4%BB%A4/'>
+                <p class='title'>let和const命令<i class="fas fa-chevron-right" aria-hidden="true"></i></p>
+                <p class='content'>let
+let类似于var，不同的地方在于var没有代码块作用域，这样会导致var变量提升，而let成功解决了这样的问题。需要特别注意的是在for循环中，for的条件部分是个父作用域，而for的...</p>
+              </a>
+            
+          </div>
+        
+      </section>
+    </article>
+  
+
+  
+    
+  <article class="post white-box reveal comments shadow">
+    <section class="article typo">
+      <p ct><i class='fas fa-comments'></i> 评论</p>
+      
+      <section id="comments">
+        <div id="valine_container" class="valine_thread">
+  <i class="fas fa-cog fa-spin fa-fw fa-2x"></i>
+</div>
+
+      </section>
+    </section>
+  </article>
+
+
+  
+
+
+
+
+<!-- 根据页面mathjax变量决定是否加载MathJax数学公式js -->
+
+
+</div>
+<aside class='l_side'>
+  
   
 
   
     
     
-  
-
-  <section class="widget tagcloud shadow desktop mobile">
-    
-  <header>
-    
-      <a href='/tags/'><i class="fas fa-tags fa-fw" aria-hidden="true"></i><span class='name'>热门标签</span></a>
-    
-  </header>
 
 
-    <div class='content'>
-      <a href="/tags/RegExp/" style="font-size: 14px; color: #999">RegExp</a> <a href="/tags/es6/" style="font-size: 14px; color: #999">es6</a> <a href="/tags/html/" style="font-size: 14px; color: #999">html</a> <a href="/tags/html5/" style="font-size: 14px; color: #999">html5</a> <a href="/tags/javascript/" style="font-size: 24px; color: #555">javascript</a> <a href="/tags/nodejs/" style="font-size: 14px; color: #999">nodejs</a> <a href="/tags/npm/" style="font-size: 14px; color: #999">npm</a> <a href="/tags/this/" style="font-size: 14px; color: #999">this</a> <a href="/tags/xhr/" style="font-size: 14px; color: #999">xhr</a> <a href="/tags/%E4%BA%8C%E5%8F%89%E6%A0%91/" style="font-size: 14px; color: #999">二叉树</a> <a href="/tags/%E4%BD%9C%E7%94%A8%E5%9F%9F/" style="font-size: 14px; color: #999">作用域</a> <a href="/tags/%E5%87%BD%E6%95%B0%E5%BC%8F%E7%BC%96%E7%A8%8B/" style="font-size: 14px; color: #999">函数式编程</a> <a href="/tags/%E5%93%88%E5%B8%8C%E8%A1%A8/" style="font-size: 14px; color: #999">哈希表</a> <a href="/tags/%E6%95%A3%E5%88%97%E8%A1%A8/" style="font-size: 14px; color: #999">散列表</a> <a href="/tags/%E7%AE%97%E6%B3%95/" style="font-size: 19px; color: #777">算法</a>
-    </div>
-  </section>
 
-
-  
 
   
 
 
 </aside>
 
-
-
-
-
-	<!-- 根据主题中的设置决定是否在archive中针对摘要部分的MathJax公式加载mathjax.js文件 -->
-	
-
-	
 
 
     </div>

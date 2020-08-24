@@ -25,7 +25,7 @@
 
   <!-- feed -->
   
-    <link rel="alternate" href="/atom.xml" title="前端之路">
+    <link rel="alternate" href="/atom.xml" title="前端之路" type="application/atom+xml">
   
 
   <!-- import meta -->
@@ -95,14 +95,14 @@
       <div class='list-h'>
         
           
-            <a href="https://volantis.js.org/getting-started/"
+            <a target="_blank" rel="noopener" href="https://volantis.js.org/getting-started/"
               
               
               id="https:volantisjsorggetting-started">
               <i class='fas fa-book fa-fw'></i><p>文档</p>
             </a>
           
-            <a href="https://volantis.js.org/archives/"
+            <a target="_blank" rel="noopener" href="https://volantis.js.org/archives/"
               
               
               id="https:volantisjsorgarchives">
@@ -120,7 +120,7 @@
               <i class='fas fa-file-code fa-fw'></i><p>源码</p>
             </a>
           
-            <a href="https://volantis.js.org/contributors/"
+            <a target="_blank" rel="noopener" href="https://volantis.js.org/contributors/"
               
               
               id="https:volantisjsorgcontributors">
@@ -411,9 +411,491 @@
         
           
         
+          
+        
+          
+        
+          
+        
       
     
     
+      
+        
+          <div class='post-wrapper'>
+            <article class="post white-box shadow reveal ">
+  
+
+
+  <section class='meta'>
+    
+      
+      
+      <div class="meta" id="header-meta">
+        
+          
+  <h2 class="title">
+    <a href="/2020/08/23/javascript/XHR%E7%9A%84%E4%BD%BF%E7%94%A8/">
+      XHR的使用
+    </a>
+  </h2>
+
+
+        
+        <div class='new-meta-box'>
+          
+            
+          
+            
+              
+<div class='new-meta-item author'>
+  <a class='author' href="https://strive087.github.io/" rel="nofollow">
+    <img no-lazy src="https://pigbro.online:9608/images/author.jpg">
+    <p>zhuduanlei</p>
+  </a>
+</div>
+
+            
+          
+            
+              
+  
+  <div class='new-meta-item category'>
+    <a href='/categories/javascript/' rel="nofollow">
+      <i class="fas fa-folder-open fa-fw" aria-hidden="true"></i>
+      <p>javascript</p>
+    </a>
+  </div>
+
+
+            
+          
+            
+              <div class="new-meta-item date">
+  <a class='notlink'>
+    <i class="fas fa-calendar-alt fa-fw" aria-hidden="true"></i>
+    <p>发布于：2020年8月23日</p>
+  </a>
+</div>
+
+            
+          
+            
+              
+  <div class="new-meta-item wordcount">
+    <a class='notlink'>
+      <i class="fas fa-keyboard fa-fw" aria-hidden="true"></i>
+      <p>字数：625字</p>
+    </a>
+  </div>
+  <div class="new-meta-item readtime">
+    <a class='notlink'>
+      <i class="fas fa-hourglass-half fa-fw" aria-hidden="true"></i>
+      <p>时长：2分钟</p>
+    </a>
+  </div>
+
+
+            
+          
+            
+              
+  <div class="new-meta-item browse valine">
+    <a class='notlink'>
+      <i class="fas fa-eye fa-fw" aria-hidden="true"></i>
+      
+      <span id="/2020/08/23/javascript/XHR%E7%9A%84%E4%BD%BF%E7%94%A8/" class="leancloud_visitors" data-flag-title="XHR的使用">
+      <p>
+        <span class="leancloud-visitors-count"></span>
+      </p>
+      </span>
+    </a>
+  </div>
+
+
+            
+          
+            
+              
+<div class="new-meta-item comments-count">
+  
+  <a href="/2020/08/23/javascript/XHR%E7%9A%84%E4%BD%BF%E7%94%A8/#comments">
+    <i class="fas fa-comment-dots fa-fw"></i>
+    <span class="valine-comment-count" data-xid="/2020/08/23/javascript/XHR%E7%9A%84%E4%BD%BF%E7%94%A8/">0</span>
+    <span class="leancloud-comments-count">&nbsp;</span>
+  </a>
+</div>
+
+
+            
+          
+            
+              
+
+            
+          
+        </div>
+        
+          <hr>
+        
+      </div>
+    
+  </section>
+
+
+  <section class="article typo">
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p class='p subtitle'>xhr基本用法</p>
+
+<ol>
+<li><p>XMLHttpRequest是原生xhr对象，可使用new操作符生成xhr对象。</p>
+</li>
+<li><p>open方法接受3个参数，发送请求的类型、url和是否异步发送。open方法并未真正发送，只是启动以备发送。</p>
+</li>
+<li><p>send方法接受1个参数，作为请求主体发送的数据，若不需要请求主体发送数据则必须传入null。调用该方法后便会发送请求到服务器，如果请求是同步的，JavaScript代码将等到服务器响应之后再继续执行，收到响应后，响应的数据会自动填入xhr对象属性。</p>
+</li>
+<li><p>xhr对象有个readystatechange事件，可以监听xhr的readyState属性的变化。以下readyState的属性值代表的含义：</p>
+<ul>
+<li>0: 未初始化。</li>
+<li>1: 启动未发送。</li>
+<li>2: 发送。</li>
+<li>3: 接收部分数据。</li>
+<li>4: 完成接收所有数据。</li>
+</ul>
+</li>
+<li><p>abort方法，在接收到响应数据之前调用该方法可以取消异步请求。</p>
+</li>
+</ol>
+<p class='p subtitle'>http头部请求</p>
+
+<ol>
+<li>setRequestHeader方法接受2个参数，头部字段的名称和值。该方法必须在open方法调用之后、send方法调用之前使用才有效。</li>
+<li>getResponseHeader方法接受1个参数，头部字段名称获取值。</li>
+<li>getAllResponseHeader获取所有头部信息。</li>
+</ol>
+<p class='p subtitle'>表单数据传达</p>
+<p>FormData为序列化表单以及创建与表单格式相同的数据提供了便利。</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> xhr = <span class="keyword">new</span> XMLHttpRequest;</span><br><span class="line"><span class="keyword">var</span> form = <span class="built_in">document</span>.getElementById(<span class="string">&#x27;user-info&#x27;</span>);</span><br><span class="line">xhr.open(...)</span><br><span class="line">xhr.send(<span class="keyword">new</span> FormData(form));</span><br></pre></td></tr></table></figure>
+
+<p class='p subtitle'>超时设定</p>
+<p>xhr有timeout属性和ontimeout事件，当请求时间到达timeout属性时间后请求就会自动终止，终止时触发ontimeout时间。<br>需要注意的是在终止之后访问status属性将导致错误。</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> xhr = <span class="keyword">new</span> XMLHttpRequest;</span><br><span class="line">xhr.open(...)</span><br><span class="line">xhr.timeout = <span class="number">1000</span>;</span><br><span class="line">xhr.ontimeout = <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;...&#125;;</span><br><span class="line">xhr.send(<span class="literal">null</span>);</span><br></pre></td></tr></table></figure>
+
+<p class='p subtitle'>overrideMimeType</p>
+<p>overrideMimeType方法重写xhr响应的MIME类型。</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> xhr = <span class="keyword">new</span> XMLHttpRequest;</span><br><span class="line">xhr.open(...)</span><br><span class="line">xhr.overrideMimeType(<span class="string">&quot;text/xml&quot;</span>)</span><br><span class="line">xhr.send(<span class="literal">null</span>);</span><br></pre></td></tr></table></figure>
+
+<p>ç<br>进度事件有如下几种：</p>
+<ul>
+<li>onloadstart：接收到响应数据第一个字节触发</li>
+<li>onprogress：在接收响应数据期间不断触发</li>
+<li>onerror：请求发送错误触发</li>
+<li>onabort：调用abort方法触发</li>
+<li>onload：接收到完整响应数据触发</li>
+<li>onloadend：通信完成或者触发error、abort或load事件后触发</li>
+</ul>
+<p>其中onprogress事件会接收一个event对象。</p>
+<ul>
+<li>event.target指向xhr对象</li>
+<li>event.lengthComputable是个布尔值代表进度信息是否可用</li>
+<li>event.position表示已经接收的字节数</li>
+<li>event.totalSize表示根据Content-Length响应头部确定的预期字节数 </li>
+</ul>
+
+      
+    </div>
+    
+      
+    
+  </section>
+</article>
+
+          </div>
+        
+      
+        
+          <div class='post-wrapper'>
+            <article class="post white-box shadow reveal ">
+  
+
+
+  <section class='meta'>
+    
+      
+      
+      <div class="meta" id="header-meta">
+        
+          
+  <h2 class="title">
+    <a href="/2020/08/22/javascript/ES6/let%E5%92%8Cconst%E5%91%BD%E4%BB%A4/">
+      let和const命令
+    </a>
+  </h2>
+
+
+        
+        <div class='new-meta-box'>
+          
+            
+          
+            
+              
+<div class='new-meta-item author'>
+  <a class='author' href="https://strive087.github.io/" rel="nofollow">
+    <img no-lazy src="https://pigbro.online:9608/images/author.jpg">
+    <p>zhuduanlei</p>
+  </a>
+</div>
+
+            
+          
+            
+              
+  
+  <div class='new-meta-item category'>
+    <a href='/categories/javascript/' rel="nofollow">
+      <i class="fas fa-folder-open fa-fw" aria-hidden="true"></i>
+      <p>javascript</p>
+    </a>
+  </div>
+
+
+            
+          
+            
+              <div class="new-meta-item date">
+  <a class='notlink'>
+    <i class="fas fa-calendar-alt fa-fw" aria-hidden="true"></i>
+    <p>发布于：2020年8月22日</p>
+  </a>
+</div>
+
+            
+          
+            
+              
+  <div class="new-meta-item wordcount">
+    <a class='notlink'>
+      <i class="fas fa-keyboard fa-fw" aria-hidden="true"></i>
+      <p>字数：504字</p>
+    </a>
+  </div>
+  <div class="new-meta-item readtime">
+    <a class='notlink'>
+      <i class="fas fa-hourglass-half fa-fw" aria-hidden="true"></i>
+      <p>时长：1分钟</p>
+    </a>
+  </div>
+
+
+            
+          
+            
+              
+  <div class="new-meta-item browse valine">
+    <a class='notlink'>
+      <i class="fas fa-eye fa-fw" aria-hidden="true"></i>
+      
+      <span id="/2020/08/22/javascript/ES6/let%E5%92%8Cconst%E5%91%BD%E4%BB%A4/" class="leancloud_visitors" data-flag-title="let和const命令">
+      <p>
+        <span class="leancloud-visitors-count"></span>
+      </p>
+      </span>
+    </a>
+  </div>
+
+
+            
+          
+            
+              
+<div class="new-meta-item comments-count">
+  
+  <a href="/2020/08/22/javascript/ES6/let%E5%92%8Cconst%E5%91%BD%E4%BB%A4/#comments">
+    <i class="fas fa-comment-dots fa-fw"></i>
+    <span class="valine-comment-count" data-xid="/2020/08/22/javascript/ES6/let%E5%92%8Cconst%E5%91%BD%E4%BB%A4/">0</span>
+    <span class="leancloud-comments-count">&nbsp;</span>
+  </a>
+</div>
+
+
+            
+          
+            
+              
+
+            
+          
+        </div>
+        
+          <hr>
+        
+      </div>
+    
+  </section>
+
+
+  <section class="article typo">
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p class='p subtitle'>let</p>
+<p>let类似于var，不同的地方在于var没有代码块作用域，这样会导致var变量提升，而let成功解决了这样的问题。<br>需要特别注意的是在for循环中，for的条件部分是个父作用域，而for的循环体是其中的子作用域。<br>从下面代码可以看出父作用域子作用域中的let声明的i不影响父作用域的let声明的i。</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">for</span> (<span class="keyword">let</span> i = <span class="number">0</span>; i &lt; <span class="number">3</span>; i++) &#123;</span><br><span class="line">  <span class="keyword">let</span> i = <span class="string">&#x27;abc&#x27;</span>;</span><br><span class="line">  <span class="built_in">console</span>.log(i);</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">// abc</span></span><br><span class="line"><span class="comment">// abc</span></span><br><span class="line"><span class="comment">// abc</span></span><br><span class="line"><span class="keyword">for</span> (<span class="keyword">var</span> i = <span class="number">0</span>; i &lt; <span class="number">3</span>; i++) &#123;</span><br><span class="line">  <span class="keyword">var</span> a = <span class="string">&#x27;abc&#x27;</span>;</span><br><span class="line">  <span class="built_in">console</span>.log(i);</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">//abc</span></span><br><span class="line"><span class="keyword">for</span> (<span class="keyword">var</span> i = <span class="number">0</span>; i &lt; <span class="number">3</span>; i++) &#123;</span><br><span class="line">  <span class="keyword">var</span> a = <span class="string">&#x27;abc&#x27;</span>;</span><br><span class="line">  <span class="built_in">console</span>.log(i);</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">//abc</span></span><br></pre></td></tr></table></figure>
+<p>ES6 明确规定，如果区块中存在let和const命令，这个区块对这些命令声明的变量，从一开始就形成了封闭作用域。凡是在声明之前就使用这些变量，就会报错。</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> tmp = <span class="number">123</span>;</span><br><span class="line"></span><br><span class="line"><span class="keyword">if</span> (<span class="literal">true</span>) &#123;</span><br><span class="line">  tmp = <span class="string">&#x27;abc&#x27;</span>; <span class="comment">// ReferenceError</span></span><br><span class="line">  <span class="keyword">let</span> tmp;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>let不允许在相同作用域内，重复声明同一个变量。</p>
+<p class='p subtitle'>const</p>
+<p>const声明的变量，一经声明便不允许修改。<br>const实际上保证的，并不是变量的值不得改动，而是变量指向的那个内存地址所保存的数据不得改动。对于简单类型的数据（数值、字符串、布尔值），值就保存在变量指向的那个内存地址，因此等同于常量。但对于复合类型的数据（主要是对象和数组），变量指向的内存地址，保存的只是一个指向实际数据的指针，const只能保证这个指针是固定的（即总是指向另一个固定的地址），至于它指向的数据结构是不是可变的，就完全不能控制了。</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> foo = &#123;&#125;;</span><br><span class="line"></span><br><span class="line"><span class="comment">// 为 foo 添加一个属性，可以成功</span></span><br><span class="line">foo.prop = <span class="number">123</span>;</span><br><span class="line">foo.prop <span class="comment">// 123</span></span><br><span class="line"></span><br><span class="line"><span class="comment">// 将 foo 指向另一个对象，就会报错</span></span><br><span class="line">foo = &#123;&#125;; <span class="comment">// TypeError: &quot;foo&quot; is read-only</span></span><br></pre></td></tr></table></figure>
+
+      
+    </div>
+    
+      
+    
+  </section>
+</article>
+
+          </div>
+        
+      
+        
+          <div class='post-wrapper'>
+            <article class="post white-box shadow reveal ">
+  
+
+
+  <section class='meta'>
+    
+      
+      
+      <div class="meta" id="header-meta">
+        
+          
+  <h2 class="title">
+    <a href="/2020/08/22/javascript/this%E6%8C%87%E9%92%88/">
+      this指针
+    </a>
+  </h2>
+
+
+        
+        <div class='new-meta-box'>
+          
+            
+          
+            
+              
+<div class='new-meta-item author'>
+  <a class='author' href="https://strive087.github.io/" rel="nofollow">
+    <img no-lazy src="https://pigbro.online:9608/images/author.jpg">
+    <p>zhuduanlei</p>
+  </a>
+</div>
+
+            
+          
+            
+              
+  
+  <div class='new-meta-item category'>
+    <a href='/categories/javascript/' rel="nofollow">
+      <i class="fas fa-folder-open fa-fw" aria-hidden="true"></i>
+      <p>javascript</p>
+    </a>
+  </div>
+
+
+            
+          
+            
+              <div class="new-meta-item date">
+  <a class='notlink'>
+    <i class="fas fa-calendar-alt fa-fw" aria-hidden="true"></i>
+    <p>发布于：2020年8月22日</p>
+  </a>
+</div>
+
+            
+          
+            
+              
+  <div class="new-meta-item wordcount">
+    <a class='notlink'>
+      <i class="fas fa-keyboard fa-fw" aria-hidden="true"></i>
+      <p>字数：1字</p>
+    </a>
+  </div>
+  <div class="new-meta-item readtime">
+    <a class='notlink'>
+      <i class="fas fa-hourglass-half fa-fw" aria-hidden="true"></i>
+      <p>时长：1分钟</p>
+    </a>
+  </div>
+
+
+            
+          
+            
+              
+  <div class="new-meta-item browse valine">
+    <a class='notlink'>
+      <i class="fas fa-eye fa-fw" aria-hidden="true"></i>
+      
+      <span id="/2020/08/22/javascript/this%E6%8C%87%E9%92%88/" class="leancloud_visitors" data-flag-title="this指针">
+      <p>
+        <span class="leancloud-visitors-count"></span>
+      </p>
+      </span>
+    </a>
+  </div>
+
+
+            
+          
+            
+              
+<div class="new-meta-item comments-count">
+  
+  <a href="/2020/08/22/javascript/this%E6%8C%87%E9%92%88/#comments">
+    <i class="fas fa-comment-dots fa-fw"></i>
+    <span class="valine-comment-count" data-xid="/2020/08/22/javascript/this%E6%8C%87%E9%92%88/">0</span>
+    <span class="leancloud-comments-count">&nbsp;</span>
+  </a>
+</div>
+
+
+            
+          
+            
+              
+
+            
+          
+        </div>
+        
+          <hr>
+        
+      </div>
+    
+  </section>
+
+
+  <section class="article typo">
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p class='p subtitle'>this</p>
+      
+    </div>
+    
+      
+    
+  </section>
+</article>
+
+          </div>
+        
       
         
           <div class='post-wrapper'>
@@ -479,7 +961,7 @@
   <div class="new-meta-item wordcount">
     <a class='notlink'>
       <i class="fas fa-keyboard fa-fw" aria-hidden="true"></i>
-      <p>字数：347字</p>
+      <p>字数：355字</p>
     </a>
   </div>
   <div class="new-meta-item readtime">
@@ -542,7 +1024,7 @@
       
         <p class='p subtitle'>闭包</p>
 <p>闭包时指有权访问另一个函数作用域中的变量的函数。例如下图，createPerson可以访问到createFunc中的变量name。</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">createFunc</span>(<span class="params">name</span>)</span>&#123;</span><br><span class="line">    <span class="keyword">return</span> <span class="function"><span class="keyword">function</span>(<span class="params">age</span>)</span>&#123;</span><br><span class="line">        <span class="keyword">var</span> person = &#123;&#125;;</span><br><span class="line">        person.name = name;</span><br><span class="line">        person.age = age</span><br><span class="line">        <span class="keyword">return</span> person;</span><br><span class="line">    &#125;;</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">var</span> createPerson = createFunc(<span class="string">'zhu'</span>);</span><br><span class="line"><span class="keyword">var</span> person = createPerson(<span class="number">18</span>);</span><br><span class="line">alert(person.name)  <span class="comment">//'zhu'</span></span><br><span class="line">createPerson = <span class="literal">null</span>;</span><br></pre></td></tr></table></figure>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">createFunc</span>(<span class="params">name</span>)</span>&#123;</span><br><span class="line">    <span class="keyword">return</span> <span class="function"><span class="keyword">function</span>(<span class="params">age</span>)</span>&#123;</span><br><span class="line">        <span class="keyword">var</span> person = &#123;&#125;;</span><br><span class="line">        person.name = name;</span><br><span class="line">        person.age = age</span><br><span class="line">        <span class="keyword">return</span> person;</span><br><span class="line">    &#125;;</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">var</span> createPerson = createFunc(<span class="string">&#x27;zhu&#x27;</span>);</span><br><span class="line"><span class="keyword">var</span> person = createPerson(<span class="number">18</span>);</span><br><span class="line">alert(person.name)  <span class="comment">//&#x27;zhu&#x27;</span></span><br><span class="line">createPerson = <span class="literal">null</span>;</span><br></pre></td></tr></table></figure>
 <img src='https://pigbro.online:9608/images/javascript/javascript_closure.png' style='width:500px'>
 <p>由于闭包会携带包含他的函数作用域，也因此他会比其他函数占用更多的内存，所有不要过度使用闭包。</p>
 <p class='p subtitle'>常见的闭包与变量的陷阱</p>
@@ -553,10 +1035,10 @@
 
 <p class='p subtitle'>内存泄漏</p>
 <p>在ie9之前对于js和dom对象使用不同的垃圾收集例程。因此如果闭包的作用域中保存着一个html元素，那么该元素将无法销毁。</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> element = <span class="built_in">document</span>.getElementById(<span class="string">'one'</span>);</span><br><span class="line">elememt.onclick = <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">    alert(elememt.id);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> element = <span class="built_in">document</span>.getElementById(<span class="string">&#x27;one&#x27;</span>);</span><br><span class="line">elememt.onclick = <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">    alert(elememt.id);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
 <p>那么这时可以采用如下方法解决</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> element = <span class="built_in">document</span>.getElementById(<span class="string">'one'</span>);</span><br><span class="line"><span class="keyword">var</span> id = elememt.id;</span><br><span class="line">elememt.onclick = <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">    alert(id);</span><br><span class="line">&#125;</span><br><span class="line">elememt = <span class="literal">null</span>;</span><br></pre></td></tr></table></figure>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> element = <span class="built_in">document</span>.getElementById(<span class="string">&#x27;one&#x27;</span>);</span><br><span class="line"><span class="keyword">var</span> id = elememt.id;</span><br><span class="line">elememt.onclick = <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">    alert(id);</span><br><span class="line">&#125;</span><br><span class="line">elememt = <span class="literal">null</span>;</span><br></pre></td></tr></table></figure>
 
       
     </div>
@@ -684,7 +1166,7 @@
           <li><a class="flat-box"
             title="/categories/javascript/" href="/categories/javascript/"
             id="categoriesjavascript"
-            ><div class='name'>javascript</div><div class='badge'>(5)</div></a></li>
+            ><div class='name'>javascript</div><div class='badge'>(8)</div></a></li>
         
           <li><a class="flat-box child"
             title="/categories/javascript/%E4%BD%9C%E7%94%A8%E5%9F%9F/" href="/categories/javascript/%E4%BD%9C%E7%94%A8%E5%9F%9F/"
@@ -743,7 +1225,7 @@
 
 
     <div class='content'>
-      <a href="/tags/RegExp/" style="font-size: 14px; color: #999">RegExp</a> <a href="/tags/html/" style="font-size: 14px; color: #999">html</a> <a href="/tags/html5/" style="font-size: 14px; color: #999">html5</a> <a href="/tags/javascript/" style="font-size: 24px; color: #555">javascript</a> <a href="/tags/nodejs/" style="font-size: 14px; color: #999">nodejs</a> <a href="/tags/npm/" style="font-size: 14px; color: #999">npm</a> <a href="/tags/%E4%BA%8C%E5%8F%89%E6%A0%91/" style="font-size: 14px; color: #999">二叉树</a> <a href="/tags/%E4%BD%9C%E7%94%A8%E5%9F%9F/" style="font-size: 14px; color: #999">作用域</a> <a href="/tags/%E5%87%BD%E6%95%B0%E5%BC%8F%E7%BC%96%E7%A8%8B/" style="font-size: 14px; color: #999">函数式编程</a> <a href="/tags/%E5%93%88%E5%B8%8C%E8%A1%A8/" style="font-size: 14px; color: #999">哈希表</a> <a href="/tags/%E6%95%A3%E5%88%97%E8%A1%A8/" style="font-size: 14px; color: #999">散列表</a> <a href="/tags/%E7%AE%97%E6%B3%95/" style="font-size: 19px; color: #777">算法</a>
+      <a href="/tags/RegExp/" style="font-size: 14px; color: #999">RegExp</a> <a href="/tags/es6/" style="font-size: 14px; color: #999">es6</a> <a href="/tags/html/" style="font-size: 14px; color: #999">html</a> <a href="/tags/html5/" style="font-size: 14px; color: #999">html5</a> <a href="/tags/javascript/" style="font-size: 24px; color: #555">javascript</a> <a href="/tags/nodejs/" style="font-size: 14px; color: #999">nodejs</a> <a href="/tags/npm/" style="font-size: 14px; color: #999">npm</a> <a href="/tags/this/" style="font-size: 14px; color: #999">this</a> <a href="/tags/xhr/" style="font-size: 14px; color: #999">xhr</a> <a href="/tags/%E4%BA%8C%E5%8F%89%E6%A0%91/" style="font-size: 14px; color: #999">二叉树</a> <a href="/tags/%E4%BD%9C%E7%94%A8%E5%9F%9F/" style="font-size: 14px; color: #999">作用域</a> <a href="/tags/%E5%87%BD%E6%95%B0%E5%BC%8F%E7%BC%96%E7%A8%8B/" style="font-size: 14px; color: #999">函数式编程</a> <a href="/tags/%E5%93%88%E5%B8%8C%E8%A1%A8/" style="font-size: 14px; color: #999">哈希表</a> <a href="/tags/%E6%95%A3%E5%88%97%E8%A1%A8/" style="font-size: 14px; color: #999">散列表</a> <a href="/tags/%E7%AE%97%E6%B3%95/" style="font-size: 19px; color: #777">算法</a>
     </div>
   </section>
 
@@ -835,7 +1317,7 @@
       
     
       
-        <div><p>博客内容遵循 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh" target="_blank" rel="noopener">署名-非商业性使用-相同方式共享 4.0 国际 (CC BY-NC-SA 4.0) 协议</a></p>
+        <div><p>博客内容遵循 <a target="_blank" rel="noopener" href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh">署名-非商业性使用-相同方式共享 4.0 国际 (CC BY-NC-SA 4.0) 协议</a></p>
 </div>
       
     
@@ -850,7 +1332,7 @@
     
       
         <div class='copyright'>
-        <p><a href="https://pigbro.online" target="_blank" rel="noopener">Copyright © 2017-2020 PigBro</a></p>
+        <p><a target="_blank" rel="noopener" href="https://pigbro.online">Copyright © 2017-2020 PigBro</a></p>
 
         </div>
       
