@@ -2,13 +2,15 @@
 layout: post
 title: html5陀螺仪
 date: 2020-06-11 07:05:49
-tags: [javascript,html,html5]
-categories : [html]
+tags: [javascript, html, html5]
+categories: [html]
 ---
+
 deviceorientation : 设备的物理方向，表示为一系列的本地坐标系旋角。
 devicemotion : 提供设备的重力加速信息。
 compassneedscalibration : 罗盘校准。
 {% codeblock lang:html %}
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
