@@ -77,7 +77,7 @@ meta_generator: true
 date_format: YYYY-MM-DD
 time_format: HH:mm:ss
 ## Use post's date for updated date unless set in front-matter
-use_date_for_updated: false
+updated_option: false
 
 # Pagination
 ## Set per_page to 0 to disable pagination
@@ -102,16 +102,16 @@ deploy:
   repository: https://github.com/Strive087/strive087.github.io.git
   branch: dev
 # 网站图标，更多尺寸等图标请使用import方式批量导入
-favicon:  images/favicon.ico
+favicon: images/favicon.ico
 # 网站图标，更多尺寸等图标请使用import方式批量导入
 #favicon: https://cdn.jsdelivr.net/gh/xaoxuu/assets@master/favicon/favicon.ico
 import:
-#  meta:
-#  - "<meta name='theme-color' content='#FFFFFF'>"
-#  - "<meta name='msapplication-TileColor' content='#1BC3FB'>"
-#  - "<meta name='msapplication-config' content='https://cdn.jsdelivr.net/gh/xaoxuu/assets@master/favicon/favicons/browserconfig.xml'>"
- link:
- - "<link rel='stylesheet' href='http://at.alicdn.com/t/font_1872916_9bxpvrr3gw.css'>"
+  #  meta:
+  #  - "<meta name='theme-color' content='#FFFFFF'>"
+  #  - "<meta name='msapplication-TileColor' content='#1BC3FB'>"
+  #  - "<meta name='msapplication-config' content='https://cdn.jsdelivr.net/gh/xaoxuu/assets@master/favicon/favicons/browserconfig.xml'>"
+  link:
+    - "<link rel='stylesheet' href='http://at.alicdn.com/t/font_1872916_9bxpvrr3gw.css'>"
 #  - "<link rel='shortcut icon' type='image/x-icon' href='https://cdn.jsdelivr.net/gh/xaoxuu/assets@master/favicon/favicon.ico'>"
 #  - "<link rel='icon' type='image/x-icon' sizes='32x32' href='https://cdn.jsdelivr.net/gh/xaoxuu/assets@master/favicon/favicons/favicon-32x32.png'>"
 #  - "<link rel='apple-touch-icon' type='image/png' sizes='180x180' href='https://cdn.jsdelivr.net/gh/xaoxuu/assets@master/favicon/favicons/apple-touch-icon.png'>"
@@ -125,26 +125,17 @@ live2d:
   model:
     use: live2d-widget-model-izumi #模型选择
   display:
-    position: left  #模型位置
-    width: 150       #模型宽度
-    height: 300      #模型高度
+    position: left #模型位置
+    width: 150 #模型宽度
+    height: 300 #模型高度
   mobile:
-    show: true      #是否在手机端显示
+    show: true #是否在手机端显示
 
 # RSS订阅支持
 plugin:
   - hexo-generator-feed
- # Feed Atom
-feed: 
+  # Feed Atom
+feed:
   type: atom
   path: atom.xml
   limit: 20
-
-
-
-
-
-
-
-
-
