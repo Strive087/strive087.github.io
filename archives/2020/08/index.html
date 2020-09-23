@@ -782,143 +782,6 @@
         
           
   <h2 class="title">
-    <a href="/2020/08/22/javascript/this%E6%8C%87%E9%92%88/">
-      this指针
-    </a>
-  </h2>
-
-
-        
-        <div class='new-meta-box'>
-          
-            
-          
-            
-              
-<div class='new-meta-item author'>
-  <a class='author' href="https://strive087.github.io/" rel="nofollow">
-    <img no-lazy src="https://pigbro.online:9608/images/author.jpg">
-    <p>zhuduanlei</p>
-  </a>
-</div>
-
-            
-          
-            
-              
-  
-  <div class='new-meta-item category'>
-    <a href='/categories/javascript/' rel="nofollow">
-      <i class="fas fa-folder-open fa-fw" aria-hidden="true"></i>
-      <p>javascript</p>
-    </a>
-  </div>
-
-
-            
-          
-            
-              <div class="new-meta-item date">
-  <a class='notlink'>
-    <i class="fas fa-calendar-alt fa-fw" aria-hidden="true"></i>
-    <p>发布于：2020年8月22日</p>
-  </a>
-</div>
-
-            
-          
-            
-              
-  <div class="new-meta-item wordcount">
-    <a class='notlink'>
-      <i class="fas fa-keyboard fa-fw" aria-hidden="true"></i>
-      <p>字数：1字</p>
-    </a>
-  </div>
-  <div class="new-meta-item readtime">
-    <a class='notlink'>
-      <i class="fas fa-hourglass-half fa-fw" aria-hidden="true"></i>
-      <p>时长：1分钟</p>
-    </a>
-  </div>
-
-
-            
-          
-            
-              
-  <div class="new-meta-item browse valine">
-    <a class='notlink'>
-      <i class="fas fa-eye fa-fw" aria-hidden="true"></i>
-      
-      <span id="/2020/08/22/javascript/this%E6%8C%87%E9%92%88/" class="leancloud_visitors" data-flag-title="this指针">
-      <p>
-        <span class="leancloud-visitors-count"></span>
-      </p>
-      </span>
-    </a>
-  </div>
-
-
-            
-          
-            
-              
-<div class="new-meta-item comments-count">
-  
-  <a href="/2020/08/22/javascript/this%E6%8C%87%E9%92%88/#comments">
-    <i class="fas fa-comment-dots fa-fw"></i>
-    <span class="valine-comment-count" data-xid="/2020/08/22/javascript/this%E6%8C%87%E9%92%88/">0</span>
-    <span class="leancloud-comments-count">&nbsp;</span>
-  </a>
-</div>
-
-
-            
-          
-            
-              
-
-            
-          
-        </div>
-        
-          <hr>
-        
-      </div>
-    
-  </section>
-
-
-  <section class="article typo">
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p class='p subtitle'>this</p>
-      
-    </div>
-    
-      
-    
-  </section>
-</article>
-
-          </div>
-        
-      
-        
-          <div class='post-wrapper'>
-            <article class="post white-box shadow reveal ">
-  
-
-
-  <section class='meta'>
-    
-      
-      
-      <div class="meta" id="header-meta">
-        
-          
-  <h2 class="title">
     <a href="/2020/08/22/javascript/ES6/let%E5%92%8Cconst%E5%91%BD%E4%BB%A4/">
       let和const命令
     </a>
@@ -1040,6 +903,143 @@
 <p>const声明的变量，一经声明便不允许修改。<br>const实际上保证的，并不是变量的值不得改动，而是变量指向的那个内存地址所保存的数据不得改动。对于简单类型的数据（数值、字符串、布尔值），值就保存在变量指向的那个内存地址，因此等同于常量。但对于复合类型的数据（主要是对象和数组），变量指向的内存地址，保存的只是一个指向实际数据的指针，const只能保证这个指针是固定的（即总是指向另一个固定的地址），至于它指向的数据结构是不是可变的，就完全不能控制了。</p>
 <figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> foo = &#123;&#125;;</span><br><span class="line"></span><br><span class="line"><span class="comment">// 为 foo 添加一个属性，可以成功</span></span><br><span class="line">foo.prop = <span class="number">123</span>;</span><br><span class="line">foo.prop <span class="comment">// 123</span></span><br><span class="line"></span><br><span class="line"><span class="comment">// 将 foo 指向另一个对象，就会报错</span></span><br><span class="line">foo = &#123;&#125;; <span class="comment">// TypeError: &quot;foo&quot; is read-only</span></span><br></pre></td></tr></table></figure>
 
+      
+    </div>
+    
+      
+    
+  </section>
+</article>
+
+          </div>
+        
+      
+        
+          <div class='post-wrapper'>
+            <article class="post white-box shadow reveal ">
+  
+
+
+  <section class='meta'>
+    
+      
+      
+      <div class="meta" id="header-meta">
+        
+          
+  <h2 class="title">
+    <a href="/2020/08/22/javascript/this%E6%8C%87%E9%92%88/">
+      this指针
+    </a>
+  </h2>
+
+
+        
+        <div class='new-meta-box'>
+          
+            
+          
+            
+              
+<div class='new-meta-item author'>
+  <a class='author' href="https://strive087.github.io/" rel="nofollow">
+    <img no-lazy src="https://pigbro.online:9608/images/author.jpg">
+    <p>zhuduanlei</p>
+  </a>
+</div>
+
+            
+          
+            
+              
+  
+  <div class='new-meta-item category'>
+    <a href='/categories/javascript/' rel="nofollow">
+      <i class="fas fa-folder-open fa-fw" aria-hidden="true"></i>
+      <p>javascript</p>
+    </a>
+  </div>
+
+
+            
+          
+            
+              <div class="new-meta-item date">
+  <a class='notlink'>
+    <i class="fas fa-calendar-alt fa-fw" aria-hidden="true"></i>
+    <p>发布于：2020年8月22日</p>
+  </a>
+</div>
+
+            
+          
+            
+              
+  <div class="new-meta-item wordcount">
+    <a class='notlink'>
+      <i class="fas fa-keyboard fa-fw" aria-hidden="true"></i>
+      <p>字数：1字</p>
+    </a>
+  </div>
+  <div class="new-meta-item readtime">
+    <a class='notlink'>
+      <i class="fas fa-hourglass-half fa-fw" aria-hidden="true"></i>
+      <p>时长：1分钟</p>
+    </a>
+  </div>
+
+
+            
+          
+            
+              
+  <div class="new-meta-item browse valine">
+    <a class='notlink'>
+      <i class="fas fa-eye fa-fw" aria-hidden="true"></i>
+      
+      <span id="/2020/08/22/javascript/this%E6%8C%87%E9%92%88/" class="leancloud_visitors" data-flag-title="this指针">
+      <p>
+        <span class="leancloud-visitors-count"></span>
+      </p>
+      </span>
+    </a>
+  </div>
+
+
+            
+          
+            
+              
+<div class="new-meta-item comments-count">
+  
+  <a href="/2020/08/22/javascript/this%E6%8C%87%E9%92%88/#comments">
+    <i class="fas fa-comment-dots fa-fw"></i>
+    <span class="valine-comment-count" data-xid="/2020/08/22/javascript/this%E6%8C%87%E9%92%88/">0</span>
+    <span class="leancloud-comments-count">&nbsp;</span>
+  </a>
+</div>
+
+
+            
+          
+            
+              
+
+            
+          
+        </div>
+        
+          <hr>
+        
+      </div>
+    
+  </section>
+
+
+  <section class="article typo">
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p class='p subtitle'>this</p>
       
     </div>
     
@@ -1345,7 +1345,7 @@
           <li><a class="flat-box"
             title="/categories/nodeJs/" href="/categories/nodeJs/"
             id="categoriesnodeJs"
-            ><div class='name'>nodeJs</div><div class='badge'>(1)</div></a></li>
+            ><div class='name'>nodeJs</div><div class='badge'>(2)</div></a></li>
         
           <li><a class="flat-box"
             title="/categories/%E7%AE%97%E6%B3%95/" href="/categories/%E7%AE%97%E6%B3%95/"
@@ -1389,7 +1389,7 @@
 
 
     <div class='content'>
-      <a href="/tags/RegExp/" style="font-size: 14px; color: #999">RegExp</a> <a href="/tags/es6/" style="font-size: 14px; color: #999">es6</a> <a href="/tags/html/" style="font-size: 14px; color: #999">html</a> <a href="/tags/html5/" style="font-size: 14px; color: #999">html5</a> <a href="/tags/http/" style="font-size: 14px; color: #999">http</a> <a href="/tags/javascript/" style="font-size: 24px; color: #555">javascript</a> <a href="/tags/node/" style="font-size: 14px; color: #999">node</a> <a href="/tags/nodejs/" style="font-size: 14px; color: #999">nodejs</a> <a href="/tags/npm/" style="font-size: 14px; color: #999">npm</a> <a href="/tags/this/" style="font-size: 14px; color: #999">this</a> <a href="/tags/webpack/" style="font-size: 14px; color: #999">webpack</a> <a href="/tags/xhr/" style="font-size: 14px; color: #999">xhr</a> <a href="/tags/%E4%BA%8C%E5%8F%89%E6%A0%91/" style="font-size: 14px; color: #999">二叉树</a> <a href="/tags/%E4%BD%9C%E7%94%A8%E5%9F%9F/" style="font-size: 14px; color: #999">作用域</a> <a href="/tags/%E5%87%BD%E6%95%B0%E5%BC%8F%E7%BC%96%E7%A8%8B/" style="font-size: 14px; color: #999">函数式编程</a> <a href="/tags/%E5%93%88%E5%B8%8C%E8%A1%A8/" style="font-size: 14px; color: #999">哈希表</a> <a href="/tags/%E6%95%A3%E5%88%97%E8%A1%A8/" style="font-size: 14px; color: #999">散列表</a> <a href="/tags/%E7%AE%97%E6%B3%95/" style="font-size: 19px; color: #777">算法</a>
+      <a href="/tags/RegExp/" style="font-size: 14px; color: #999">RegExp</a> <a href="/tags/es6/" style="font-size: 14px; color: #999">es6</a> <a href="/tags/html/" style="font-size: 14px; color: #999">html</a> <a href="/tags/html5/" style="font-size: 14px; color: #999">html5</a> <a href="/tags/http/" style="font-size: 14px; color: #999">http</a> <a href="/tags/javascript/" style="font-size: 24px; color: #555">javascript</a> <a href="/tags/node/" style="font-size: 14px; color: #999">node</a> <a href="/tags/nodejs/" style="font-size: 17.33px; color: #828282">nodejs</a> <a href="/tags/npm/" style="font-size: 17.33px; color: #828282">npm</a> <a href="/tags/this/" style="font-size: 14px; color: #999">this</a> <a href="/tags/webpack/" style="font-size: 14px; color: #999">webpack</a> <a href="/tags/xhr/" style="font-size: 14px; color: #999">xhr</a> <a href="/tags/%E4%BA%8C%E5%8F%89%E6%A0%91/" style="font-size: 14px; color: #999">二叉树</a> <a href="/tags/%E4%BD%9C%E7%94%A8%E5%9F%9F/" style="font-size: 14px; color: #999">作用域</a> <a href="/tags/%E5%87%BD%E6%95%B0%E5%BC%8F%E7%BC%96%E7%A8%8B/" style="font-size: 14px; color: #999">函数式编程</a> <a href="/tags/%E5%93%88%E5%B8%8C%E8%A1%A8/" style="font-size: 14px; color: #999">哈希表</a> <a href="/tags/%E6%95%A3%E5%88%97%E8%A1%A8/" style="font-size: 14px; color: #999">散列表</a> <a href="/tags/%E7%AE%97%E6%B3%95/" style="font-size: 20.67px; color: #6c6c6c">算法</a>
     </div>
   </section>
 
