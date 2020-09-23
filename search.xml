@@ -37,6 +37,31 @@
     
     
     <entry>
+      <title>http请求</title>
+      <link href="2020/08/25/http/http/"/>
+      <url>2020/08/25/http/http/</url>
+      
+        <content type="html"><![CDATA[<p>ping<br>ttl 默认为 64，每次经过经过一个设备 ttl 减一，当 ttl 为 0 时包会被丢弃<br>浏览器访问页面流程<br>解析域名<br>浏览器发送 http 请求<br>服务器处理请求<br>服务器返回 html 响应<br>浏览器处理 html 页面</p><p>一次 http 操作为称为一个事务</p><p>http 请求：get、post、head、put、delete、connect、option</p><p>http 状态码：<br>1xx：指示信息 – 表示请求已经接受，继续处理</p><p>2xx：成功 – 请求已被成功接收</p><p>3xx：重定向 – 要完成请求必须进行更一步操作<br>301：资源被永久移动了<br>302：资源被临时移动了<br>304：本地重定向<br>305：资源直接请求不到，要通过代理<br>307：临时重定向</p><p>4xx：客户端错误 – 请求有语法错误或请求无法实现<br>400：请求语法错误<br>402：请求需要验证<br>403：拒绝执行<br>404：资源没找到，资源根本不存在<br>406：无法完成请求<br>408：请求时间过长<br>409：请求方法和无服务器要求的方法冲突<br>410：资源不存在了，原来有后来没了，维护人员应该设置 301 跳转<br>413：发送的数据太大，服务器拒绝执行<br>422：请求的数据是错误的数据</p><p>5xx：服务器端错误 – 服务器未能实现合法的请求<br>500：服务器奔溃</p><p>http 请求头</p><p>cookies<br>存在于客户端的一小段文本，随客户端点每一个请求发送该 url 下的所有 cookies 到服务器端。既可以在服务端也可以在客户端产生<br>cookie：客户端将服务器设置的 cookie 返回服务器<br>setCookie：服务端向客户端设置 cookie</p><p>seesion<br>存在于服务端，服务端用 seesionid 区分会话，服务器会将 seesionid 通过 setCookie 存在客户端。</p><p>http 缓存机制（浏览器的缓存）<br>缓存会根据请求保存输出内容的副本，如果是同一 url，缓存直接使用副本响应访问请求，而不是向源服务器再次发送请求。</p><p>缓存协商策略（服务器决定策略）<br>Etag：文件的 md5 指纹（哈希值）<br>Last-Modified：文件的时间戳<br>强制缓存：不向服务器发送请求，直接拿缓存资源（资源有时间戳和强制缓存标志 Expires）<br>每次访问后服务端会重新给个新的 md5 指纹或时间戳</p><p>密码学<br>散列是一种数据一旦转化成其他形式将永远无法恢复的加密技术<br>对称加密：加密和解密手段相同，手段泄露后不安全<br>费对称加密：<br>密钥交换算法：</p><p>https:<br>tls 协议包含了握手协议、密钥配置切换协议、应用数据协议和警报协议</p>]]></content>
+      
+      
+      <categories>
+          
+          <category> http </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> http </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>XHR的使用</title>
       <link href="2020/08/23/javascript/XHR%E7%9A%84%E4%BD%BF%E7%94%A8/"/>
       <url>2020/08/23/javascript/XHR%E7%9A%84%E4%BD%BF%E7%94%A8/</url>

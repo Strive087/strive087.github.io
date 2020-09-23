@@ -18,7 +18,7 @@
 
   <!-- 页面元数据 -->
   
-  <title>归档：2020/6 - 前端之路</title>
+  <title>标签：http - 前端之路</title>
   
 
   
@@ -356,7 +356,7 @@
   
 
 
-  <div class="l_body">
+  <div class="l_body nocover">
     <div class='body-wrapper' id="pjax-container">
       
         <!--此文件用来存放一些不方便取值的变量-->
@@ -379,16 +379,16 @@
 
 <script>
   // 处理封面 此时 jquery 还没加载
-  if ("blog" == "none") { // 移除封面
+  if ("none" == "none") { // 移除封面
     document.getElementsByClassName('cover')[0].style.display = "none";
     document.getElementsByClassName('l_body')[0].classList.add("nocover");
     document.getElementsByClassName('l_header', 'cover-wrapper')[0].classList.add("show");
   } else {
-    if ("blog" == "blog") { // 半屏
+    if ("none" == "blog") { // 半屏
       document.getElementsByClassName('cover')[0].classList.remove("full");
       document.getElementsByClassName('cover')[0].classList.add("half");
       document.getElementsByClassName('scroll-down')[0].style.display = "none";
-    } else if ("blog" == "docs") { // 全屏
+    } else if ("none" == "docs") { // 全屏
       document.getElementsByClassName('cover')[0].classList.remove("half");
       document.getElementsByClassName('cover')[0].classList.add("full");
       document.getElementsByClassName('scroll-down')[0].style.display = "";
@@ -402,21 +402,17 @@
       
       
 
+
 <div class='l_main'>
-	
-		
+  
+    
+      
   <section class="post-list ">
     
       
         
           
         
-          
-        
-          
-        
-          
-        
       
     
     
@@ -435,8 +431,8 @@
         
           
   <h2 class="title">
-    <a href="/2020/06/11/javascript/JS%E5%87%BD%E6%95%B0%E5%BC%8F%E7%BC%96%E7%A8%8B/">
-      JS的函数式编程
+    <a href="/2020/08/25/http/http/">
+      http请求
     </a>
   </h2>
 
@@ -461,9 +457,9 @@
               
   
   <div class='new-meta-item category'>
-    <a href='/categories/javascript/%E5%87%BD%E6%95%B0%E5%BC%8F%E7%BC%96%E7%A8%8B/' rel="nofollow">
+    <a href='/categories/http/' rel="nofollow">
       <i class="fas fa-folder-open fa-fw" aria-hidden="true"></i>
-      <p>javascript/函数式编程</p>
+      <p>http</p>
     </a>
   </div>
 
@@ -474,7 +470,7 @@
               <div class="new-meta-item date">
   <a class='notlink'>
     <i class="fas fa-calendar-alt fa-fw" aria-hidden="true"></i>
-    <p>发布于：2020年6月11日</p>
+    <p>发布于：2020年8月25日</p>
   </a>
 </div>
 
@@ -485,13 +481,13 @@
   <div class="new-meta-item wordcount">
     <a class='notlink'>
       <i class="fas fa-keyboard fa-fw" aria-hidden="true"></i>
-      <p>字数：104字</p>
+      <p>字数：704字</p>
     </a>
   </div>
   <div class="new-meta-item readtime">
     <a class='notlink'>
       <i class="fas fa-hourglass-half fa-fw" aria-hidden="true"></i>
-      <p>时长：1分钟</p>
+      <p>时长：2分钟</p>
     </a>
   </div>
 
@@ -504,7 +500,7 @@
     <a class='notlink'>
       <i class="fas fa-eye fa-fw" aria-hidden="true"></i>
       
-      <span id="/2020/06/11/javascript/JS%E5%87%BD%E6%95%B0%E5%BC%8F%E7%BC%96%E7%A8%8B/" class="leancloud_visitors" data-flag-title="JS的函数式编程">
+      <span id="/2020/08/25/http/http/" class="leancloud_visitors" data-flag-title="http请求">
       <p>
         <span class="leancloud-visitors-count"></span>
       </p>
@@ -519,9 +515,9 @@
               
 <div class="new-meta-item comments-count">
   
-  <a href="/2020/06/11/javascript/JS%E5%87%BD%E6%95%B0%E5%BC%8F%E7%BC%96%E7%A8%8B/#comments">
+  <a href="/2020/08/25/http/http/#comments">
     <i class="fas fa-comment-dots fa-fw"></i>
-    <span class="valine-comment-count" data-xid="/2020/06/11/javascript/JS%E5%87%BD%E6%95%B0%E5%BC%8F%E7%BC%96%E7%A8%8B/">0</span>
+    <span class="valine-comment-count" data-xid="/2020/08/25/http/http/">0</span>
     <span class="leancloud-comments-count">&nbsp;</span>
   </a>
 </div>
@@ -546,460 +542,21 @@
   <section class="article typo">
     <div class="article-entry" itemprop="articleBody">
       
-        <p>函数式编程特点：</p>
-<ol>
-<li>函数是”第一等公民”  (与变量的)</li>
-<li>只用”表达式”，不用”语句”  </li>
-<li>没有”副作用”  </li>
-<li>不修改状态  </li>
-<li>引用透明（函数运行只靠参数）</li>
-</ol>
-<p>函数curry<br>多参数函数转化成一个嵌套的一元函数<br>好处：一种函数的预加载的方法,相当于-缓存，保存作用域链<br>闭包必定会有内存泄漏</p>
-
-      
-    </div>
-    
-      
-    
-  </section>
-</article>
-
-          </div>
-        
-      
-        
-          <div class='post-wrapper'>
-            <article class="post white-box shadow reveal ">
-  
-
-
-  <section class='meta'>
-    
-      
-      
-      <div class="meta" id="header-meta">
-        
-          
-  <h2 class="title">
-    <a href="/2020/06/10/html5%E9%99%80%E8%9E%BA%E4%BB%AA/">
-      html5陀螺仪
-    </a>
-  </h2>
-
-
-        
-        <div class='new-meta-box'>
-          
-            
-          
-            
-              
-<div class='new-meta-item author'>
-  <a class='author' href="https://strive087.github.io/" rel="nofollow">
-    <img no-lazy src="https://pigbro.online:9608/images/author.jpg">
-    <p>zhuduanlei</p>
-  </a>
-</div>
-
-            
-          
-            
-              
-  
-  <div class='new-meta-item category'>
-    <a href='/categories/html/' rel="nofollow">
-      <i class="fas fa-folder-open fa-fw" aria-hidden="true"></i>
-      <p>html</p>
-    </a>
-  </div>
-
-
-            
-          
-            
-              <div class="new-meta-item date">
-  <a class='notlink'>
-    <i class="fas fa-calendar-alt fa-fw" aria-hidden="true"></i>
-    <p>发布于：2020年6月11日</p>
-  </a>
-</div>
-
-            
-          
-            
-              
-  <div class="new-meta-item wordcount">
-    <a class='notlink'>
-      <i class="fas fa-keyboard fa-fw" aria-hidden="true"></i>
-      <p>字数：332字</p>
-    </a>
-  </div>
-  <div class="new-meta-item readtime">
-    <a class='notlink'>
-      <i class="fas fa-hourglass-half fa-fw" aria-hidden="true"></i>
-      <p>时长：1分钟</p>
-    </a>
-  </div>
-
-
-            
-          
-            
-              
-  <div class="new-meta-item browse valine">
-    <a class='notlink'>
-      <i class="fas fa-eye fa-fw" aria-hidden="true"></i>
-      
-      <span id="/2020/06/10/html5%E9%99%80%E8%9E%BA%E4%BB%AA/" class="leancloud_visitors" data-flag-title="html5陀螺仪">
-      <p>
-        <span class="leancloud-visitors-count"></span>
-      </p>
-      </span>
-    </a>
-  </div>
-
-
-            
-          
-            
-              
-<div class="new-meta-item comments-count">
-  
-  <a href="/2020/06/10/html5%E9%99%80%E8%9E%BA%E4%BB%AA/#comments">
-    <i class="fas fa-comment-dots fa-fw"></i>
-    <span class="valine-comment-count" data-xid="/2020/06/10/html5%E9%99%80%E8%9E%BA%E4%BB%AA/">0</span>
-    <span class="leancloud-comments-count">&nbsp;</span>
-  </a>
-</div>
-
-
-            
-          
-            
-              
-
-            
-          
-        </div>
-        
-          <hr>
-        
-      </div>
-    
-  </section>
-
-
-  <section class="article typo">
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>deviceorientation : 设备的物理方向，表示为一系列的本地坐标系旋角。<br>devicemotion : 提供设备的重力加速信息。<br>compassneedscalibration : 罗盘校准。</p>
-<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"><span class="meta">&lt;!DOCTYPE <span class="meta-keyword">html</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">html</span> <span class="attr">lang</span>=<span class="string">&quot;en&quot;</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">head</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">meta</span> <span class="attr">charset</span>=<span class="string">&quot;UTF-8&quot;</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">meta</span> <span class="attr">name</span>=<span class="string">&quot;viewport&quot;</span> <span class="attr">content</span>=<span class="string">&quot;width=device-width, initial-scale=1.0&quot;</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">title</span>&gt;</span>html5陀螺仪<span class="tag">&lt;/<span class="name">title</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">link</span> <span class="attr">rel</span>=<span class="string">&quot;stylesheet&quot;</span> <span class="attr">href</span>=<span class="string">&quot;http://at.alicdn.com/t/font_1872916_9bxpvrr3gw.css&quot;</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">script</span> <span class="attr">src</span>=<span class="string">&quot;https://cdn.bootcdn.net/ajax/libs/jquery/3.5.1/jquery.min.js&quot;</span>&gt;</span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">head</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">body</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">h1</span> <span class="attr">style</span>=<span class="string">&quot;text-align: center;&quot;</span>&gt;</span>摇一摇有惊喜！<span class="tag">&lt;/<span class="name">h1</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">div</span> <span class="attr">align</span> = <span class="string">&quot;center&quot;</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">img</span> <span class="attr">src</span>=<span class="string">&quot;https://pigbro.online:9608/images/surprise/1.jpg&quot;</span> <span class="attr">alt</span>=<span class="string">&quot;surprise&quot;</span>&gt;</span> </span><br><span class="line">    <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">script</span>&gt;</span></span><br><span class="line"><span class="javascript">        <span class="comment">//获取手机屏幕宽度</span></span></span><br><span class="line"><span class="javascript">        <span class="keyword">var</span> deviceWidth = <span class="built_in">document</span>.documentElement.clientWidth;</span></span><br><span class="line"><span class="javascript">        <span class="keyword">var</span> speed = <span class="number">30</span>;</span></span><br><span class="line"><span class="javascript">        <span class="keyword">var</span> picture = <span class="number">1</span>;</span></span><br><span class="line"><span class="javascript">        <span class="keyword">var</span> x=y=z=lastx=lasty=lastz=<span class="number">0</span>;</span></span><br><span class="line"><span class="javascript">        $(<span class="string">&#x27;img&#x27;</span>).width(deviceWidth*<span class="number">0.9</span>);</span></span><br><span class="line"><span class="javascript">        <span class="keyword">var</span> flag = <span class="literal">true</span>;</span></span><br><span class="line"><span class="javascript">        <span class="keyword">if</span> (<span class="built_in">window</span>.DeviceOrientationEvent) &#123;</span></span><br><span class="line"><span class="javascript">            <span class="built_in">window</span>.addEventListener(<span class="string">&#x27;deviceorientation&#x27;</span>, <span class="function">(<span class="params">event</span>) =&gt;</span> &#123;</span></span><br><span class="line"><span class="javascript">                <span class="keyword">var</span> x = event.beta;</span></span><br><span class="line"><span class="javascript">                <span class="keyword">var</span> y = event.gamma;</span></span><br><span class="line"><span class="javascript">                <span class="keyword">var</span> z = event.alpha;</span></span><br><span class="line"><span class="javascript">                <span class="keyword">if</span>((<span class="built_in">Math</span>.abs(x-lastx)&gt;speed || <span class="built_in">Math</span>.abs(y-lasty)&gt;speed || <span class="built_in">Math</span>.abs(z-lastz)&gt;speed) &amp;&amp; flag)&#123;</span></span><br><span class="line">                    if(++picture &gt; 7)&#123;</span><br><span class="line">                        picture = 1;</span><br><span class="line">                    &#125;</span><br><span class="line"><span class="javascript">                    $(<span class="string">&#x27;img&#x27;</span>).attr(<span class="string">&#x27;src&#x27;</span>,<span class="string">&#x27;https://pigbro.online:9608/images/surprise/&#x27;</span>+picture+<span class="string">&#x27;.jpg&#x27;</span>);</span></span><br><span class="line"><span class="javascript">                    flag = <span class="literal">false</span>;</span></span><br><span class="line">                &#125;</span><br><span class="line">                lastx = x;</span><br><span class="line">                lasty = y;</span><br><span class="line">                lastz = z;</span><br><span class="line">            &#125;);</span><br><span class="line">            wi</span><br><span class="line">        &#125;</span><br><span class="line"><span class="javascript">        $(<span class="string">&#x27;img&#x27;</span>).on(<span class="string">&#x27;load&#x27;</span>, <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span></span><br><span class="line"><span class="javascript">            <span class="built_in">setTimeout</span>(<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</span></span><br><span class="line"><span class="javascript">                flag = <span class="literal">true</span>;</span></span><br><span class="line">            &#125;,1000);</span><br><span class="line">        &#125;);</span><br><span class="line">    <span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">body</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">html</span>&gt;</span></span><br></pre></td></tr></table></figure>
-
-      
-    </div>
-    
-      
-    
-  </section>
-</article>
-
-          </div>
-        
-      
-        
-          <div class='post-wrapper'>
-            <article class="post white-box shadow reveal ">
-  
-
-
-  <section class='meta'>
-    
-      
-      
-      <div class="meta" id="header-meta">
-        
-          
-  <h2 class="title">
-    <a href="/2020/06/10/javascript/JS%E7%9A%84%E8%AF%8D%E6%B3%95%E4%BD%9C%E7%94%A8%E5%9F%9F/">
-      JS的作用域
-    </a>
-  </h2>
-
-
-        
-        <div class='new-meta-box'>
-          
-            
-          
-            
-              
-<div class='new-meta-item author'>
-  <a class='author' href="https://strive087.github.io/" rel="nofollow">
-    <img no-lazy src="https://pigbro.online:9608/images/author.jpg">
-    <p>zhuduanlei</p>
-  </a>
-</div>
-
-            
-          
-            
-              
-  
-  <div class='new-meta-item category'>
-    <a href='/categories/javascript/%E4%BD%9C%E7%94%A8%E5%9F%9F/' rel="nofollow">
-      <i class="fas fa-folder-open fa-fw" aria-hidden="true"></i>
-      <p>javascript/作用域</p>
-    </a>
-  </div>
-
-
-            
-          
-            
-              <div class="new-meta-item date">
-  <a class='notlink'>
-    <i class="fas fa-calendar-alt fa-fw" aria-hidden="true"></i>
-    <p>发布于：2020年6月11日</p>
-  </a>
-</div>
-
-            
-          
-            
-              
-  <div class="new-meta-item wordcount">
-    <a class='notlink'>
-      <i class="fas fa-keyboard fa-fw" aria-hidden="true"></i>
-      <p>字数：350字</p>
-    </a>
-  </div>
-  <div class="new-meta-item readtime">
-    <a class='notlink'>
-      <i class="fas fa-hourglass-half fa-fw" aria-hidden="true"></i>
-      <p>时长：1分钟</p>
-    </a>
-  </div>
-
-
-            
-          
-            
-              
-  <div class="new-meta-item browse valine">
-    <a class='notlink'>
-      <i class="fas fa-eye fa-fw" aria-hidden="true"></i>
-      
-      <span id="/2020/06/10/javascript/JS%E7%9A%84%E8%AF%8D%E6%B3%95%E4%BD%9C%E7%94%A8%E5%9F%9F/" class="leancloud_visitors" data-flag-title="JS的作用域">
-      <p>
-        <span class="leancloud-visitors-count"></span>
-      </p>
-      </span>
-    </a>
-  </div>
-
-
-            
-          
-            
-              
-<div class="new-meta-item comments-count">
-  
-  <a href="/2020/06/10/javascript/JS%E7%9A%84%E8%AF%8D%E6%B3%95%E4%BD%9C%E7%94%A8%E5%9F%9F/#comments">
-    <i class="fas fa-comment-dots fa-fw"></i>
-    <span class="valine-comment-count" data-xid="/2020/06/10/javascript/JS%E7%9A%84%E8%AF%8D%E6%B3%95%E4%BD%9C%E7%94%A8%E5%9F%9F/">0</span>
-    <span class="leancloud-comments-count">&nbsp;</span>
-  </a>
-</div>
-
-
-            
-          
-            
-              
-
-            
-          
-        </div>
-        
-          <hr>
-        
-      </div>
-    
-  </section>
-
-
-  <section class="article typo">
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p class='p subtitle'>作用域</p>
-<p>其实作用域就是一套用来存储变量以及快速查找变量的一套的规则。分为全局、函数、块级作用域这三种。<br>块级作用域可通过新增命令let和const声明，所声明的变量在指定块的作用域外无法被访问。块级作用域在如下情况被创建：</p>
-<ol>
-<li>在一个函数内部</li>
-<li>在一个代码块（由一对花括号包裹）内部</li>
-</ol>
-<p>作用域是分层的，内层作用域可以访问外层作用域的变量，反之则不行。</p>
-<img src='https://zhuduanlei-1256381138.cos.ap-guangzhou.myqcloud.com/uPic/169590b8c66f551b.jpg' style='width:300px'>
-
-<p class='p subtitle'>词法作用域</p>
-
-<p class='p subtitle'>关于自由变量的取值</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> x = <span class="number">10</span></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">fn</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">  <span class="built_in">console</span>.log(x)</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">show</span>(<span class="params">f</span>) </span>&#123;</span><br><span class="line">  <span class="keyword">var</span> x = <span class="number">20</span></span><br><span class="line">  (<span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">    f() <span class="comment">//10，而不是20</span></span><br><span class="line">  &#125;)()</span><br><span class="line">&#125;</span><br><span class="line">show(fn)</span><br></pre></td></tr></table></figure>
-<p>在fn函数中，取自由变量x的值时，要到哪个作用域中取？——要到创建fn函数的那个作用域中取，无论fn函数将在哪里调用。</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> a = <span class="number">10</span></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">fn</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">  <span class="keyword">var</span> b = <span class="number">20</span></span><br><span class="line">  <span class="function"><span class="keyword">function</span> <span class="title">bar</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">    <span class="built_in">console</span>.log(a + b) <span class="comment">//30</span></span><br><span class="line">  &#125;</span><br><span class="line">  <span class="keyword">return</span> bar</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">var</span> x = fn(),</span><br><span class="line">  b = <span class="number">200</span></span><br><span class="line">x() <span class="comment">//bar()</span></span><br></pre></td></tr></table></figure>
-<p>fn()返回的是bar函数，赋值给x。执行x()，即执行bar函数代码。取b的值时，直接在fn作用域取出。取a的值时，试图在fn作用域取，但是取不到，只能转向创建fn的那个作用域中去查找，结果找到了,所以最后的结果是30</p>
-
-      
-    </div>
-    
-      
-    
-  </section>
-</article>
-
-          </div>
-        
-      
-        
-          <div class='post-wrapper'>
-            <article class="post white-box shadow reveal ">
-  
-
-
-  <section class='meta'>
-    
-      
-      
-      <div class="meta" id="header-meta">
-        
-          
-  <h2 class="title">
-    <a href="/2020/06/07/npm/">
-      npm切换镜像源
-    </a>
-  </h2>
-
-
-        
-        <div class='new-meta-box'>
-          
-            
-          
-            
-              
-<div class='new-meta-item author'>
-  <a class='author' href="https://strive087.github.io/" rel="nofollow">
-    <img no-lazy src="https://pigbro.online:9608/images/author.jpg">
-    <p>zhuduanlei</p>
-  </a>
-</div>
-
-            
-          
-            
-              
-  
-  <div class='new-meta-item category'>
-    <a href='/categories/nodeJs/' rel="nofollow">
-      <i class="fas fa-folder-open fa-fw" aria-hidden="true"></i>
-      <p>nodeJs</p>
-    </a>
-  </div>
-
-
-            
-          
-            
-              <div class="new-meta-item date">
-  <a class='notlink'>
-    <i class="fas fa-calendar-alt fa-fw" aria-hidden="true"></i>
-    <p>发布于：2020年6月7日</p>
-  </a>
-</div>
-
-            
-          
-            
-              
-  <div class="new-meta-item wordcount">
-    <a class='notlink'>
-      <i class="fas fa-keyboard fa-fw" aria-hidden="true"></i>
-      <p>字数：170字</p>
-    </a>
-  </div>
-  <div class="new-meta-item readtime">
-    <a class='notlink'>
-      <i class="fas fa-hourglass-half fa-fw" aria-hidden="true"></i>
-      <p>时长：1分钟</p>
-    </a>
-  </div>
-
-
-            
-          
-            
-              
-  <div class="new-meta-item browse valine">
-    <a class='notlink'>
-      <i class="fas fa-eye fa-fw" aria-hidden="true"></i>
-      
-      <span id="/2020/06/07/npm/" class="leancloud_visitors" data-flag-title="npm切换镜像源">
-      <p>
-        <span class="leancloud-visitors-count"></span>
-      </p>
-      </span>
-    </a>
-  </div>
-
-
-            
-          
-            
-              
-<div class="new-meta-item comments-count">
-  
-  <a href="/2020/06/07/npm/#comments">
-    <i class="fas fa-comment-dots fa-fw"></i>
-    <span class="valine-comment-count" data-xid="/2020/06/07/npm/">0</span>
-    <span class="leancloud-comments-count">&nbsp;</span>
-  </a>
-</div>
-
-
-            
-          
-            
-              
-
-            
-          
-        </div>
-        
-          <hr>
-        
-      </div>
-    
-  </section>
-
-
-  <section class="article typo">
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p class='p subtitle'>手动切换npm源</p>
-
-<ul>
-<li>切换为淘宝镜像<br>npm install cnpm 1.临时使用<pre><code>npm --registry https:&#x2F;&#x2F;registry.npm.taobao.org install express;</code></pre> 2.持久使用
-<pre><code>npm config set registry https:&#x2F;&#x2F;registry.npm.taobao.org</code></pre> 3.通过 cnpm
-<pre><code>npm install -g cnpm --registry&#x3D;https:&#x2F;&#x2F;registry.npm.taobao.org</code></pre></li>
-<li>切换官方镜像<pre><code>npm config set registry https:&#x2F;&#x2F;registry.npmjs.org&#x2F;</code></pre></li>
-<li>查看当前 npm 源地址<pre><code>npm config get registry</code></pre>
-
-</li>
-</ul>
-<p class='p subtitle'>nrm切换npm源</p>
-<p>通过 nrm 设置 npm 源<br>npm install -g nrm<br>nrm ls<br>nrm use <registry></p>
-<p class='p subtitle'>npm设置代理</p>
-<p>npm 代理:<br>npm config set proxy <a target="_blank" rel="noopener" href="http://127.0.0.1:1087">http://127.0.0.1:1087</a><br>npm config set https-proxy <a target="_blank" rel="noopener" href="http://127.0.0.1:1087">http://127.0.0.1:1087</a><br>npm config set proxy socks5://127.0.0.1:1080<br>npm config set https-proxy socks5://127.0.0.1:1080</p>
-<p>取消代理:<br>npm config delete proxy<br>npm config delete https-proxy</p>
+        <p>ping<br>ttl 默认为 64，每次经过经过一个设备 ttl 减一，当 ttl 为 0 时包会被丢弃<br>浏览器访问页面流程<br>解析域名<br>浏览器发送 http 请求<br>服务器处理请求<br>服务器返回 html 响应<br>浏览器处理 html 页面</p>
+<p>一次 http 操作为称为一个事务</p>
+<p>http 请求：get、post、head、put、delete、connect、option</p>
+<p>http 状态码：<br>1xx：指示信息 – 表示请求已经接受，继续处理</p>
+<p>2xx：成功 – 请求已被成功接收</p>
+<p>3xx：重定向 – 要完成请求必须进行更一步操作<br>301：资源被永久移动了<br>302：资源被临时移动了<br>304：本地重定向<br>305：资源直接请求不到，要通过代理<br>307：临时重定向</p>
+<p>4xx：客户端错误 – 请求有语法错误或请求无法实现<br>400：请求语法错误<br>402：请求需要验证<br>403：拒绝执行<br>404：资源没找到，资源根本不存在<br>406：无法完成请求<br>408：请求时间过长<br>409：请求方法和无服务器要求的方法冲突<br>410：资源不存在了，原来有后来没了，维护人员应该设置 301 跳转<br>413：发送的数据太大，服务器拒绝执行<br>422：请求的数据是错误的数据</p>
+<p>5xx：服务器端错误 – 服务器未能实现合法的请求<br>500：服务器奔溃</p>
+<p>http 请求头</p>
+<p>cookies<br>存在于客户端的一小段文本，随客户端点每一个请求发送该 url 下的所有 cookies 到服务器端。既可以在服务端也可以在客户端产生<br>cookie：客户端将服务器设置的 cookie 返回服务器<br>setCookie：服务端向客户端设置 cookie</p>
+<p>seesion<br>存在于服务端，服务端用 seesionid 区分会话，服务器会将 seesionid 通过 setCookie 存在客户端。</p>
+<p>http 缓存机制（浏览器的缓存）<br>缓存会根据请求保存输出内容的副本，如果是同一 url，缓存直接使用副本响应访问请求，而不是向源服务器再次发送请求。</p>
+<p>缓存协商策略（服务器决定策略）<br>Etag：文件的 md5 指纹（哈希值）<br>Last-Modified：文件的时间戳<br>强制缓存：不向服务器发送请求，直接拿缓存资源（资源有时间戳和强制缓存标志 Expires）<br>每次访问后服务端会重新给个新的 md5 指纹或时间戳</p>
+<p>密码学<br>散列是一种数据一旦转化成其他形式将永远无法恢复的加密技术<br>对称加密：加密和解密手段相同，手段泄露后不安全<br>费对称加密：<br>密钥交换算法：</p>
+<p>https:<br>tls 协议包含了握手协议、密钥配置切换协议、应用数据协议和警报协议</p>
 
       
     </div>
@@ -1023,7 +580,8 @@
   
 
 
-	
+    
+  
 </div>
 <aside class='l_side'>
   
@@ -1207,15 +765,6 @@
 
 
 </aside>
-
-
-
-
-
-	<!-- 根据主题中的设置决定是否在archive中针对摘要部分的MathJax公式加载mathjax.js文件 -->
-	
-
-	
 
 
     </div>
