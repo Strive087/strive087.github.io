@@ -55,7 +55,6 @@ xhr.overrideMimeType("text/xml")
 xhr.send(null);
 {% endcodeblock %}
 
-ç
 进度事件有如下几种：
 
 * onloadstart：接收到响应数据第一个字节触发

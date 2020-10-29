@@ -31,10 +31,10 @@ function Person(name,age){
 var person = new Person('zhu',18);
 {% endcodeblock %}
 使用new操作符创建新实例必须经历4个阶段:
- 1.创建一个新的对象
- 2.将构造函数的作用域赋给新对象（因此this就指向了该对象）
- 3.执行构造函数中的代码（为新对象添加属性）
- 4.返回新对象
+ 1.创建一个新的空对象对象 -- obj = {}
+ 2.将构造函数的作用域赋给新对象（因此this就指向了该对象）-- obj.__proto__ = Person.prototype
+ 3.执行构造函数中的代码（为新对象obj添加属性）
+ 4.判断fn返回值类型(无返回值默认return this)，如果是值类型，返回obj；如果是引用类型，则返回该引用类型的对象。
 构造函数的问题：
 对于sayname的函数相当于new Function('alert(this.name)'),这就造成不同实例的同名函数不相等，为了解决这个问题可以将函数定义移到构造函数外部。
 {% codeblock lang:javascript %}
