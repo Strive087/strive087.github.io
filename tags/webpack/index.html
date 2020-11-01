@@ -413,6 +413,8 @@
         
           
         
+          
+        
       
     
     
@@ -431,7 +433,151 @@
         
           
   <h2 class="title">
-    <a href="/2020/09/12/node/webpack/%E5%BF%AB%E9%80%9F%E6%90%AD%E5%BB%BA%E6%89%8B%E5%86%8C/">
+    <a href="/2020/10/25/webpack/wepack%E6%BA%90%E7%A0%81%E5%88%86%E6%9E%900/">
+      webpack4.x/5.x源码分析1
+    </a>
+  </h2>
+
+
+        
+        <div class='new-meta-box'>
+          
+            
+          
+            
+              
+<div class='new-meta-item author'>
+  <a class='author' href="https://strive087.github.io/" rel="nofollow">
+    <img no-lazy src="https://pigbro.online:9608/images/author.jpg">
+    <p>zhuduanlei</p>
+  </a>
+</div>
+
+            
+          
+            
+              
+  
+  <div class='new-meta-item category'>
+    <a href='/categories/webpack/' rel="nofollow">
+      <i class="fas fa-folder-open fa-fw" aria-hidden="true"></i>
+      <p>webpack</p>
+    </a>
+  </div>
+
+
+            
+          
+            
+              <div class="new-meta-item date">
+  <a class='notlink'>
+    <i class="fas fa-calendar-alt fa-fw" aria-hidden="true"></i>
+    <p>发布于：2020年10月26日</p>
+  </a>
+</div>
+
+            
+          
+            
+              
+  <div class="new-meta-item wordcount">
+    <a class='notlink'>
+      <i class="fas fa-keyboard fa-fw" aria-hidden="true"></i>
+      <p>字数：295字</p>
+    </a>
+  </div>
+  <div class="new-meta-item readtime">
+    <a class='notlink'>
+      <i class="fas fa-hourglass-half fa-fw" aria-hidden="true"></i>
+      <p>时长：1分钟</p>
+    </a>
+  </div>
+
+
+            
+          
+            
+              
+  <div class="new-meta-item browse valine">
+    <a class='notlink'>
+      <i class="fas fa-eye fa-fw" aria-hidden="true"></i>
+      
+      <span id="/2020/10/25/webpack/wepack%E6%BA%90%E7%A0%81%E5%88%86%E6%9E%900/" class="leancloud_visitors" data-flag-title="webpack4.x/5.x源码分析1">
+      <p>
+        <span class="leancloud-visitors-count"></span>
+      </p>
+      </span>
+    </a>
+  </div>
+
+
+            
+          
+            
+              
+<div class="new-meta-item comments-count">
+  
+  <a href="/2020/10/25/webpack/wepack%E6%BA%90%E7%A0%81%E5%88%86%E6%9E%900/#comments">
+    <i class="fas fa-comment-dots fa-fw"></i>
+    <span class="valine-comment-count" data-xid="/2020/10/25/webpack/wepack%E6%BA%90%E7%A0%81%E5%88%86%E6%9E%900/">0</span>
+    <span class="leancloud-comments-count">&nbsp;</span>
+  </a>
+</div>
+
+
+            
+          
+            
+              
+
+            
+          
+        </div>
+        
+          <hr>
+        
+      </div>
+    
+  </section>
+
+
+  <section class="article typo">
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p class='p subtitle'>单文件输出分析</p>
+<p>1.webpack4.x</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br></pre></td><td class="code"><pre><span class="line">(<span class="function"><span class="keyword">function</span> (<span class="params">modules</span>) </span>&#123;</span><br><span class="line">  <span class="comment">// webpackBootstrap</span></span><br><span class="line">  <span class="comment">// The module cache</span></span><br><span class="line">  <span class="keyword">var</span> installedModules = &#123;&#125;;</span><br><span class="line"></span><br><span class="line">  <span class="comment">// The require function</span></span><br><span class="line">  <span class="function"><span class="keyword">function</span> <span class="title">__webpack_require__</span>(<span class="params">moduleId</span>) </span>&#123;</span><br><span class="line">    <span class="comment">// Check if module is in cache</span></span><br><span class="line">    <span class="keyword">if</span> (installedModules[moduleId]) &#123;</span><br><span class="line">      <span class="keyword">return</span> installedModules[moduleId].exports;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="comment">// Create a new module (and put it into the cache)</span></span><br><span class="line">    <span class="keyword">var</span> <span class="built_in">module</span> = (installedModules[moduleId] = &#123;</span><br><span class="line">      i: moduleId,</span><br><span class="line">      l: <span class="literal">false</span>,</span><br><span class="line">      <span class="built_in">exports</span>: &#123;&#125;,</span><br><span class="line">    &#125;);</span><br><span class="line"></span><br><span class="line">    <span class="comment">// Execute the module function</span></span><br><span class="line">    modules[moduleId].call(</span><br><span class="line">      <span class="built_in">module</span>.exports,</span><br><span class="line">      <span class="built_in">module</span>,</span><br><span class="line">      <span class="built_in">module</span>.exports,</span><br><span class="line">      __webpack_require__</span><br><span class="line">    );</span><br><span class="line"></span><br><span class="line">    <span class="comment">// Flag the module as loaded</span></span><br><span class="line">    <span class="built_in">module</span>.l = <span class="literal">true</span>;</span><br><span class="line"></span><br><span class="line">    <span class="comment">// Return the exports of the module</span></span><br><span class="line">    <span class="keyword">return</span> <span class="built_in">module</span>.exports;</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="comment">// Load entry module and return exports</span></span><br><span class="line">  <span class="keyword">return</span> __webpack_require__((__webpack_require__.s = <span class="string">&#x27;./src/index.js&#x27;</span>));</span><br><span class="line">&#125;)(&#123;<span class="comment">//立即执行函数传入一个对象,以文件路径为属性名,函数体为值</span></span><br><span class="line">  <span class="string">&#x27;./src/index.js&#x27;</span>: <span class="function"><span class="keyword">function</span> (<span class="params">module, exports</span>) </span>&#123;</span><br><span class="line">    <span class="built_in">console</span>.log(<span class="string">&#x27;zhuduanlei&#x27;</span>);</span><br><span class="line">  &#125;,</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
+<p>从上面代码可以得知首先调用立即执行函数,然后函数体内会创建一个缓存对象,然后对判断缓存对象中是否存在传入的module,存在就返回,不存在就创建一个module,模拟commonJS的export,然后存入缓存中,最后通过call执行mudule中的函数,返回mudule.export;</p>
+<p>2.webpack5.x</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">(<span class="function">() =&gt;</span> &#123;</span><br><span class="line">  <span class="built_in">eval</span>(<span class="string">&#x27;console.log(zhuduanlei)&#x27;</span>);</span><br><span class="line">&#125;)();</span><br></pre></td></tr></table></figure>
+<p>由于现代浏览器的普及,在webpack5中便直接将源代码进行输出执行</p>
+<p class='p subtitle'>多文件输出分析</p>
+      
+    </div>
+    
+      
+    
+  </section>
+</article>
+
+          </div>
+        
+      
+        
+          <div class='post-wrapper'>
+            <article class="post white-box shadow reveal ">
+  
+
+
+  <section class='meta'>
+    
+      
+      
+      <div class="meta" id="header-meta">
+        
+          
+  <h2 class="title">
+    <a href="/2020/09/12/webpack/%E5%BF%AB%E9%80%9F%E6%90%AD%E5%BB%BA%E6%89%8B%E5%86%8C/">
       webpack快速搭建手册
     </a>
   </h2>
@@ -457,9 +603,9 @@
               
   
   <div class='new-meta-item category'>
-    <a href='/categories/javascript/node/webpack/' rel="nofollow">
+    <a href='/categories/webpack/' rel="nofollow">
       <i class="fas fa-folder-open fa-fw" aria-hidden="true"></i>
-      <p>javascript/node/webpack</p>
+      <p>webpack</p>
     </a>
   </div>
 
@@ -500,7 +646,7 @@
     <a class='notlink'>
       <i class="fas fa-eye fa-fw" aria-hidden="true"></i>
       
-      <span id="/2020/09/12/node/webpack/%E5%BF%AB%E9%80%9F%E6%90%AD%E5%BB%BA%E6%89%8B%E5%86%8C/" class="leancloud_visitors" data-flag-title="webpack快速搭建手册">
+      <span id="/2020/09/12/webpack/%E5%BF%AB%E9%80%9F%E6%90%AD%E5%BB%BA%E6%89%8B%E5%86%8C/" class="leancloud_visitors" data-flag-title="webpack快速搭建手册">
       <p>
         <span class="leancloud-visitors-count"></span>
       </p>
@@ -515,9 +661,9 @@
               
 <div class="new-meta-item comments-count">
   
-  <a href="/2020/09/12/node/webpack/%E5%BF%AB%E9%80%9F%E6%90%AD%E5%BB%BA%E6%89%8B%E5%86%8C/#comments">
+  <a href="/2020/09/12/webpack/%E5%BF%AB%E9%80%9F%E6%90%AD%E5%BB%BA%E6%89%8B%E5%86%8C/#comments">
     <i class="fas fa-comment-dots fa-fw"></i>
-    <span class="valine-comment-count" data-xid="/2020/09/12/node/webpack/%E5%BF%AB%E9%80%9F%E6%90%AD%E5%BB%BA%E6%89%8B%E5%86%8C/">0</span>
+    <span class="valine-comment-count" data-xid="/2020/09/12/webpack/%E5%BF%AB%E9%80%9F%E6%90%AD%E5%BB%BA%E6%89%8B%E5%86%8C/">0</span>
     <span class="leancloud-comments-count">&nbsp;</span>
   </a>
 </div>
@@ -654,6 +800,11 @@
       <ul class="entry navigation">
         
           <li><a class="flat-box"
+            title="/categories/framework/" href="/categories/framework/"
+            id="categoriesframework"
+            ><div class='name'>framework</div><div class='badge'>(2)</div></a></li>
+        
+          <li><a class="flat-box"
             title="/categories/html/" href="/categories/html/"
             id="categorieshtml"
             ><div class='name'>html</div><div class='badge'>(1)</div></a></li>
@@ -666,22 +817,12 @@
           <li><a class="flat-box"
             title="/categories/javascript/" href="/categories/javascript/"
             id="categoriesjavascript"
-            ><div class='name'>javascript</div><div class='badge'>(10)</div></a></li>
+            ><div class='name'>javascript</div><div class='badge'>(12)</div></a></li>
         
           <li><a class="flat-box child"
             title="/categories/javascript/RegExp/" href="/categories/javascript/RegExp/"
             id="categoriesjavascriptRegExp"
             ><div class='name'>RegExp</div><div class='badge'>(1)</div></a></li>
-        
-          <li><a class="flat-box child"
-            title="/categories/javascript/node/" href="/categories/javascript/node/"
-            id="categoriesjavascriptnode"
-            ><div class='name'>node</div><div class='badge'>(1)</div></a></li>
-        
-          <li><a class="flat-box child"
-            title="/categories/javascript/node/webpack/" href="/categories/javascript/node/webpack/"
-            id="categoriesjavascriptnodewebpack"
-            ><div class='name'>webpack</div><div class='badge'>(1)</div></a></li>
         
           <li><a class="flat-box child"
             title="/categories/javascript/%E4%BD%9C%E7%94%A8%E5%9F%9F/" href="/categories/javascript/%E4%BD%9C%E7%94%A8%E5%9F%9F/"
@@ -693,10 +834,30 @@
             id="categoriesjavascriptE587BDE695B0E5BC8FE7BC96E7A88B"
             ><div class='name'>函数式编程</div><div class='badge'>(1)</div></a></li>
         
+          <li><a class="flat-box child"
+            title="/categories/javascript/%E8%BF%90%E7%AE%97/" href="/categories/javascript/%E8%BF%90%E7%AE%97/"
+            id="categoriesjavascriptE8BF90E7AE97"
+            ><div class='name'>运算</div><div class='badge'>(3)</div></a></li>
+        
           <li><a class="flat-box"
             title="/categories/nodeJs/" href="/categories/nodeJs/"
             id="categoriesnodeJs"
-            ><div class='name'>nodeJs</div><div class='badge'>(2)</div></a></li>
+            ><div class='name'>nodeJs</div><div class='badge'>(3)</div></a></li>
+        
+          <li><a class="flat-box"
+            title="/categories/vue/" href="/categories/vue/"
+            id="categoriesvue"
+            ><div class='name'>vue</div><div class='badge'>(7)</div></a></li>
+        
+          <li><a class="flat-box"
+            title="/categories/webpack/" href="/categories/webpack/"
+            id="categorieswebpack"
+            ><div class='name'>webpack</div><div class='badge'>(2)</div></a></li>
+        
+          <li><a class="flat-box"
+            title="/categories/wx%E5%B0%8F%E7%A8%8B%E5%BA%8F/" href="/categories/wx%E5%B0%8F%E7%A8%8B%E5%BA%8F/"
+            id="categorieswxE5B08FE7A88BE5BA8F"
+            ><div class='name'>wx小程序</div><div class='badge'>(1)</div></a></li>
         
           <li><a class="flat-box"
             title="/categories/%E7%AE%97%E6%B3%95/" href="/categories/%E7%AE%97%E6%B3%95/"
@@ -740,7 +901,7 @@
 
 
     <div class='content'>
-      <a href="/tags/RegExp/" style="font-size: 14px; color: #999">RegExp</a> <a href="/tags/es6/" style="font-size: 14px; color: #999">es6</a> <a href="/tags/html/" style="font-size: 14px; color: #999">html</a> <a href="/tags/html5/" style="font-size: 14px; color: #999">html5</a> <a href="/tags/http/" style="font-size: 14px; color: #999">http</a> <a href="/tags/javascript/" style="font-size: 24px; color: #555">javascript</a> <a href="/tags/node/" style="font-size: 14px; color: #999">node</a> <a href="/tags/nodejs/" style="font-size: 17.33px; color: #828282">nodejs</a> <a href="/tags/npm/" style="font-size: 17.33px; color: #828282">npm</a> <a href="/tags/this/" style="font-size: 14px; color: #999">this</a> <a href="/tags/webpack/" style="font-size: 14px; color: #999">webpack</a> <a href="/tags/xhr/" style="font-size: 14px; color: #999">xhr</a> <a href="/tags/%E4%BA%8C%E5%8F%89%E6%A0%91/" style="font-size: 14px; color: #999">二叉树</a> <a href="/tags/%E4%BD%9C%E7%94%A8%E5%9F%9F/" style="font-size: 14px; color: #999">作用域</a> <a href="/tags/%E5%87%BD%E6%95%B0%E5%BC%8F%E7%BC%96%E7%A8%8B/" style="font-size: 14px; color: #999">函数式编程</a> <a href="/tags/%E5%93%88%E5%B8%8C%E8%A1%A8/" style="font-size: 14px; color: #999">哈希表</a> <a href="/tags/%E6%95%A3%E5%88%97%E8%A1%A8/" style="font-size: 14px; color: #999">散列表</a> <a href="/tags/%E7%AE%97%E6%B3%95/" style="font-size: 20.67px; color: #6c6c6c">算法</a>
+      <a href="/tags/RegExp/" style="font-size: 14px; color: #999">RegExp</a> <a href="/tags/es6/" style="font-size: 14px; color: #999">es6</a> <a href="/tags/framework/" style="font-size: 16.5px; color: #888">framework</a> <a href="/tags/html/" style="font-size: 14px; color: #999">html</a> <a href="/tags/html5/" style="font-size: 14px; color: #999">html5</a> <a href="/tags/http/" style="font-size: 14px; color: #999">http</a> <a href="/tags/javascript/" style="font-size: 24px; color: #555">javascript</a> <a href="/tags/nodejs/" style="font-size: 19px; color: #777">nodejs</a> <a href="/tags/npm/" style="font-size: 19px; color: #777">npm</a> <a href="/tags/this/" style="font-size: 14px; color: #999">this</a> <a href="/tags/vue/" style="font-size: 21.5px; color: #666">vue</a> <a href="/tags/webpack/" style="font-size: 16.5px; color: #888">webpack</a> <a href="/tags/wx%E5%B0%8F%E7%A8%8B%E5%BA%8F/" style="font-size: 14px; color: #999">wx小程序</a> <a href="/tags/xhr/" style="font-size: 14px; color: #999">xhr</a> <a href="/tags/%E4%BA%8C%E5%8F%89%E6%A0%91/" style="font-size: 14px; color: #999">二叉树</a> <a href="/tags/%E4%BD%8D%E8%BF%90%E7%AE%97/" style="font-size: 16.5px; color: #888">位运算</a> <a href="/tags/%E4%BD%9C%E7%94%A8%E5%9F%9F/" style="font-size: 14px; color: #999">作用域</a> <a href="/tags/%E5%87%BD%E6%95%B0%E5%BC%8F%E7%BC%96%E7%A8%8B/" style="font-size: 14px; color: #999">函数式编程</a> <a href="/tags/%E5%93%88%E5%B8%8C%E8%A1%A8/" style="font-size: 14px; color: #999">哈希表</a> <a href="/tags/%E6%95%A3%E5%88%97%E8%A1%A8/" style="font-size: 14px; color: #999">散列表</a> <a href="/tags/%E6%B5%AE%E7%82%B9%E6%95%B0/" style="font-size: 14px; color: #999">浮点数</a> <a href="/tags/%E7%AE%97%E6%B3%95/" style="font-size: 19px; color: #777">算法</a>
     </div>
   </section>
 
