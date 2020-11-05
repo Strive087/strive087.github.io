@@ -2,7 +2,7 @@
 title: npm script使用指南
 date: 2020/9/7 20:20:35
 tag: [npm, nodejs]
-categories: nodeJs
+categories: [nodeJs,npm]
 ---
 
 {% p subtitle,参考链接 %}
