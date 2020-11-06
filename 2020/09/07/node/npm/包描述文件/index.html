@@ -444,9 +444,9 @@
               
   
   <div class='new-meta-item category'>
-    <a href='/categories/nodeJs/' rel="nofollow">
+    <a href='/categories/nodeJs/npm/' rel="nofollow">
       <i class="fas fa-folder-open fa-fw" aria-hidden="true"></i>
-      <p>nodeJs</p>
+      <p>nodeJs/npm</p>
     </a>
   </div>
 
@@ -481,10 +481,37 @@
         <div class="article-entry" itemprop="articleBody">
           
           
-          <p class='p subtitle'>必需字段分析</p>
-<p>-name:包名,必须是唯一的,以免对外公布时产生冲突<br>-description:包简介<br>-version:版本号,通常格式为major.minor.revision<br>-keywords:关键词数组,npm用来做分类搜索<br>-maintainers:包维护者列表,每个维护者由name/email/web三个属性组成,npm根据该属性进行权限认证<br>-contributors:贡献者列表,格式与维护者列表相同<br>-bugs:一个可以反馈bug的网址或者邮箱<br>-licenses:许可证列表,表示这个包可以在哪些许可证下使用<br>-repositories:托管源代码的位置列表<br>-dependencies:当前包所需要依赖的包列表,npm会根据这个属性自动加载依赖包</p>
-<p class='p subtitle'>非必需字段分析</p>
-<p>-script:脚本说明对象,主要被包管理器用来安装/编译/测试/卸载包<br>-homepage:当前包网址地址<br>-os:操作系统支持列表<br>-cpu:cpu架构支持列表<br>-engines:支持的JavaScript引擎列表</p>
+          <p class='p subtitle'>CommonJS包规范-必需字段分析</p>
+
+<ul>
+<li>name:包名,必须是唯一的,以免对外公布时产生冲突</li>
+<li>description:包简介</li>
+<li>version:版本号,通常格式为major.minor.revision</li>
+<li>keywords:关键词数组,npm用来做分类搜索</li>
+<li>maintainers:包维护者列表,每个维护者由name/email/web三个属性组成,npm根据该属性进行权限认证</li>
+<li>contributors:贡献者列表,格式与维护者列表相同</li>
+<li>bugs:一个可以反馈bug的网址或者邮箱</li>
+<li>licenses:许可证列表,表示这个包可以在哪些许可证下使用</li>
+<li>repositories:托管源代码的位置列表</li>
+<li>dependencies:当前包所需要依赖的包列表,npm会根据这个属性自动加载依赖包</li>
+</ul>
+<p class='p subtitle'>CommonJS包规范-非必需字段分析</p>
+
+<ul>
+<li>script:脚本说明对象,主要被包管理器用来安装/编译/测试/卸载包</li>
+<li>homepage:当前包网址地址</li>
+<li>os:操作系统支持列表</li>
+<li>cpu:cpu架构支持列表</li>
+<li>engines:支持的JavaScript引擎列表</li>
+</ul>
+<p class='p subtitle'>NPM包规范增加字段</p>
+
+<ul>
+<li>author:包作者</li>
+<li>bin:可以让包作为命令行工具使用,在配置好bin字段后,可通过npm install package_name - g可以将脚本添加到执行路径中.之后可以在命令行中直接执行</li>
+<li>main:模块引入时会优先检查这个字段,将其作为包中其他模块的入口,如果不存在将会查找包目录下的index文件作为入口</li>
+<li>devDependencies:一些模块只需要在开发时安装</li>
+</ul>
 <p class='p subtitle'>devDependencies和dependencies的区别</p>
 <p>通常我们安装模块时,使用<br>npm i <package_name> –save<br>这时的模块将被放在 dependencies 下,而我们使用<br>npm i <package_name> –save –dev<br>这时的模块将被放在 devDependencies 下<br>他们的区别在于作为一个项目时,我们初始化 npm i 下载模块的时候,devDependencies 和 dependencies 下的所有依赖模块将被下载到本地的 node_modules,而在这个项目发布 npm 包时,别人 npm i <package_name>你的这个项目时,只会把 dependencies 下的所有依赖模块下载</p>
 
@@ -574,10 +601,10 @@
     <div class='new-meta-box'>
       
         
-          <div class="new-meta-item date" itemprop="dateUpdated" datetime="2020-11-03T09:35:26+00:00">
+          <div class="new-meta-item date" itemprop="dateUpdated" datetime="2020-11-06T12:51:32+00:00">
   <a class='notlink'>
     <i class="fas fa-edit fa-fw" aria-hidden="true"></i>
-    <p>更新于：2020年11月3日</p>
+    <p>更新于：2020年11月6日</p>
   </a>
 </div>
 
