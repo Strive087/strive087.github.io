@@ -26,7 +26,7 @@
     "hexo-server": "^1.0.0",
     "hexo-wordcount": "^6.0.1",
     "live2d-widget-model-izumi": "1.0.5",
-    "valine": "^1.4.14"
+    "valine": "^1.5.0"
   },
   "devDependencies": {
     "shelljs": "^0.8.4"
